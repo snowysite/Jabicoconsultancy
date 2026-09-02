@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Grades | JABICO Cohort Portal</title>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Grades CSS -->
+<link rel="stylesheet" href="css/grades.css">
+
+
+</head>
+
+<body>
+
+
+<main class="grades-page">
+
+    <!-- PAGE HEADER -->
+    <section class="grades-header">
+
+        <div>
+            <span class="eyebrow">
+                <i class="fa-solid fa-chart-line"></i>
+                ACADEMIC PERFORMANCE
+            </span>
+
+            <h1>My Grades</h1>
+
+            <p>
+                Track your academic performance, course progress and assessment results.
+            </p>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="btn btn-light"
+                id="printGradesBtn"
+            >
+                <i class="fa-solid fa-print"></i>
+                Print Report
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="downloadGradesBtn"
+            >
+                <i class="fa-solid fa-download"></i>
+                Download Report
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- OVERVIEW CARDS -->
+    <section class="grade-overview">
+
+        <article class="overview-card primary-card">
+
+            <div class="overview-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div class="overview-content">
+                <span>Overall Score</span>
+                <strong id="overallScore">87%</strong>
+
+                <div class="mini-progress">
+                    <span id="overallProgress"></span>
+                </div>
+
+                <small>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    6.4% from last assessment
+                </small>
+            </div>
+
+        </article>
+
+
+        <article class="overview-card">
+
+            <div class="overview-icon purple">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="overview-content">
+                <span>Average Grade</span>
+                <strong id="averageGrade">A-</strong>
+
+                <p>
+                    Excellent performance
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="overview-card">
+
+            <div class="overview-icon green">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="overview-content">
+                <span>Courses Completed</span>
+                <strong>06</strong>
+
+                <p>
+                    <b>8</b> total courses
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="overview-card">
+
+            <div class="overview-icon orange">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+
+            <div class="overview-content">
+                <span>Class Rank</span>
+                <strong>08<span>/42</span></strong>
+
+                <p>
+                    Top 20% of cohort
+                </p>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <section class="grades-layout">
+
+        <!-- LEFT CONTENT -->
+        <div class="grades-main">
+
+            <!-- PERFORMANCE CARD -->
+            <section class="grade-section performance-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            PERFORMANCE
+                        </span>
+
+                        <h2>Course Performance</h2>
+
+                        <p>
+                            Your grades across all registered courses.
+                        </p>
+                    </div>
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- FILTER -->
+                <div class="grade-toolbar">
+
+                    <div class="filter-tabs">
+
+                        <button
+                            type="button"
+                            class="filter-tab active"
+                            data-filter="all"
+                        >
+                            All Courses
+                        </button>
+
+                        <button
+                            type="button"
+                            class="filter-tab"
+                            data-filter="completed"
+                        >
+                            Completed
+                        </button>
+
+                        <button
+                            type="button"
+                            class="filter-tab"
+                            data-filter="progress"
+                        >
+                            In Progress
+                        </button>
+
+                    </div>
+
+                    <select
+                        id="semesterFilter"
+                        class="semester-select"
+                    >
+                        <option value="all">
+                            All Terms
+                        </option>
+
+                        <option value="current">
+                            Current Term
+                        </option>
+
+                        <option value="previous">
+                            Previous Term
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- COURSE TABLE -->
+                <div class="table-wrapper">
+
+                    <table class="grades-table">
+
+                        <thead>
+                            <tr>
+                                <th>COURSE</th>
+                                <th>PROGRESS</th>
+                                <th>SCORE</th>
+                                <th>GRADE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="gradesTableBody">
+
+                            <tr
+                                class="course-row"
+                                data-status="completed"
+                                data-term="current"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon blue">
+                                            <i class="fa-solid fa-code"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Web Development</strong>
+                                            <span>JABICO-WEB-201</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>100%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 100%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">94%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-a">
+                                        A
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="course-row"
+                                data-status="completed"
+                                data-term="current"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon purple">
+                                            <i class="fa-solid fa-palette"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>UI/UX Design</strong>
+                                            <span>JABICO-DES-202</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>100%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 100%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">91%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-a">
+                                        A
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="course-row"
+                                data-status="completed"
+                                data-term="current"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon green">
+                                            <i class="fa-solid fa-database"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Database Systems</strong>
+                                            <span>JABICO-DB-203</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>96%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 96%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">88%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-b">
+                                        B+
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="course-row"
+                                data-status="progress"
+                                data-term="current"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon orange">
+                                            <i class="fa-solid fa-mobile-screen-button"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Mobile App Development</strong>
+                                            <span>JABICO-MOB-204</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>78%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 78%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">84%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-b">
+                                        B+
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="course-row"
+                                data-status="progress"
+                                data-term="current"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon pink">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Digital Business</strong>
+                                            <span>JABICO-BIZ-205</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>64%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 64%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">81%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-b">
+                                        B
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="course-row"
+                                data-status="completed"
+                                data-term="previous"
+                            >
+                                <td>
+
+                                    <div class="course-info">
+
+                                        <div class="course-icon blue">
+                                            <i class="fa-solid fa-lightbulb"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Digital Skills</strong>
+                                            <span>JABICO-DS-101</span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div>
+                                            <span>100%</span>
+                                        </div>
+
+                                        <div class="progress-track">
+                                            <span style="width: 100%"></span>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <strong class="score">90%</strong>
+                                </td>
+
+                                <td>
+                                    <span class="grade-badge grade-a">
+                                        A-
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <div
+                        class="empty-table"
+                        id="emptyTable"
+                        hidden
+                    >
+                        <div class="empty-table-icon">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+
+                        <h3>No courses found</h3>
+
+                        <p>
+                            There are no courses matching your selected filter.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT ASSESSMENTS -->
+            <section class="grade-section assessment-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            RECENT RESULTS
+                        </span>
+
+                        <h2>Recent Assessments</h2>
+
+                        <p>
+                            Your latest quizzes, assignments and examinations.
+                        </p>
+                    </div>
+
+                    <div class="section-icon green">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="assessment-list">
+
+                    <article class="assessment-item">
+
+                        <div class="assessment-icon blue">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div class="assessment-info">
+                            <strong>Frontend Development Quiz</strong>
+                            <span>Web Development • Aug 24, 2026</span>
+                        </div>
+
+                        <div class="assessment-score">
+                            <strong>96%</strong>
+                            <span>Excellent</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="assessment-item">
+
+                        <div class="assessment-icon purple">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+
+                        <div class="assessment-info">
+                            <strong>UX Research Assignment</strong>
+                            <span>UI/UX Design • Aug 21, 2026</span>
+                        </div>
+
+                        <div class="assessment-score">
+                            <strong>91%</strong>
+                            <span>Excellent</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="assessment-item">
+
+                        <div class="assessment-icon orange">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div class="assessment-info">
+                            <strong>Database Practical</strong>
+                            <span>Database Systems • Aug 18, 2026</span>
+                        </div>
+
+                        <div class="assessment-score">
+                            <strong>88%</strong>
+                            <span>Very Good</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="assessment-item">
+
+                        <div class="assessment-icon green">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+
+                        <div class="assessment-info">
+                            <strong>Mobile UI Assignment</strong>
+                            <span>Mobile Development • Aug 15, 2026</span>
+                        </div>
+
+                        <div class="assessment-score">
+                            <strong>84%</strong>
+                            <span>Very Good</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="grades-sidebar">
+
+            <!-- GRADE SUMMARY -->
+            <section class="side-card">
+
+                <div class="side-card-heading">
+
+                    <div>
+                        <span class="section-label">
+                            SUMMARY
+                        </span>
+
+                        <h2>Grade Distribution</h2>
+                    </div>
+
+                    <div class="side-heading-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="grade-chart">
+
+                    <div
+                        class="donut-chart"
+                        id="donutChart"
+                        style="--percentage: 87%;"
+                    >
+                        <div class="donut-center">
+                            <strong>87%</strong>
+                            <span>Average</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="distribution-list">
+
+                    <div class="distribution-item">
+                        <span>
+                            <i class="distribution-dot grade-a-dot"></i>
+                            A Grade
+                        </span>
+
+                        <strong>3</strong>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>
+                            <i class="distribution-dot grade-b-dot"></i>
+                            B Grade
+                        </span>
+
+                        <strong>2</strong>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>
+                            <i class="distribution-dot grade-c-dot"></i>
+                            C Grade
+                        </span>
+
+                        <strong>0</strong>
+                    </div>
+
+                    <div class="distribution-item">
+                        <span>
+                            <i class="distribution-dot grade-d-dot"></i>
+                            D / F Grade
+                        </span>
+
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GPA CARD -->
+            <section class="side-card gpa-card">
+
+                <div class="gpa-top">
+
+                    <div>
+                        <span class="section-label">
+                            PERFORMANCE INDEX
+                        </span>
+
+                        <h2>Current GPA</h2>
+                    </div>
+
+                    <div class="gpa-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="gpa-value">
+                    <strong>3.72</strong>
+                    <span>/ 4.00</span>
+                </div>
+
+                <div class="gpa-progress">
+                    <span></span>
+                </div>
+
+                <p>
+                    You are <strong>0.28</strong> points away from a perfect GPA.
+                </p>
+
+            </section>
+
+
+            <!-- NEXT TARGET -->
+            <section class="side-card target-card">
+
+                <div class="target-decoration">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <span class="section-label">
+                    NEXT TARGET
+                </span>
+
+                <h2>Reach 90% Average</h2>
+
+                <p>
+                    You're only a few points away. Keep up your current performance.
+                </p>
+
+                <div class="target-progress">
+
+                    <div class="target-progress-heading">
+                        <span>Current</span>
+                        <strong>87%</strong>
+                    </div>
+
+                    <div class="target-track">
+                        <span style="width: 87%"></span>
+                    </div>
+
+                    <div class="target-values">
+                        <span>0%</span>
+                        <span>90%</span>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-primary target-btn"
+                    id="viewTipsBtn"
+                >
+                    <i class="fa-solid fa-lightbulb"></i>
+                    View Study Tips
+                </button>
+
+            </section>
+
+
+            <!-- PERFORMANCE TIP -->
+            <section class="side-card tip-card">
+
+                <div class="tip-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div>
+                    <span class="section-label">
+                        STUDY TIP
+                    </span>
+
+                    <h2>Focus on consistency</h2>
+
+                    <p>
+                        Short, focused study sessions throughout the week can help you maintain strong performance.
+                    </p>
+                </div>
+
+            </section>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<!-- SUCCESS TOAST -->
+<div
+    class="toast"
+    id="successToast"
+    role="status"
+    aria-live="polite"
+>
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div>
+        <strong>Report Ready</strong>
+        <p>Your grades report has been prepared.</p>
+    </div>
+
+    <button
+        type="button"
+        id="closeToast"
+        aria-label="Close notification"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+
+
+<!-- STUDY TIPS MODAL -->
+<div
+    class="modal-overlay"
+    id="tipsModal"
+    hidden
+>
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tipsModalTitle"
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeTipsModal"
+            aria-label="Close"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <h2 id="tipsModalTitle">
+            Study Tips
+        </h2>
+
+        <p>
+            Simple strategies to help you improve your academic performance.
+        </p>
+
+        <div class="tips-list">
+
+            <div class="tip-item">
+                <span>01</span>
+                <div>
+                    <strong>Review your weakest topics</strong>
+                    <p>Spend more time on areas where your assessment scores are lowest.</p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <span>02</span>
+                <div>
+                    <strong>Study in focused sessions</strong>
+                    <p>Use short sessions with clear goals instead of long unfocused study periods.</p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <span>03</span>
+                <div>
+                    <strong>Practice with projects</strong>
+                    <p>Apply what you learn by building practical projects and solving problems.</p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <span>04</span>
+                <div>
+                    <strong>Ask for feedback</strong>
+                    <p>Use feedback from instructors and peers to improve your next submission.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/grades.js"></script>
+```
+
+</body>
+</html>

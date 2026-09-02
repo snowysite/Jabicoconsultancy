@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Profile | JABICO Cohort Portal</title>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Profile CSS -->
+<link rel="stylesheet" href="css/profile.css">
+
+
+</head>
+
+<body>
+
+
+<main class="profile-page">
+
+    <!-- PAGE HEADER -->
+    <section class="profile-header">
+        <div>
+            <span class="eyebrow">
+                <i class="fa-solid fa-user"></i>
+                MY ACCOUNT
+            </span>
+
+            <h1>My Profile</h1>
+
+            <p>
+                Manage your personal information and account preferences.
+            </p>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="btn btn-light"
+                id="cancelTopBtn"
+                hidden
+            >
+                <i class="fa-solid fa-xmark"></i>
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="editTopBtn"
+            >
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- PROFILE CONTENT -->
+    <section class="profile-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="profile-sidebar">
+
+            <!-- PROFILE CARD -->
+            <div class="profile-card">
+
+                <div class="profile-cover"></div>
+
+                <div class="profile-avatar-wrapper">
+
+                    <div class="profile-avatar">
+
+                        <img
+                            id="profileImage"
+                            src="https://i.pravatar.cc/200?img=12"
+                            alt="Profile picture"
+                        >
+
+                        <button
+                            type="button"
+                            class="avatar-edit"
+                            id="avatarEditBtn"
+                            aria-label="Change profile picture"
+                            title="Change profile picture"
+                            disabled
+                        >
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+
+                        <input
+                            type="file"
+                            id="avatarInput"
+                            accept="image/*"
+                            hidden
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="profile-summary">
+
+                    <h2 id="profileName">
+                        Alex Johnson
+                    </h2>
+
+                    <p id="profileRole">
+                        Student
+                    </p>
+
+                    <span class="profile-status">
+                        <i class="fa-solid fa-circle"></i>
+                        Active student
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stats">
+
+                    <div class="profile-stat">
+                        <strong>08</strong>
+                        <span>Projects</span>
+                    </div>
+
+                    <div class="profile-stat">
+                        <strong>92%</strong>
+                        <span>Progress</span>
+                    </div>
+
+                    <div class="profile-stat">
+                        <strong>14</strong>
+                        <span>Badges</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT SECURITY -->
+            <div class="side-card">
+
+                <div class="side-card-header">
+
+                    <div class="side-icon blue">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Account Security</h3>
+                        <p>Your account is protected.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="security-item">
+
+                    <span>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email verification
+                    </span>
+
+                    <strong class="verified">
+                        <i class="fa-solid fa-check"></i>
+                        Verified
+                    </strong>
+
+                </div>
+
+
+                <div class="security-item">
+
+                    <span>
+                        <i class="fa-solid fa-lock"></i>
+                        Password
+                    </span>
+
+                    <button
+                        type="button"
+                        id="changePasswordBtn"
+                    >
+                        Change
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="profile-main">
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="profile-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            PERSONAL INFORMATION
+                        </span>
+
+                        <h2>Personal Details</h2>
+
+                        <p>
+                            Keep your personal information up to date.
+                        </p>
+                    </div>
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm" novalidate>
+
+                    <div class="form-grid">
+
+                        <!-- FIRST NAME -->
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    value="Alex"
+                                    placeholder="Enter your first name"
+                                    disabled
+                                    autocomplete="given-name"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="firstNameError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- LAST NAME -->
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    value="Johnson"
+                                    placeholder="Enter your last name"
+                                    disabled
+                                    autocomplete="family-name"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="lastNameError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="form-group full-width">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value="alex.johnson@example.com"
+                                    placeholder="Enter your email"
+                                    disabled
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="emailError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    value="+234 801 234 5678"
+                                    placeholder="Enter your phone number"
+                                    disabled
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LOCATION -->
+                        <div class="form-group">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="location"
+                                    name="location"
+                                    value="Lagos, Nigeria"
+                                    placeholder="City, Country"
+                                    disabled
+                                    autocomplete="address-level2"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- COHORT -->
+                        <div class="form-group">
+
+                            <label for="cohort">
+                                Cohort
+                            </label>
+
+                            <div class="input-wrapper select-wrapper">
+
+                                <i class="fa-solid fa-users"></i>
+
+                                <select
+                                    id="cohort"
+                                    name="cohort"
+                                    disabled
+                                >
+                                    <option value="Cohort 1">
+                                        Cohort 1
+                                    </option>
+
+                                    <option
+                                        value="Cohort 2"
+                                        selected
+                                    >
+                                        Cohort 2
+                                    </option>
+
+                                    <option value="Cohort 3">
+                                        Cohort 3
+                                    </option>
+                                </select>
+
+                                <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ROLE -->
+                        <div class="form-group">
+
+                            <label for="role">
+                                Role
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
+                                <input
+                                    type="text"
+                                    id="role"
+                                    name="role"
+                                    value="Student"
+                                    disabled
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BIO -->
+                    <div class="form-group bio-group">
+
+                        <label for="bio">
+                            About Me
+                        </label>
+
+                        <div class="textarea-wrapper">
+
+                            <i class="fa-regular fa-message"></i>
+
+                            <textarea
+                                id="bio"
+                                name="bio"
+                                rows="5"
+                                maxlength="300"
+                                placeholder="Tell us a little about yourself..."
+                                disabled
+                            >I am a passionate learner focused on improving my digital skills and building meaningful projects.</textarea>
+
+                        </div>
+
+                        <div class="character-count">
+                            <span id="bioCount">0</span>/300 characters
+                        </div>
+
+                    </div>
+
+
+                    <!-- FORM ACTIONS -->
+                    <div
+                        class="form-actions"
+                        id="formActions"
+                        hidden
+                    >
+
+                        <button
+                            type="button"
+                            class="btn btn-light"
+                            id="cancelBtn"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="saveBtn"
+                        >
+                            <i class="fa-solid fa-check"></i>
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- PREFERENCES -->
+            <div class="profile-section preferences-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            PREFERENCES
+                        </span>
+
+                        <h2>Account Preferences</h2>
+
+                        <p>
+                            Choose how you want to use the portal.
+                        </p>
+
+                    </div>
+
+                    <div class="section-icon purple">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="preference-list">
+
+                    <!-- EMAIL NOTIFICATIONS -->
+                    <div class="preference-item">
+
+                        <div class="preference-info">
+
+                            <div class="preference-icon">
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+
+                            <div>
+                                <h3>Email Notifications</h3>
+
+                                <p>
+                                    Receive updates about projects,
+                                    classes and announcements.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="emailNotifications"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- PROJECT REMINDERS -->
+                    <div class="preference-item">
+
+                        <div class="preference-info">
+
+                            <div class="preference-icon purple">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+
+                            <div>
+                                <h3>Project Reminders</h3>
+
+                                <p>
+                                    Get reminders when project deadlines
+                                    are approaching.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="projectReminders"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- CLASS REMINDERS -->
+                    <div class="preference-item">
+
+                        <div class="preference-info">
+
+                            <div class="preference-icon orange">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+
+                            <div>
+                                <h3>Class Reminders</h3>
+
+                                <p>
+                                    Receive reminders before upcoming
+                                    classes and sessions.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="classReminders"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- SUCCESS TOAST -->
+<div
+    class="toast"
+    id="successToast"
+    role="status"
+    aria-live="polite"
+>
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div>
+        <strong id="toastTitle">
+            Profile Updated
+        </strong>
+
+        <p id="toastMessage">
+            Your information has been saved successfully.
+        </p>
+    </div>
+
+    <button
+        type="button"
+        id="closeToast"
+        aria-label="Close notification"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+
+<!-- PASSWORD MODAL -->
+<div
+    class="modal-overlay"
+    id="passwordModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="passwordModalTitle"
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closePasswordModal"
+            aria-label="Close"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <h2 id="passwordModalTitle">
+            Change Password
+        </h2>
+
+        <p>
+            Enter your new password below.
+        </p>
+
+
+        <form id="passwordForm" novalidate>
+
+            <div class="form-group">
+
+                <label for="newPassword">
+                    New Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Enter new password"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+                <small
+                    class="field-error"
+                    id="newPasswordError"
+                ></small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm new password"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+                <small
+                    class="field-error"
+                    id="confirmPasswordError"
+                ></small>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    id="cancelPasswordBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="updatePasswordBtn"
+                >
+                    <i class="fa-solid fa-shield-check"></i>
+                    Update Password
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- Profile JavaScript -->
+<script src="js/profile.js"></script>
+
+
+</body>
+</html>

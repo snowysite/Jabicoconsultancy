@@ -1,0 +1,1232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Modules | Jabico Consultancy</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+    <!-- Modules CSS -->
+    <link rel="stylesheet" href="css/modules.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+                <h2>JABICO</h2>
+
+                <span>
+                    CONSULTANCY
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <ul class="menu">
+
+            <li>
+
+                <a href="dashboard.html">
+
+                    <i class="fas fa-grid-2"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="modules.html">
+
+                    <i class="fas fa-book-open"></i>
+
+                    <span>
+                        My Modules
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="classes.html">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    <span>
+                        Classes
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="assignment.html">
+
+                    <i class="fas fa-file-lines"></i>
+
+                    <span>
+                        Assignments
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="resources.html">
+
+                    <i class="fas fa-folder-open"></i>
+
+                    <span>
+                        Resources
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="message.html">
+
+                    <i class="fas fa-comments"></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="profile.html">
+
+                    <i class="fas fa-user"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <!-- LOGOUT -->
+
+        <a
+            href="index.html"
+            class="logout"
+        >
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation"
+            >
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    LEARNING CENTER
+                </span>
+
+                <h1>
+                    My <span>Modules</span>
+                </h1>
+
+                <p>
+                    Continue your learning journey and track your progress.
+                </p>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="moduleSearch"
+                        placeholder="Search modules..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    class="header-icon"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        class="header-icon"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fas fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- NOTIFICATION DROPDOWN -->
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown"
+                    >
+
+                        <div class="notification-header">
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <span>
+                                3 New
+                            </span>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div
+                                class="notification-icon blue"
+                            >
+
+                                <i class="fas fa-book"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New module available
+                                </strong>
+
+                                <p>
+                                    Module 5 has been added to your learning path.
+                                </p>
+
+                                <small>
+                                    10 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div
+                                class="notification-icon purple"
+                            >
+
+                                <i class="fas fa-calendar"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Upcoming class
+                                </strong>
+
+                                <p>
+                                    Your next live class starts tomorrow.
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div
+                                class="notification-icon green"
+                            >
+
+                                <i class="fas fa-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Module completed
+                                </strong>
+
+                                <p>
+                                    Congratulations on completing Module 4.
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="profile">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Student profile"
+                    >
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Antonio Cruz
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             MODULE HERO
+        ================================================== -->
+
+        <section class="modules-hero">
+
+            <div class="modules-hero-content">
+
+                <span class="hero-label">
+                    YOUR LEARNING PATH
+                </span>
+
+                <h2>
+                    Master your skills,
+                    <span>one module at a time.</span>
+                </h2>
+
+                <p>
+                    Follow your structured learning path, complete lessons,
+                    submit assignments and build your skills step by step.
+                </p>
+
+            </div>
+
+
+            <div class="hero-progress">
+
+                <div class="hero-progress-top">
+
+                    <span>
+                        Overall Progress
+                    </span>
+
+                    <strong>
+                        63%
+                    </strong>
+
+                </div>
+
+                <div class="hero-progress-track">
+
+                    <div
+                        class="hero-progress-value"
+                        style="width: 63%"
+                    ></div>
+
+                </div>
+
+                <small>
+                    4 of 6 modules completed
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MODULE FILTERS
+        ================================================== -->
+
+        <section class="module-toolbar">
+
+            <div class="module-tabs">
+
+                <button
+                    class="module-tab active"
+                    data-filter="all"
+                >
+                    All Modules
+                </button>
+
+                <button
+                    class="module-tab"
+                    data-filter="completed"
+                >
+                    Completed
+                </button>
+
+                <button
+                    class="module-tab"
+                    data-filter="current"
+                >
+                    In Progress
+                </button>
+
+                <button
+                    class="module-tab"
+                    data-filter="locked"
+                >
+                    Locked
+                </button>
+
+            </div>
+
+
+            <div class="module-count">
+
+                <i class="fas fa-layer-group"></i>
+
+                <span id="moduleCount">
+                    6 Modules
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MODULES GRID
+        ================================================== -->
+
+        <section
+            class="modules-grid"
+            id="modulesGrid"
+        >
+
+
+            <!-- MODULE 01 -->
+
+            <article
+                class="module-card"
+                data-status="completed"
+                data-search="digital foundations introduction technology"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        01
+                    </div>
+
+                    <span class="module-status completed">
+                        <i class="fas fa-check"></i>
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon blue">
+
+                    <i class="fas fa-laptop-code"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 01
+                    </span>
+
+                    <h3>
+                        Digital Foundations
+                    </h3>
+
+                    <p>
+                        Learn the essential digital concepts,
+                        tools and workflows required for modern business.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-video"></i>
+                        6 Lessons
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        3h 20m
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:100%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        100%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="module-1.html"
+                    class="module-action completed-btn"
+                >
+
+                    Review Module
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- MODULE 02 -->
+
+            <article
+                class="module-card"
+                data-status="completed"
+                data-search="business communication professional communication"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        02
+                    </div>
+
+                    <span class="module-status completed">
+
+                        <i class="fas fa-check"></i>
+
+                        Completed
+
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon purple">
+
+                    <i class="fas fa-comments"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 02
+                    </span>
+
+                    <h3>
+                        Business Communication
+                    </h3>
+
+                    <p>
+                        Develop professional communication skills
+                        for workplace conversations and presentations.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-video"></i>
+                        5 Lessons
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        2h 45m
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:100%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        100%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="module-2.html"
+                    class="module-action completed-btn"
+                >
+
+                    Review Module
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- MODULE 03 -->
+
+            <article
+                class="module-card"
+                data-status="completed"
+                data-search="leadership management team leadership"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        03
+                    </div>
+
+                    <span class="module-status completed">
+
+                        <i class="fas fa-check"></i>
+
+                        Completed
+
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon green">
+
+                    <i class="fas fa-users"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 03
+                    </span>
+
+                    <h3>
+                        Leadership & Teamwork
+                    </h3>
+
+                    <p>
+                        Understand leadership principles, teamwork,
+                        collaboration and effective decision making.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-video"></i>
+                        7 Lessons
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        4h 10m
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:100%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        100%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="module-3.html"
+                    class="module-action completed-btn"
+                >
+
+                    Review Module
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- MODULE 04 -->
+
+            <article
+                class="module-card"
+                data-status="current"
+                data-search="project management planning execution"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        04
+                    </div>
+
+                    <span class="module-status current">
+
+                        <i class="fas fa-play"></i>
+
+                        In Progress
+
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon orange">
+
+                    <i class="fas fa-diagram-project"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 04
+                    </span>
+
+                    <h3>
+                        Project Management
+                    </h3>
+
+                    <p>
+                        Learn how to plan, execute and manage projects
+                        using practical project management frameworks.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-video"></i>
+                        8 Lessons
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        5h 15m
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:63%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        63%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="module-4.html"
+                    class="module-action"
+                >
+
+                    Continue Learning
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- MODULE 05 -->
+
+            <article
+                class="module-card"
+                data-status="locked"
+                data-search="business strategy strategic thinking"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        05
+                    </div>
+
+                    <span class="module-status locked">
+
+                        <i class="fas fa-lock"></i>
+
+                        Locked
+
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon blue">
+
+                    <i class="fas fa-chess"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 05
+                    </span>
+
+                    <h3>
+                        Business Strategy
+                    </h3>
+
+                    <p>
+                        Explore strategic thinking, business models,
+                        competitive positioning and growth planning.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-video"></i>
+                        6 Lessons
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        3h 50m
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:0%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        0%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="module-action disabled"
+                    aria-disabled="true"
+                >
+
+                    <i class="fas fa-lock"></i>
+
+                    Locked
+
+                </a>
+
+            </article>
+
+
+            <!-- MODULE 06 -->
+
+            <article
+                class="module-card"
+                data-status="locked"
+                data-search="final project capstone assessment"
+            >
+
+                <div class="module-card-top">
+
+                    <div class="module-number">
+                        06
+                    </div>
+
+                    <span class="module-status locked">
+
+                        <i class="fas fa-lock"></i>
+
+                        Locked
+
+                    </span>
+
+                </div>
+
+
+                <div class="module-icon purple">
+
+                    <i class="fas fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div class="module-card-content">
+
+                    <span class="module-week">
+                        WEEK 06
+                    </span>
+
+                    <h3>
+                        Final Capstone Project
+                    </h3>
+
+                    <p>
+                        Apply everything you've learned by completing
+                        a practical final project and assessment.
+                    </p>
+
+                </div>
+
+
+                <div class="module-card-meta">
+
+                    <span>
+                        <i class="fas fa-file-lines"></i>
+                        Final Project
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        6h+
+                    </span>
+
+                </div>
+
+
+                <div class="module-progress">
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-value"
+                            style="width:0%"
+                        ></div>
+
+                    </div>
+
+                    <span>
+                        0%
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="module-action disabled"
+                    aria-disabled="true"
+                >
+
+                    <i class="fas fa-lock"></i>
+
+                    Locked
+
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             EMPTY SEARCH STATE
+        ================================================== -->
+
+        <div
+            class="empty-module-state"
+            id="emptyModuleState"
+        >
+
+            <div class="empty-icon">
+
+                <i class="fas fa-search"></i>
+
+            </div>
+
+            <h3>
+                No modules found
+            </h3>
+
+            <p>
+                Try searching with a different keyword.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             LEARNING TIP
+        ================================================== -->
+
+        <section class="learning-tip">
+
+            <div class="tip-icon">
+
+                <i class="fas fa-lightbulb"></i>
+
+            </div>
+
+
+            <div class="tip-content">
+
+                <span>
+                    LEARNING TIP
+                </span>
+
+                <h3>
+                    Stay consistent with your learning.
+                </h3>
+
+                <p>
+                    Completing a little each day is better than
+                    waiting until the last minute. Keep progressing
+                    through your current module.
+                </p>
+
+            </div>
+
+
+            <div class="tip-action">
+
+                <a href="module-4.html">
+
+                    Continue Module
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     APEXCHARTS
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+<!-- DASHBOARD JS -->
+
+<script src="js/dashboard.js"></script>
+
+
+<!-- MODULES JS -->
+
+<script src="js/modules.js"></script>
+
+</body>
+</html>
+```

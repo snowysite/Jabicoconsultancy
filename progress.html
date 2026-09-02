@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta
+    name="description"
+    content="Jabico Consultancy Student Portal Projects"
+>
+
+<title>Projects | Jabico Consultancy</title>
+
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- =====================================================
+     GOOGLE FONT
+====================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<!-- =====================================================
+     PROJECT CSS
+====================================================== -->
+<link rel="stylesheet" href="css/progress.css">
+```
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+```
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <div class="logo-box">J</div>
+
+        <div class="logo-text">
+            <h2>JABICO</h2>
+            <span>CONSULTANCY</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fas fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="modules.html">
+                <i class="fas fa-book-open"></i>
+                <span>Modules</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="classes.html">
+                <i class="fas fa-calendar-days"></i>
+                <span>Classes</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="assignment.html">
+                <i class="fas fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="projects.html">
+                <i class="fas fa-diagram-project"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="resources.html">
+                <i class="fas fa-folder-open"></i>
+                <span>Resources</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="announcement.html">
+                <i class="fas fa-bullhorn"></i>
+                <span>Announcements</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="grades.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Grades</span>
+            </a>
+        </li>
+
+    </ul>
+
+    <!-- LOGOUT -->
+    <a href="index.html" class="logout">
+        <i class="fas fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</aside>
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+<main class="content">
+
+    <!-- =================================================
+         TOPBAR
+    ================================================== -->
+    <header class="topbar">
+
+        <!-- MOBILE MENU -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- WELCOME -->
+        <div class="welcome">
+
+            <span class="welcome-label">
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                Projects <span>& Portfolio</span>
+            </h1>
+
+            <p>
+                Build practical skills, complete projects and
+                showcase your learning journey.
+            </p>
+
+        </div>
+
+        <!-- HEADER ACTIONS -->
+        <div class="header-actions">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+
+                <input
+                    type="text"
+                    id="projectSearch"
+                    placeholder="Search projects..."
+                    aria-label="Search projects"
+                >
+            </div>
+
+            <!-- THEME -->
+            <button
+                class="header-icon"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+            >
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <!-- NOTIFICATIONS -->
+            <div class="notification-wrapper">
+
+                <button
+                    class="header-icon notification-btn"
+                    id="notificationBtn"
+                    type="button"
+                    aria-label="Notifications"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div
+                    class="notification-dropdown"
+                    id="notificationDropdown"
+                >
+
+                    <div class="notification-header">
+                        <h3>Notifications</h3>
+                        <span>3 New</span>
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon blue">
+                            <i class="fas fa-diagram-project"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Project update
+                            </strong>
+
+                            <p>
+                                Your project milestone has been
+                                updated.
+                            </p>
+
+                            <small>
+                                5 minutes ago
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Project deadline
+                            </strong>
+
+                            <p>
+                                Your final project submission
+                                is approaching.
+                            </p>
+
+                            <small>
+                                1 hour ago
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Milestone completed
+                            </strong>
+
+                            <p>
+                                You completed your latest project
+                                milestone.
+                            </p>
+
+                            <small>
+                                3 hours ago
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROFILE -->
+            <div class="profile">
+
+                <img
+                    src="assets/images/profile.jpg"
+                    alt="Student profile"
+                    onerror="this.onerror=null;this.src='https://i.pravatar.cc/100?img=12';"
+                >
+
+                <div class="profile-info">
+                    <strong>Antonio Cruz</strong>
+                    <span>Student</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PROJECT HERO
+    ================================================== -->
+    <section class="project-hero">
+
+        <div class="hero-content">
+
+            <span class="panel-label">
+                MY LEARNING PROJECTS
+            </span>
+
+            <h2>
+                Turn your knowledge into
+                <span>real-world projects.</span>
+            </h2>
+
+            <p>
+                Manage your active projects, track milestones,
+                collaborate with your cohort and build a portfolio
+                that demonstrates what you've learned.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    class="primary-btn"
+                    id="startProjectBtn"
+                    type="button"
+                >
+                    <i class="fas fa-plus"></i>
+                    Start New Project
+                </button>
+
+                <a
+                    href="resources.html"
+                    class="secondary-btn"
+                >
+                    <i class="fas fa-folder-open"></i>
+                    Browse Resources
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <strong>12</strong>
+                    <span>Ideas</span>
+                </div>
+            </div>
+
+            <div class="project-orbit">
+
+                <div class="orbit-ring"></div>
+
+                <div class="orbit-center">
+                    <i class="fas fa-diagram-project"></i>
+                    <strong>72%</strong>
+                    <span>Overall Progress</span>
+                </div>
+
+            </div>
+
+            <div class="floating-card card-two">
+                <i class="fas fa-trophy"></i>
+                <div>
+                    <strong>4</strong>
+                    <span>Completed</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROJECT STATISTICS
+    ================================================== -->
+    <section class="project-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="fas fa-layer-group"></i>
+            </div>
+
+            <div class="stat-content">
+                <span>Total Projects</span>
+                <strong id="totalProjects">8</strong>
+                <small>Across your programme</small>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                <i class="fas fa-spinner"></i>
+            </div>
+
+            <div class="stat-content">
+                <span>In Progress</span>
+                <strong id="activeProjects">3</strong>
+                <small>Currently active</small>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="fas fa-circle-check"></i>
+            </div>
+
+            <div class="stat-content">
+                <span>Completed</span>
+                <strong id="completedProjects">4</strong>
+                <small>Successfully finished</small>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <i class="fas fa-clock"></i>
+            </div>
+
+            <div class="stat-content">
+                <span>Upcoming Deadline</span>
+                <strong>7</strong>
+                <small>Days remaining</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROJECT CONTROLS
+    ================================================== -->
+    <section class="project-controls card">
+
+        <div class="filter-group">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+                type="button"
+            >
+                All Projects
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="active"
+                type="button"
+            >
+                In Progress
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="completed"
+                type="button"
+            >
+                Completed
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="upcoming"
+                type="button"
+            >
+                Upcoming
+            </button>
+
+        </div>
+
+        <div class="sort-group">
+
+            <label for="projectSort">
+                Sort by
+            </label>
+
+            <select id="projectSort">
+
+                <option value="latest">
+                    Latest
+                </option>
+
+                <option value="progress">
+                    Progress
+                </option>
+
+                <option value="deadline">
+                    Deadline
+                </option>
+
+                <option value="name">
+                    Name
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MAIN PROJECT AREA
+    ================================================== -->
+    <div class="projects-layout">
+
+        <!-- =================================================
+             PROJECT FEED
+        ================================================== -->
+        <section class="projects-main">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="panel-label">
+                        PROJECT WORKSPACE
+                    </span>
+
+                    <h2>
+                        Your Projects
+                    </h2>
+                </div>
+
+                <span
+                    class="project-count"
+                    id="projectCount"
+                >
+                    8 projects
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROJECT GRID
+            ================================================== -->
+            <div
+                class="project-grid"
+                id="projectGrid"
+            >
+
+                <!-- PROJECT 1 -->
+                <article
+                    class="project-card featured"
+                    data-status="active"
+                    data-category="active"
+                    data-progress="72"
+                    data-deadline="2026-09-05"
+                    data-name="Digital Marketing Strategy"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status active">
+                            <i class="fas fa-circle"></i>
+                            In Progress
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon blue">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+
+                    <span class="project-category">
+                        DIGITAL MARKETING
+                    </span>
+
+                    <h3>
+                        Digital Marketing Strategy
+                    </h3>
+
+                    <p>
+                        Develop a complete digital marketing strategy
+                        for a modern business, including audience
+                        research, positioning, content and campaigns.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>72%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:72%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Due Sep 5
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            8/11 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-members">
+
+                            <img
+                                src="https://i.pravatar.cc/40?img=12"
+                                alt=""
+                            >
+
+                            <img
+                                src="https://i.pravatar.cc/40?img=32"
+                                alt=""
+                            >
+
+                            <span>
+                                +2
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="digital-marketing"
+                        >
+                            Open Project
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+                <article
+                    class="project-card"
+                    data-status="active"
+                    data-category="active"
+                    data-progress="48"
+                    data-deadline="2026-09-12"
+                    data-name="Brand Identity Development"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status active">
+                            <i class="fas fa-circle"></i>
+                            In Progress
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon purple">
+                        <i class="fas fa-palette"></i>
+                    </div>
+
+                    <span class="project-category">
+                        BRANDING
+                    </span>
+
+                    <h3>
+                        Brand Identity Development
+                    </h3>
+
+                    <p>
+                        Create a complete brand identity system,
+                        including visual direction, typography,
+                        colours and brand guidelines.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>48%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:48%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Due Sep 12
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            6/12 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-members">
+
+                            <img
+                                src="https://i.pravatar.cc/40?img=5"
+                                alt=""
+                            >
+
+                            <img
+                                src="https://i.pravatar.cc/40?img=8"
+                                alt=""
+                            >
+
+                            <span>
+                                +1
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="brand"
+                        >
+                            Open Project
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+                <article
+                    class="project-card"
+                    data-status="upcoming"
+                    data-category="upcoming"
+                    data-progress="0"
+                    data-deadline="2026-09-18"
+                    data-name="Social Media Campaign"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status upcoming">
+                            <i class="fas fa-clock"></i>
+                            Upcoming
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon orange">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+
+                    <span class="project-category">
+                        SOCIAL MEDIA
+                    </span>
+
+                    <h3>
+                        Social Media Campaign
+                    </h3>
+
+                    <p>
+                        Plan and design a social media campaign
+                        focused on audience growth, engagement and
+                        measurable campaign performance.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>0%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:0%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Starts Sep 10
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            0/10 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-members">
+                            <span class="solo-member">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="social"
+                        >
+                            View Project
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 4 -->
+                <article
+                    class="project-card"
+                    data-status="completed"
+                    data-category="completed"
+                    data-progress="100"
+                    data-deadline="2026-08-15"
+                    data-name="Market Research Analysis"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status completed">
+                            <i class="fas fa-check"></i>
+                            Completed
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon green">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+
+                    <span class="project-category">
+                        RESEARCH
+                    </span>
+
+                    <h3>
+                        Market Research Analysis
+                    </h3>
+
+                    <p>
+                        Analyse customer behaviour, competitors and
+                        market opportunities to produce a practical
+                        research report.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>100%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:100%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Completed Aug 15
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            14/14 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-score">
+                            <i class="fas fa-star"></i>
+                            <strong>92%</strong>
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="research"
+                        >
+                            View Results
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 5 -->
+                <article
+                    class="project-card"
+                    data-status="completed"
+                    data-category="completed"
+                    data-progress="100"
+                    data-deadline="2026-08-10"
+                    data-name="Content Strategy Portfolio"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status completed">
+                            <i class="fas fa-check"></i>
+                            Completed
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon blue">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+
+                    <span class="project-category">
+                        CONTENT
+                    </span>
+
+                    <h3>
+                        Content Strategy Portfolio
+                    </h3>
+
+                    <p>
+                        Build a professional content strategy portfolio
+                        covering content planning, storytelling and
+                        audience engagement.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>100%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:100%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Completed Aug 10
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            10/10 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-score">
+                            <i class="fas fa-star"></i>
+                            <strong>88%</strong>
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="content"
+                        >
+                            View Results
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 6 -->
+                <article
+                    class="project-card"
+                    data-status="active"
+                    data-category="active"
+                    data-progress="31"
+                    data-deadline="2026-09-22"
+                    data-name="Email Marketing Campaign"
+                >
+
+                    <div class="project-card-top">
+
+                        <span class="project-status active">
+                            <i class="fas fa-circle"></i>
+                            In Progress
+                        </span>
+
+                        <button
+                            class="project-menu"
+                            type="button"
+                            aria-label="Project options"
+                        >
+                            <i class="fas fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-icon green">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+
+                    <span class="project-category">
+                        EMAIL MARKETING
+                    </span>
+
+                    <h3>
+                        Email Marketing Campaign
+                    </h3>
+
+                    <p>
+                        Design a strategic email campaign from
+                        audience segmentation through automation,
+                        copywriting and reporting.
+                    </p>
+
+                    <div class="project-progress">
+
+                        <div class="progress-heading">
+                            <span>Project Progress</span>
+                            <strong>31%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:31%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-meta">
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Due Sep 22
+                        </span>
+
+                        <span>
+                            <i class="fas fa-list-check"></i>
+                            4/13 tasks
+                        </span>
+
+                    </div>
+
+                    <div class="project-footer">
+
+                        <div class="project-members">
+
+                            <img
+                                src="https://i.pravatar.cc/40?img=15"
+                                alt=""
+                            >
+
+                            <span>
+                                +1
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="view-project-btn"
+                            type="button"
+                            data-project="email"
+                        >
+                            Open Project
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div
+                class="project-empty"
+                id="projectEmpty"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+
+                <h3>
+                    No projects found
+                </h3>
+
+                <p>
+                    Try changing your search or selected filter.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+        <aside class="projects-sidebar">
+
+            <!-- DEADLINE PANEL -->
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            PRIORITY
+                        </span>
+
+                        <h2>
+                            Next Deadline
+                        </h2>
+                    </div>
+
+                    <i class="fas fa-clock panel-header-icon"></i>
+
+                </div>
+
+                <div class="deadline-highlight">
+
+                    <span class="deadline-label">
+                        SUBMISSION DUE
+                    </span>
+
+                    <h3>
+                        Digital Marketing Strategy
+                    </h3>
+
+                    <div class="deadline-date">
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <div>
+                            <span>
+                                SEPTEMBER
+                            </span>
+
+                            <small>
+                                2026
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <div class="deadline-progress">
+
+                        <div>
+                            <span>
+                                7 days remaining
+                            </span>
+
+                            <strong>
+                                72%
+                            </strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:72%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="deadline-btn"
+                        type="button"
+                        data-project="digital-marketing"
+                    >
+                        Continue Project
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MILESTONES -->
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            PROGRESS
+                        </span>
+
+                        <h2>
+                            Milestones
+                        </h2>
+                    </div>
+
+                    <a href="#">
+                        View all
+                    </a>
+
+                </div>
+
+                <div class="milestone-list">
+
+                    <div class="milestone completed">
+
+                        <div class="milestone-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Research Completed
+                            </strong>
+
+                            <span>
+                                Digital Marketing
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="milestone completed">
+
+                        <div class="milestone-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Audience Analysis
+                            </strong>
+
+                            <span>
+                                Digital Marketing
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="milestone current">
+
+                        <div class="milestone-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Campaign Strategy
+                            </strong>
+
+                            <span>
+                                In progress
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="milestone">
+
+                        <div class="milestone-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Final Presentation
+                            </strong>
+
+                            <span>
+                                Locked
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT TIPS -->
+            <div class="side-panel panel tips-panel">
+
+                <div class="tip-decoration">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+
+                <span class="panel-label">
+                    PROJECT TIP
+                </span>
+
+                <h2>
+                    Document your process.
+                </h2>
+
+                <p>
+                    Keep screenshots, research notes and drafts
+                    throughout your project. They can become valuable
+                    portfolio material later.
+                </p>
+
+                <a href="resources.html" class="panel-link">
+                    Explore resources
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- TEAM -->
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            COLLABORATION
+                        </span>
+
+                        <h2>
+                            Project Team
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div class="team-list">
+
+                    <div class="team-member">
+
+                        <img
+                            src="https://i.pravatar.cc/50?img=32"
+                            alt=""
+                        >
+
+                        <div>
+                            <strong>
+                                Sarah Johnson
+                            </strong>
+
+                            <span>
+                                Project Lead
+                            </span>
+                        </div>
+
+                        <i class="fas fa-circle online"></i>
+
+                    </div>
+
+                    <div class="team-member">
+
+                        <img
+                            src="https://i.pravatar.cc/50?img=5"
+                            alt=""
+                        >
+
+                        <div>
+                            <strong>
+                                David Williams
+                            </strong>
+
+                            <span>
+                                Research
+                            </span>
+                        </div>
+
+                        <i class="fas fa-circle online"></i>
+
+                    </div>
+
+                    <div class="team-member">
+
+                        <img
+                            src="https://i.pravatar.cc/50?img=8"
+                            alt=""
+                        >
+
+                        <div>
+                            <strong>
+                                Emily Smith
+                            </strong>
+
+                            <span>
+                                Content
+                            </span>
+                        </div>
+
+                        <i class="fas fa-circle offline"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- =================================================
+         PROJECT DETAIL MODAL
+    ================================================== -->
+    <div
+        class="modal"
+        id="projectModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay"></div>
+
+        <div
+            class="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalProjectTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="modal-project-info">
+
+                    <div
+                        class="modal-project-icon"
+                        id="modalProjectIcon"
+                    >
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+
+                    <div>
+
+                        <span
+                            class="modal-category"
+                            id="modalProjectCategory"
+                        >
+                            DIGITAL MARKETING
+                        </span>
+
+                        <h2 id="modalProjectTitle">
+                            Digital Marketing Strategy
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="modal-close"
+                    id="closeProjectModal"
+                    type="button"
+                    aria-label="Close project"
+                >
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="modal-progress-section">
+
+                <div class="modal-progress-heading">
+
+                    <span>
+                        Overall Progress
+                    </span>
+
+                    <strong id="modalProgress">
+                        72%
+                    </strong>
+
+                </div>
+
+                <div class="progress-bar large">
+                    <span
+                        id="modalProgressBar"
+                        style="width:72%"
+                    ></span>
+                </div>
+
+            </div>
+
+
+            <div
+                class="modal-description"
+                id="modalProjectDescription"
+            >
+                Develop a complete digital marketing strategy for
+                a modern business, including audience research,
+                positioning, content and campaigns.
+            </div>
+
+
+            <div class="modal-details-grid">
+
+                <div class="modal-detail">
+
+                    <i class="far fa-calendar"></i>
+
+                    <div>
+                        <span>Deadline</span>
+                        <strong id="modalDeadline">
+                            September 5, 2026
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="modal-detail">
+
+                    <i class="fas fa-list-check"></i>
+
+                    <div>
+                        <span>Tasks</span>
+                        <strong id="modalTasks">
+                            8 of 11 completed
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="modal-detail">
+
+                    <i class="fas fa-users"></i>
+
+                    <div>
+                        <span>Team</span>
+                        <strong>
+                            4 Members
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="modal-detail">
+
+                    <i class="fas fa-award"></i>
+
+                    <div>
+                        <span>Assessment</span>
+                        <strong>
+                            Portfolio Project
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <a
+                    href="assignment.html"
+                    class="modal-secondary-btn"
+                >
+                    <i class="fas fa-file-pen"></i>
+                    Related Assignment
+                </a>
+
+                <button
+                    class="modal-primary-btn"
+                    id="modalContinueBtn"
+                    type="button"
+                >
+                    Continue Project
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+    <footer class="page-footer">
+
+        <p>
+            © 2026 Jabico Consultancy.
+            All rights reserved.
+        </p>
+
+        <div>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Support
+            </a>
+
+        </div>
+
+    </footer>
+
+</main>
+```
+
+</div>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/progress.js"></script>
+
+</body>
+</html>

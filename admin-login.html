@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jabico Consultancy | Admin Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         ADMIN LOGIN PAGE
+    ========================================== -->
+
+    <main class="admin-login-page">
+
+        <!-- Decorative Background -->
+        <div class="background-decoration decoration-one"></div>
+        <div class="background-decoration decoration-two"></div>
+        <div class="background-grid"></div>
+
+        <!-- Login Wrapper -->
+        <section class="login-wrapper">
+
+            <!-- =====================================
+                 BRAND / LEFT PANEL
+            ====================================== -->
+            <div class="brand-panel">
+
+                <div class="brand-content">
+
+                    <!-- Logo -->
+                    <div class="brand-logo">
+                        <div class="logo-mark">
+                            <span>J</span>
+                        </div>
+
+                        <div class="logo-text">
+                            <h1>JABICO</h1>
+                            <span>CONSULTANCY</span>
+                        </div>
+                    </div>
+
+                    <!-- Brand Message -->
+                    <div class="brand-message">
+
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            ADMINISTRATION PORTAL
+                        </span>
+
+                        <h2>
+                            Manage.
+                            <span>Monitor.</span>
+                            Empower.
+                        </h2>
+
+                        <p>
+                            Welcome to the Jabico Consultancy administration
+                            portal. Manage students, cohorts, classes,
+                            resources and academic activities from one secure
+                            workspace.
+                        </p>
+
+                    </div>
+
+                    <!-- Features -->
+                    <div class="brand-features">
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div>
+                                <strong>Student Management</strong>
+                                <span>Review and manage student applications</span>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+                                <strong>Academic Overview</strong>
+                                <span>Monitor cohorts and academic activities</span>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div>
+                                <strong>Secure Workspace</strong>
+                                <span>Administrative tools in one place</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Copyright -->
+                <div class="brand-footer">
+                    <span>
+                        &copy; <span id="currentYear"></span>
+                        Jabico Consultancy. All rights reserved.
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 LOGIN PANEL
+            ====================================== -->
+            <div class="login-panel">
+
+                <div class="login-card">
+
+                    <!-- Mobile Logo -->
+                    <div class="mobile-brand">
+
+                        <div class="logo-mark">
+                            <span>J</span>
+                        </div>
+
+                        <div class="logo-text">
+                            <h1>JABICO</h1>
+                            <span>CONSULTANCY</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Login Heading -->
+                    <div class="login-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div>
+                            <span class="small-heading">
+                                SECURE ACCESS
+                            </span>
+
+                            <h2>Admin Login</h2>
+                        </div>
+
+                    </div>
+
+                    <p class="login-description">
+                        Sign in to access the Jabico administration dashboard.
+                    </p>
+
+
+                    <!-- =================================
+                         LOGIN MESSAGE
+                    ================================== -->
+                    <div
+                        class="login-message"
+                        id="loginMessage"
+                        role="alert"
+                        aria-live="polite"
+                    >
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span id="messageText"></span>
+                    </div>
+
+
+                    <!-- =================================
+                         LOGIN FORM
+                    ================================== -->
+                    <form
+                        id="adminLoginForm"
+                        class="admin-login-form"
+                        novalidate
+                    >
+
+                        <!-- Email -->
+                        <div class="form-group">
+
+                            <label for="adminEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-envelope input-icon"></i>
+
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    name="email"
+                                    placeholder="Enter your admin email"
+                                    autocomplete="username"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="emailError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="form-group">
+
+                            <div class="label-row">
+
+                                <label for="adminPassword">
+                                    Password
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="forgot-password"
+                                    id="forgotPassword"
+                                >
+                                    Forgot password?
+                                </button>
+
+                            </div>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-lock input-icon"></i>
+
+                                <input
+                                    type="password"
+                                    id="adminPassword"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="passwordToggle"
+                                    aria-label="Show password"
+                                    title="Show password"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="passwordError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Remember Me -->
+                        <div class="form-options">
+
+                            <label class="remember-me">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberMe"
+                                    name="remember"
+                                >
+
+                                <span class="custom-checkbox">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+                            <span class="secure-note">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Secure login
+                            </span>
+
+                        </div>
+
+
+                        <!-- Login Button -->
+                        <button
+                            type="submit"
+                            class="login-button"
+                            id="adminLoginButton"
+                        >
+
+                            <span
+                                class="button-content"
+                                id="buttonContent"
+                            >
+                                <span>Sign In</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                            <span
+                                class="button-loading"
+                                id="buttonLoading"
+                            >
+                                <span class="spinner"></span>
+                                Signing in...
+                            </span>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <strong>Protected Area</strong>
+
+                            <p>
+                                This area is restricted to authorized
+                                Jabico administrators only.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Back to Website -->
+                    <a
+                        href="index.html"
+                        class="back-link"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Jabico Website
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FORGOT PASSWORD MODAL
+    ========================================== -->
+
+    <div
+        class="modal-overlay"
+        id="forgotModal"
+        aria-hidden="true"
+    >
+
+        <div class="forgot-modal">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-key"></i>
+            </div>
+
+            <h3>Forgot Password?</h3>
+
+            <p>
+                Password recovery will be connected to the Jabico
+                administrator backend when authentication is implemented.
+            </p>
+
+            <button
+                type="button"
+                class="modal-button"
+                id="modalOkay"
+            >
+                <span>Okay</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Admin Login JS -->
+    <script src="js/api-config.js"></script>
+    <script src="js/admin-login.js"></script>
+
+</body>
+</html>
+

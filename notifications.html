@@ -1,0 +1,749 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Notifications | Jabico Consultancy
+    </title>
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/notifications.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+            J
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                JABICO
+            </h2>
+
+            <span>
+                CONSULTANCY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Learning Materials
+            </span>
+
+        </a>
+
+
+        <a href="my-courses.html">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>
+                My Courses
+            </span>
+
+        </a>
+
+
+        <a href="schedule.html">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span>
+                Schedule
+            </span>
+
+        </a>
+
+
+        <a
+            href="notifications.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span>
+                Notifications
+            </span>
+
+            <span
+                class="sidebar-notification-count"
+                id="sidebarNotificationCount"
+            >
+                0
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <span>
+                Help & Support
+            </span>
+
+        </a>
+
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+
+    <!-- =====================================
+         TOPBAR
+    ====================================== -->
+
+    <header class="topbar">
+
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <span>
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                Notifications
+            </h1>
+
+        </div>
+
+
+        <div class="student-area">
+
+
+            <button
+                type="button"
+                class="notification-button active"
+                aria-label="Notifications"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span
+                    class="notification-dot"
+                    id="notificationDot"
+                ></span>
+
+            </button>
+
+
+            <div class="student-profile">
+
+
+                <div class="student-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="student-details">
+
+                    <strong id="studentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================
+         PAGE CONTENT
+    ====================================== -->
+
+    <section class="content-container">
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <div class="notification-hero">
+
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    STAY UPDATED
+                </span>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <p>
+                    Stay informed about your courses,
+                    learning materials, classes and important
+                    announcements from Jabico Consultancy.
+                </p>
+
+            </div>
+
+
+            <div class="hero-icon">
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <div class="notification-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Unread
+                    </span>
+
+                    <strong id="unreadCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-envelope-open"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Read
+                    </span>
+
+                    <strong id="readCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Important
+                    </span>
+
+                    <strong id="importantCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TOOLBAR
+        ====================================== -->
+
+        <div class="notification-toolbar">
+
+
+            <div class="notification-tabs">
+
+
+                <button
+                    type="button"
+                    class="notification-tab active"
+                    data-filter="all"
+                >
+
+                    All
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="notification-tab"
+                    data-filter="unread"
+                >
+
+                    Unread
+
+                    <span id="unreadTabCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="notification-tab"
+                    data-filter="read"
+                >
+
+                    Read
+
+                </button>
+
+
+            </div>
+
+
+            <button
+                type="button"
+                class="mark-all-button"
+                id="markAllButton"
+            >
+
+                <i class="fa-solid fa-check-double"></i>
+
+                Mark All as Read
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             SEARCH
+        ====================================== -->
+
+        <div class="search-row">
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search notifications..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="refresh-button"
+                id="refreshButton"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             NOTIFICATION LIST
+        ====================================== -->
+
+        <div class="section-header">
+
+
+            <div>
+
+                <h2>
+                    Recent Notifications
+                </h2>
+
+                <p>
+                    Important updates and announcements
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="notification-list"
+            id="notificationList"
+        >
+        </div>
+
+
+
+        <!-- =====================================
+             EMPTY STATE
+        ====================================== -->
+
+        <div
+            class="empty-state"
+            id="emptyState"
+            hidden
+        >
+
+            <div class="empty-icon">
+
+                <i class="fa-regular fa-bell-slash"></i>
+
+            </div>
+
+
+            <h3>
+                No notifications found
+            </h3>
+
+
+            <p>
+                There are no notifications matching your current filter.
+            </p>
+
+
+            <button
+                type="button"
+                id="clearFilters"
+            >
+                Clear Filters
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         NOTIFICATION DETAILS MODAL
+    ====================================== -->
+
+    <div
+        class="notification-modal"
+        id="notificationModal"
+        hidden
+    >
+
+
+        <div
+            class="modal-overlay"
+            id="modalOverlay"
+        ></div>
+
+
+        <div class="modal-box">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close notification"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div
+                class="modal-notification-icon"
+                id="modalIcon"
+            >
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+
+            <span
+                class="modal-category"
+                id="modalCategory"
+            >
+                NOTIFICATION
+            </span>
+
+
+            <h2 id="modalTitle">
+                Notification
+            </h2>
+
+
+            <div
+                class="modal-time"
+                id="modalTime"
+            >
+                —
+            </div>
+
+
+            <p id="modalMessage">
+                Notification message
+            </p>
+
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="modal-read-button"
+                    id="modalReadButton"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Mark as Read
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="modal-delete-button"
+                    id="modalDeleteButton"
+                >
+
+                    <i class="fa-regular fa-trash-can"></i>
+
+                    Delete
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            ©
+            <span id="currentYear"></span>
+            Jabico Consultancy.
+            All rights reserved.
+
+        </p>
+
+
+        <span>
+            Private Cohort Learning Portal
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/api-config.js"></script>
+<script src="js/notifications.js"></script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,1382 @@
+/* =========================================================
+   JABICO COHORT PORTAL
+   CERTIFICATE PAGE
+   ========================================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-soft: #eff6ff;
+
+    --purple: #7c3aed;
+    --purple-soft: #f5f3ff;
+
+    --green: #16a34a;
+    --green-soft: #f0fdf4;
+
+    --orange: #f59e0b;
+    --orange-soft: #fffbeb;
+
+    --red: #dc2626;
+
+    --background: #f6f8fc;
+    --card: #ffffff;
+
+    --text: #111827;
+    --text-soft: #64748b;
+    --text-muted: #94a3b8;
+
+    --border: #e5e7eb;
+
+    --gold: #b88924;
+    --gold-light: #d6ad50;
+
+    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.14);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+    --transition: 0.25s ease;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.certificate-page {
+    width: min(100%, 1450px);
+    margin: 0 auto;
+    padding: 34px 38px 60px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.certificate-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.eyebrow i {
+    font-size: 11px;
+}
+
+.certificate-header h1 {
+    margin-top: 7px;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
+
+.certificate-header p {
+    margin-top: 8px;
+    color: var(--text-soft);
+    font-size: 13px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 6px 17px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-light {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn-light:hover {
+    background: #f8fafc;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.certificate-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 315px;
+    gap: 22px;
+    align-items: start;
+}
+
+.certificate-preview-section {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   PREVIEW HEADER
+   ========================================================= */
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-label {
+    display: block;
+    color: var(--primary);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.preview-header h2 {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.certificate-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.certificate-status i {
+    font-size: 8px;
+}
+
+/* =========================================================
+   CERTIFICATE WRAPPER
+   ========================================================= */
+
+.certificate-wrapper {
+    width: 100%;
+    overflow: auto;
+    padding: 15px;
+    border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            #f1f5f9,
+            #e9eef6
+        );
+}
+
+.certificate-border {
+    width: min(100%, 900px);
+    min-width: 650px;
+    margin: 0 auto;
+    padding: 9px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #f0d27b,
+            var(--gold),
+            #8f6718
+        );
+    box-shadow: var(--shadow-md);
+}
+
+.certificate-inner {
+    position: relative;
+    min-height: 590px;
+    padding: 48px 65px 40px;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(214, 173, 80, 0.07),
+            transparent 45%
+        ),
+        #fffdf8;
+    border: 2px solid #d6ad50;
+}
+
+/* =========================================================
+   DECORATIVE CORNERS
+   ========================================================= */
+
+.corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.7;
+}
+
+.corner-top-left {
+    top: 17px;
+    left: 17px;
+    border-width: 2px 0 0 2px;
+}
+
+.corner-top-right {
+    top: 17px;
+    right: 17px;
+    border-width: 2px 2px 0 0;
+}
+
+.corner-bottom-left {
+    bottom: 17px;
+    left: 17px;
+    border-width: 0 0 2px 2px;
+}
+
+.corner-bottom-right {
+    right: 17px;
+    bottom: 17px;
+    border-width: 0 2px 2px 0;
+}
+
+/* =========================================================
+   CERTIFICATE LOGO
+   ========================================================= */
+
+.certificate-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-mark {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.logo-text strong {
+    color: var(--primary);
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.logo-text span {
+    margin-top: -2px;
+    color: var(--text-muted);
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   CERTIFICATE TITLES
+   ========================================================= */
+
+.certificate-title-small {
+    display: block;
+    margin-top: 27px;
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.certificate-title {
+    margin-top: 4px;
+    color: #263247;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 37px;
+    letter-spacing: 2px;
+}
+
+.certificate-intro {
+    margin-top: 15px;
+    color: #64748b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* =========================================================
+   STUDENT
+   ========================================================= */
+
+.certificate-student {
+    margin-top: 10px;
+    color: #172033;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.name-line {
+    width: 320px;
+    max-width: 80%;
+    height: 1px;
+    margin: 8px auto 0;
+    background: var(--gold);
+}
+
+.certificate-description {
+    margin-top: 14px;
+    color: #64748b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+}
+
+.certificate-program {
+    margin-top: 8px;
+    color: var(--primary);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+}
+
+.certificate-description.secondary {
+    max-width: 560px;
+    margin: 8px auto 0;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   CERTIFICATE DETAILS
+   ========================================================= */
+
+.certificate-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 650px;
+    margin: 28px auto 0;
+}
+
+.certificate-detail {
+    padding: 9px;
+    border-top: 1px solid rgba(184, 137, 36, 0.45);
+}
+
+.certificate-detail span {
+    display: block;
+    color: #94a3b8;
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.certificate-detail strong {
+    display: block;
+    margin-top: 4px;
+    color: #263247;
+    font-size: 9px;
+}
+
+/* =========================================================
+   CERTIFICATE FOOTER
+   ========================================================= */
+
+.certificate-footer {
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    align-items: end;
+    gap: 35px;
+    max-width: 650px;
+    margin: 30px auto 0;
+}
+
+.signature-block {
+    text-align: center;
+}
+
+.signature {
+    min-height: 27px;
+    color: #344054;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 20px;
+}
+
+.signature-line {
+    height: 1px;
+    background: #94a3b8;
+}
+
+.signature-block span {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 7px;
+}
+
+/* =========================================================
+   SEAL
+   ========================================================= */
+
+.certificate-seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seal-ring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    box-shadow:
+        inset 0 0 0 3px #fffdf8,
+        inset 0 0 0 5px var(--gold);
+}
+
+.seal-ring i {
+    font-size: 6px;
+}
+
+.seal-ring strong {
+    margin: 3px 0 1px;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.seal-ring small {
+    font-size: 5px;
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   PREVIEW ACTIONS
+   ========================================================= */
+
+.preview-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 17px;
+}
+
+.preview-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--text-soft);
+    font-size: 9px;
+    font-weight: 700;
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.preview-action:hover {
+    border-color: #bfdbfe;
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.certificate-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.side-card {
+    padding: 19px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+}
+
+.side-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.side-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 11px;
+}
+
+.side-icon.green {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.side-icon.blue {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.side-icon.purple {
+    background: var(--purple-soft);
+    color: var(--purple);
+}
+
+.side-card-header h3 {
+    font-size: 11px;
+}
+
+.side-card-header p {
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+/* =========================================================
+   COMPLETION
+   ========================================================= */
+
+.completion-progress {
+    display: flex;
+    justify-content: center;
+    margin: 22px 0 15px;
+}
+
+.completion-circle {
+    display: grid;
+    place-items: center;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            var(--green) 100%,
+            #e2e8f0 0
+        );
+}
+
+.completion-circle::before {
+    content: "";
+    position: absolute;
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    background: var(--card);
+}
+
+.completion-circle {
+    position: relative;
+}
+
+.completion-circle > div {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.completion-circle strong {
+    display: block;
+    color: var(--green);
+    font-size: 20px;
+}
+
+.completion-circle span {
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.completion-message {
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.completion-message strong {
+    font-size: 11px;
+}
+
+.completion-message p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   INFORMATION LIST
+   ========================================================= */
+
+.info-list {
+    margin-top: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+}
+
+.info-item span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.info-item span i {
+    width: 12px;
+    text-align: center;
+}
+
+.info-item strong {
+    max-width: 150px;
+    color: var(--text);
+    font-size: 8px;
+    text-align: right;
+}
+
+/* =========================================================
+   ACHIEVEMENTS
+   ========================================================= */
+
+.achievement-list {
+    margin-top: 14px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid var(--border);
+}
+
+.achievement-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+}
+
+.achievement-icon.blue {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.achievement-icon.purple {
+    background: var(--purple-soft);
+    color: var(--purple);
+}
+
+.achievement-icon.orange {
+    background: var(--orange-soft);
+    color: var(--orange);
+}
+
+.achievement-item strong {
+    display: block;
+    font-size: 12px;
+}
+
+.achievement-item span {
+    display: block;
+    margin-top: 1px;
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+/* =========================================================
+   VERIFICATION CARD
+   ========================================================= */
+
+.verification-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background:
+        linear-gradient(
+            145deg,
+            #eff6ff,
+            #f5f3ff
+        );
+}
+
+.verification-icon {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 11px;
+    border-radius: 13px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    font-size: 17px;
+}
+
+.verification-card h3 {
+    font-size: 13px;
+}
+
+.verification-card p {
+    margin-top: 6px;
+    color: var(--text-soft);
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+.verify-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.verify-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+    width: min(100%, 430px);
+    padding: 28px;
+    border-radius: 20px;
+    background: var(--card);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(15px) scale(0.97);
+    transition: transform var(--transition);
+}
+
+.modal-overlay.show .modal {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text-muted);
+}
+
+.modal-close:hover {
+    color: var(--text);
+}
+
+.modal-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 17px;
+}
+
+.modal h2 {
+    margin-top: 16px;
+    font-size: 19px;
+}
+
+.modal > p {
+    margin-top: 5px;
+    color: var(--text-soft);
+    font-size: 10px;
+}
+
+/* =========================================================
+   SHARE OPTIONS
+   ========================================================= */
+
+.share-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.share-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--text-soft);
+    font-size: 9px;
+    font-weight: 700;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+.share-option:hover {
+    border-color: #bfdbfe;
+    background: var(--primary-soft);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   VERIFICATION MODAL
+   ========================================================= */
+
+.verification-modal {
+    text-align: center;
+}
+
+.verification-success-icon {
+    display: grid;
+    place-items: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 25px;
+}
+
+.verified-label {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--green);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.verification-modal h2 {
+    margin-top: 5px;
+}
+
+.verification-details {
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.verification-details > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.verification-details > div:last-child {
+    border-bottom: 0;
+}
+
+.verification-details span {
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.verification-details strong {
+    color: var(--text);
+    font-size: 8px;
+}
+
+.verified-text {
+    color: var(--green) !important;
+}
+
+.modal-done {
+    width: 100%;
+    margin-top: 16px;
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: min(360px, calc(100vw - 30px));
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--card);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.toast strong {
+    display: block;
+    font-size: 10px;
+}
+
+.toast p {
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.toast button {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-muted);
+}
+
+.toast button:hover {
+    background: var(--background);
+    color: var(--text);
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes certificateFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificate-header,
+.certificate-preview-section,
+.certificate-sidebar {
+    animation: certificateFade 0.45s ease both;
+}
+
+.certificate-preview-section {
+    animation-delay: 0.08s;
+}
+
+.certificate-sidebar {
+    animation-delay: 0.15s;
+}
+
+/* =========================================================
+   FULLSCREEN
+   ========================================================= */
+
+.certificate-wrapper.fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 0;
+}
+
+.certificate-wrapper.fullscreen .certificate-border {
+    max-height: 95vh;
+    overflow: auto;
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+        background: #ffffff;
+    }
+
+    .certificate-page {
+        width: 100%;
+        padding: 0;
+    }
+
+    .certificate-header,
+    .preview-header,
+    .preview-actions,
+    .certificate-sidebar {
+        display: none !important;
+    }
+
+    .certificate-preview-section {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .certificate-wrapper {
+        padding: 0;
+        overflow: visible;
+        background: #ffffff;
+    }
+
+    .certificate-border {
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+    }
+
+    .certificate-inner {
+        min-height: 0;
+        height: 100vh;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .certificate-layout {
+        grid-template-columns: minmax(0, 1fr) 280px;
+    }
+
+    .certificate-page {
+        padding: 28px 24px 50px;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .certificate-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions .btn {
+        flex: 1;
+    }
+
+    .certificate-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .verification-card {
+        grid-column: 1 / -1;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .certificate-page {
+        padding: 22px 15px 40px;
+    }
+
+    .certificate-header h1 {
+        font-size: 28px;
+    }
+
+    .certificate-preview-section {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .certificate-sidebar {
+        display: flex;
+    }
+
+    .preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .certificate-wrapper {
+        padding: 8px;
+    }
+
+    .certificate-border {
+        min-width: 580px;
+    }
+
+    .preview-actions {
+        flex-direction: column;
+    }
+
+    .preview-action {
+        justify-content: center;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header-actions {
+        flex-direction: column;
+    }
+
+    .header-actions .btn {
+        width: 100%;
+    }
+
+    .certificate-title {
+        font-size: 30px;
+    }
+
+    .certificate-student {
+        font-size: 25px;
+    }
+
+    .certificate-details {
+        gap: 5px;
+    }
+
+    .certificate-footer {
+        gap: 15px;
+    }
+
+    .share-options {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 23px 19px;
+    }
+
+    .toast {
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

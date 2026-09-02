@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources | Jabico Consultancy</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Dashboard / Resources CSS -->
+   <link rel="stylesheet" href="css/resources.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+                <h2>JABICO</h2>
+                <span>CONSULTANCY</span>
+            </div>
+
+        </div>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="modules.html">
+                    <i class="fas fa-book-open"></i>
+                    <span>Modules</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="resources.html">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Resources</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="classes.html">
+                    <i class="fas fa-calendar-days"></i>
+                    <span>Classes</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="assignment.html">
+                    <i class="fas fa-file-pen"></i>
+                    <span>Assignments</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="announcement.html">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a href="index.html" class="logout">
+            <i class="fas fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="content">
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    Learning <span>Resources</span>
+                </h1>
+
+                <p>
+                    Access course materials, guides and useful learning resources.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="resourceSearch"
+                        placeholder="Search resources..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    class="header-icon"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATION -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        class="header-icon"
+                        id="notificationBtn"
+                        aria-label="Notifications">
+
+                        <i class="fas fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown">
+
+                        <div class="notification-header">
+
+                            <h3>Notifications</h3>
+
+                            <span>3 New</span>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon blue">
+                                <i class="fas fa-book"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New resource available
+                                </strong>
+
+                                <p>
+                                    A new learning guide has been added.
+                                </p>
+
+                                <small>
+                                    10 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon purple">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Upcoming class
+                                </strong>
+
+                                <p>
+                                    Your next live class starts tomorrow.
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon green">
+                                <i class="fas fa-check"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Assignment updated
+                                </strong>
+
+                                <p>
+                                    Your assignment status has been updated.
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="profile">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Student profile">
+
+                    <div class="profile-info">
+
+                        <strong>Student</strong>
+
+                        <span>Jabico Cohort</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             RESOURCE SUMMARY
+        ================================================== -->
+
+        <section class="resource-summary">
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    <i class="fas fa-folder"></i>
+                </div>
+
+                <div>
+                    <span>Total Resources</span>
+                    <h3>24</h3>
+                    <small>Available materials</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon purple">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+
+                <div>
+                    <span>PDF Guides</span>
+                    <h3>12</h3>
+                    <small>Study documents</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    <i class="fas fa-video"></i>
+                </div>
+
+                <div>
+                    <span>Video Lessons</span>
+                    <h3>7</h3>
+                    <small>Recorded sessions</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon orange">
+                    <i class="fas fa-link"></i>
+                </div>
+
+                <div>
+                    <span>Useful Links</span>
+                    <h3>5</h3>
+                    <small>External resources</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESOURCE AREA
+        ================================================== -->
+
+        <section class="resource-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        LEARNING MATERIALS
+                    </span>
+
+                    <h2>
+                        Resource Library
+                    </h2>
+
+                    <p>
+                        Find everything you need to support your learning.
+                    </p>
+
+                </div>
+
+
+                <div class="resource-filter">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all">
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="pdf">
+                        PDFs
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="video">
+                        Videos
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="link">
+                        Links
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESOURCE GRID
+            ================================================== -->
+
+            <div class="resource-grid" id="resourceGrid">
+
+
+                <!-- RESOURCE 1 -->
+
+                <article
+                    class="resource-card"
+                    data-type="pdf"
+                    data-title="Business Strategy Guide">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            PDF
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Strategy Guide
+                    </h3>
+
+                    <p>
+                        A comprehensive guide covering the fundamentals
+                        of business strategy and planning.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-file"></i>
+                            2.4 MB
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            15 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 01
+                        </span>
+
+                        <a
+                            href="assets/resources/business-strategy.pdf"
+                            target="_blank"
+                            class="resource-btn">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 2 -->
+
+                <article
+                    class="resource-card"
+                    data-type="pdf"
+                    data-title="Marketing Fundamentals">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type purple">
+                            <i class="fas fa-file-lines"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            PDF
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Marketing Fundamentals
+                    </h3>
+
+                    <p>
+                        Learn the core principles of marketing,
+                        positioning, branding and customer research.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-file"></i>
+                            3.1 MB
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            20 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 02
+                        </span>
+
+                        <a
+                            href="assets/resources/marketing-fundamentals.pdf"
+                            target="_blank"
+                            class="resource-btn">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 3 -->
+
+                <article
+                    class="resource-card"
+                    data-type="video"
+                    data-title="Introduction to Entrepreneurship">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type green">
+                            <i class="fas fa-video"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            VIDEO
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Introduction to Entrepreneurship
+                    </h3>
+
+                    <p>
+                        Watch the recorded lesson covering entrepreneurial
+                        thinking and opportunity identification.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-play"></i>
+                            1 video
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            42 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 03
+                        </span>
+
+                        <a
+                            href="#"
+                            class="resource-btn">
+
+                            <i class="fas fa-play"></i>
+                            Watch
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 4 -->
+
+                <article
+                    class="resource-card"
+                    data-type="video"
+                    data-title="Financial Management Masterclass">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type orange">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            VIDEO
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Financial Management Masterclass
+                    </h3>
+
+                    <p>
+                        Understand budgeting, cash flow and basic financial
+                        management for growing businesses.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-play"></i>
+                            1 video
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            51 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 04
+                        </span>
+
+                        <a
+                            href="#"
+                            class="resource-btn">
+
+                            <i class="fas fa-play"></i>
+                            Watch
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 5 -->
+
+                <article
+                    class="resource-card"
+                    data-type="pdf"
+                    data-title="Leadership Handbook">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type blue">
+                            <i class="fas fa-book"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            PDF
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Leadership Handbook
+                    </h3>
+
+                    <p>
+                        Practical leadership principles for managing teams,
+                        communication and workplace performance.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-file"></i>
+                            4.2 MB
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            25 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 05
+                        </span>
+
+                        <a
+                            href="assets/resources/leadership-handbook.pdf"
+                            target="_blank"
+                            class="resource-btn">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 6 -->
+
+                <article
+                    class="resource-card"
+                    data-type="link"
+                    data-title="Business Planning Toolkit">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type purple">
+                            <i class="fas fa-link"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            LINK
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Planning Toolkit
+                    </h3>
+
+                    <p>
+                        Helpful templates and tools for developing your
+                        business plan and setting measurable goals.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-globe"></i>
+                            Online
+                        </span>
+
+                        <span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            External
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Toolkit
+                        </span>
+
+                        <a
+                            href="#"
+                            class="resource-btn">
+
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            Open
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 7 -->
+
+                <article
+                    class="resource-card"
+                    data-type="pdf"
+                    data-title="Communication Skills">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type green">
+                            <i class="fas fa-comments"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            PDF
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Communication Skills
+                    </h3>
+
+                    <p>
+                        Improve professional communication, presentations,
+                        meetings and interpersonal skills.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-file"></i>
+                            1.8 MB
+                        </span>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            12 min
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Week 06
+                        </span>
+
+                        <a
+                            href="assets/resources/communication-skills.pdf"
+                            target="_blank"
+                            class="resource-btn">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESOURCE 8 -->
+
+                <article
+                    class="resource-card"
+                    data-type="link"
+                    data-title="Recommended Reading">
+
+                    <div class="resource-card-top">
+
+                        <div class="resource-type orange">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+
+                        <span class="resource-badge">
+                            LINK
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Recommended Reading
+                    </h3>
+
+                    <p>
+                        Explore carefully selected articles, books and
+                        external learning materials.
+                    </p>
+
+                    <div class="resource-meta">
+
+                        <span>
+                            <i class="fas fa-globe"></i>
+                            Online
+                        </span>
+
+                        <span>
+                            <i class="fas fa-book"></i>
+                            10 items
+                        </span>
+
+                    </div>
+
+                    <div class="resource-footer">
+
+                        <span>
+                            Library
+                        </span>
+
+                        <a
+                            href="#"
+                            class="resource-btn">
+
+                            <i class="fas fa-arrow-right"></i>
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="no-results"
+                id="noResults">
+
+                <i class="fas fa-folder-open"></i>
+
+                <h3>
+                    No resources found
+                </h3>
+
+                <p>
+                    Try a different search term or category.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="js/resources.js"></script>
+
+</body>
+</html>

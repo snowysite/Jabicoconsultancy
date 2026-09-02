@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Messages | JABICO Cohort Portal</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+    <!-- Messages CSS -->
+    <link
+        rel="stylesheet"
+        href="css/message.css"
+    >
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+
+                <h2>JABICO</h2>
+
+                <span>
+                    CONSULTANCY
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="modules.html">
+                    <i class="fas fa-book-open"></i>
+                    <span>My Modules</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="classes.html">
+                    <i class="fas fa-calendar-days"></i>
+                    <span>Classes</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="assignment.html">
+                    <i class="fas fa-file-lines"></i>
+                    <span>Assignments</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="resources.html">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Resources</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="message.html">
+                    <i class="fas fa-comments"></i>
+                    <span>Messages</span>
+                    <span class="menu-badge">3</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a
+            href="index.html"
+            class="logout"
+        >
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    COMMUNICATION
+                </span>
+
+                <h1>
+                    My <span>Messages</span>
+                </h1>
+
+                <p>
+                    Stay connected with your mentors and cohort.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        placeholder="Search..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="header-icon"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="header-icon"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fas fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown"
+                    >
+
+                        <div class="notification-header">
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <span>
+                                3 New
+                            </span>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon blue">
+                                <i class="fas fa-comment"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New message
+                                </strong>
+
+                                <p>
+                                    Sarah sent you a new message.
+                                </p>
+
+                                <small>
+                                    5 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon purple">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Upcoming class
+                                </strong>
+
+                                <p>
+                                    Your next class starts tomorrow.
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon green">
+                                <i class="fas fa-check"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Assignment graded
+                                </strong>
+
+                                <p>
+                                    Your latest assignment has been graded.
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    class="profile"
+                >
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Student profile"
+                    >
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Antonio Cruz
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             MESSAGES HEADER
+        ================================================== -->
+
+        <section class="messages-header">
+
+            <div>
+
+                <span class="section-label">
+                    INBOX
+                </span>
+
+                <h2>
+                    Conversations
+                </h2>
+
+                <p>
+                    Message your mentors, instructors and cohort members.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="new-message-btn"
+                id="newMessageBtn"
+            >
+
+                <i class="fas fa-pen"></i>
+
+                New Message
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             MESSAGE APPLICATION
+        ================================================== -->
+
+        <section class="messages-container">
+
+
+            <!-- =================================================
+                 CONVERSATION SIDEBAR
+            ================================================== -->
+
+            <aside class="conversation-panel">
+
+
+                <div class="conversation-header">
+
+                    <div>
+
+                        <h3>
+                            Messages
+                        </h3>
+
+                        <span id="conversationCount">
+                            4 conversations
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="compose-btn"
+                        id="composeBtn"
+                        aria-label="Compose message"
+                    >
+
+                        <i class="fas fa-pen"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGE SEARCH -->
+
+                <div class="message-search">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="messageSearch"
+                        placeholder="Search conversations..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- FILTER -->
+
+                <div class="conversation-filter">
+
+                    <button
+                        type="button"
+                        class="conversation-filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="conversation-filter-btn"
+                        data-filter="unread"
+                    >
+                        Unread
+                    </button>
+
+                    <button
+                        type="button"
+                        class="conversation-filter-btn"
+                        data-filter="important"
+                    >
+                        Important
+                    </button>
+
+                </div>
+
+
+                <!-- CONVERSATIONS -->
+
+                <div
+                    class="conversation-list"
+                    id="conversationList"
+                >
+
+
+                    <!-- CONVERSATION 1 -->
+
+                    <button
+                        type="button"
+                        class="conversation active unread"
+                        data-id="sarah"
+                        data-name="Sarah Williams"
+                        data-filter="unread"
+                    >
+
+                        <div class="conversation-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Sarah Williams"
+                            >
+
+                            <span class="online-dot"></span>
+
+                        </div>
+
+
+                        <div class="conversation-content">
+
+                            <div class="conversation-top">
+
+                                <strong>
+                                    Sarah Williams
+                                </strong>
+
+                                <time>
+                                    10:42 AM
+                                </time>
+
+                            </div>
+
+                            <div class="conversation-bottom">
+
+                                <p>
+                                    Hey Antonio, have you completed...
+                                </p>
+
+                                <span class="unread-count">
+                                    2
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- CONVERSATION 2 -->
+
+                    <button
+                        type="button"
+                        class="conversation"
+                        data-id="michael"
+                        data-name="Michael Adams"
+                    >
+
+                        <div class="conversation-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=11"
+                                alt="Michael Adams"
+                            >
+
+                        </div>
+
+
+                        <div class="conversation-content">
+
+                            <div class="conversation-top">
+
+                                <strong>
+                                    Michael Adams
+                                </strong>
+
+                                <time>
+                                    Yesterday
+                                </time>
+
+                            </div>
+
+                            <div class="conversation-bottom">
+
+                                <p>
+                                    The project presentation looks...
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- CONVERSATION 3 -->
+
+                    <button
+                        type="button"
+                        class="conversation important"
+                        data-id="mentor"
+                        data-name="David Johnson"
+                        data-filter="important"
+                    >
+
+                        <div class="conversation-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=68"
+                                alt="David Johnson"
+                            >
+
+                            <span class="online-dot"></span>
+
+                        </div>
+
+
+                        <div class="conversation-content">
+
+                            <div class="conversation-top">
+
+                                <strong>
+                                    David Johnson
+                                </strong>
+
+                                <time>
+                                    Aug 27
+                                </time>
+
+                            </div>
+
+                            <div class="conversation-bottom">
+
+                                <p>
+                                    Great progress on your module...
+                                </p>
+
+                                <i class="fas fa-star important-star"></i>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- CONVERSATION 4 -->
+
+                    <button
+                        type="button"
+                        class="conversation"
+                        data-id="cohort"
+                        data-name="Cohort Group"
+                    >
+
+                        <div class="conversation-avatar group-avatar">
+
+                            <i class="fas fa-users"></i>
+
+                        </div>
+
+
+                        <div class="conversation-content">
+
+                            <div class="conversation-top">
+
+                                <strong>
+                                    Cohort Group
+                                </strong>
+
+                                <time>
+                                    Aug 25
+                                </time>
+
+                            </div>
+
+                            <div class="conversation-bottom">
+
+                                <p>
+                                    Maria: Does anyone have the...
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- EMPTY CONVERSATION -->
+
+                <div
+                    class="conversation-empty"
+                    id="conversationEmpty"
+                >
+
+                    <i class="fas fa-comments"></i>
+
+                    <p>
+                        No conversations found.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =================================================
+                 CHAT AREA
+            ================================================== -->
+
+            <div class="chat-panel">
+
+
+                <!-- CHAT HEADER -->
+
+                <header class="chat-header">
+
+                    <div class="chat-user">
+
+                        <div class="chat-avatar">
+
+                            <img
+                                id="chatAvatar"
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Sarah Williams"
+                            >
+
+                            <span
+                                class="chat-online-dot"
+                                id="chatOnlineDot"
+                            ></span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3 id="chatName">
+                                Sarah Williams
+                            </h3>
+
+                            <span id="chatStatus">
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chat-actions">
+
+                        <button
+                            type="button"
+                            class="chat-icon-btn"
+                            id="chatSearchBtn"
+                            aria-label="Search messages"
+                        >
+
+                            <i class="fas fa-search"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="chat-icon-btn"
+                            id="chatInfoBtn"
+                            aria-label="Conversation information"
+                        >
+
+                            <i class="fas fa-circle-info"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="chat-icon-btn"
+                            id="chatMoreBtn"
+                            aria-label="More options"
+                        >
+
+                            <i class="fas fa-ellipsis-vertical"></i>
+
+                        </button>
+
+                    </div>
+
+                </header>
+
+
+                <!-- CHAT SEARCH -->
+
+                <div
+                    class="chat-search-bar"
+                    id="chatSearchBar"
+                >
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="chatSearchInput"
+                        placeholder="Search in conversation..."
+                    >
+
+                    <button
+                        type="button"
+                        id="closeChatSearch"
+                        aria-label="Close search"
+                    >
+
+                        <i class="fas fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGES -->
+
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+                    <div class="date-divider">
+
+                        <span>
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="message received">
+
+                        <div class="message-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Sarah Williams"
+                            >
+
+                        </div>
+
+                        <div class="message-body">
+
+                            <span class="message-name">
+                                Sarah Williams
+                            </span>
+
+                            <div class="message-bubble">
+
+                                Hey Antonio! 👋
+
+                            </div>
+
+                            <time>
+                                10:35 AM
+                            </time>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message received">
+
+                        <div class="message-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Sarah Williams"
+                            >
+
+                        </div>
+
+                        <div class="message-body">
+
+                            <div class="message-bubble">
+
+                                Have you completed the Project Management
+                                assignment yet?
+
+                            </div>
+
+                            <time>
+                                10:36 AM
+                            </time>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message sent">
+
+                        <div class="message-body">
+
+                            <div class="message-bubble">
+
+                                Hey Sarah! 👋 Yes, I'm almost done with it.
+                                I'm just finishing the final section.
+
+                            </div>
+
+                            <time>
+                                10:39 AM
+                                <i class="fas fa-check-double"></i>
+                            </time>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message received">
+
+                        <div class="message-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Sarah Williams"
+                            >
+
+                        </div>
+
+                        <div class="message-body">
+
+                            <div class="message-bubble">
+
+                                That's great! I'm working on mine too.
+                                Maybe we can review them together before
+                                submitting.
+
+                            </div>
+
+                            <time>
+                                10:42 AM
+                            </time>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="typing-indicator"
+                        id="typingIndicator"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <small>
+                            Sarah is typing...
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE INPUT -->
+
+                <div class="message-composer">
+
+                    <button
+                        type="button"
+                        class="composer-btn"
+                        id="attachmentBtn"
+                        aria-label="Attach file"
+                    >
+
+                        <i class="fas fa-paperclip"></i>
+
+                    </button>
+
+                    <input
+                        type="file"
+                        id="attachmentInput"
+                        hidden
+                    >
+
+
+                    <div class="message-input-wrapper">
+
+                        <textarea
+                            id="messageInput"
+                            rows="1"
+                            maxlength="1000"
+                            placeholder="Write a message..."
+                        ></textarea>
+
+                        <button
+                            type="button"
+                            class="emoji-btn"
+                            id="emojiBtn"
+                            aria-label="Add emoji"
+                        >
+
+                            <i class="far fa-face-smile"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="send-btn"
+                        id="sendMessageBtn"
+                        aria-label="Send message"
+                    >
+
+                        <i class="fas fa-paper-plane"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="attachment-preview"
+                    id="attachmentPreview"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEW MESSAGE MODAL
+        ================================================== -->
+
+        <div
+            class="message-modal-overlay"
+            id="messageModal"
+        >
+
+            <div class="message-modal">
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeMessageModal"
+                    aria-label="Close"
+                >
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+
+                <div class="modal-icon">
+
+                    <i class="fas fa-pen"></i>
+
+                </div>
+
+
+                <span class="section-label">
+                    NEW MESSAGE
+                </span>
+
+                <h2>
+                    Start a conversation
+                </h2>
+
+                <p>
+                    Choose someone from your cohort or your mentor.
+                </p>
+
+
+                <form id="newMessageForm">
+
+                    <div class="modal-field">
+
+                        <label for="recipient">
+                            Recipient
+                        </label>
+
+                        <select
+                            id="recipient"
+                            required
+                        >
+
+                            <option value="">
+                                Select recipient
+                            </option>
+
+                            <option value="sarah">
+                                Sarah Williams
+                            </option>
+
+                            <option value="michael">
+                                Michael Adams
+                            </option>
+
+                            <option value="mentor">
+                                David Johnson
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="modal-field">
+
+                        <label for="newMessageText">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="newMessageText"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="btn-light"
+                            id="cancelMessageBtn"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                        >
+
+                            <i class="fas fa-paper-plane"></i>
+
+                            Send Message
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            class="message-toast"
+            id="messageToast"
+            role="status"
+            aria-live="polite"
+        >
+
+            <div class="toast-icon">
+
+                <i class="fas fa-check"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Message Sent
+                </strong>
+
+                <p>
+                    Your message has been sent successfully.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- Dashboard JS -->
+<script src="js/dashboard.js"></script>
+
+<!-- Messages JS -->
+<script src="js/message.js"></script>
+
+</body>
+</html>

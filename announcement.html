@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Jabico Consultancy Student Portal Announcements"
+>
+
+<meta
+    name="theme-color"
+    content="#2563eb"
+>
+
+<title>Announcements | Jabico Consultancy</title>
+
+
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<!-- =====================================================
+     GOOGLE FONT
+====================================================== -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =====================================================
+     ANNOUNCEMENT CSS
+====================================================== -->
+
+<link
+    rel="stylesheet"
+    href="css/announcement.css"
+>
+
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<div class="dashboard">
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- =================================================
+         LOGO
+    ================================================== -->
+
+    <div class="logo">
+
+        <div class="logo-box">
+            J
+        </div>
+
+        <div class="logo-text">
+
+            <h2>JABICO</h2>
+
+            <span>
+                CONSULTANCY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================== -->
+
+    <ul class="menu">
+
+
+        <!-- Dashboard -->
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fas fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Modules -->
+
+        <li>
+
+            <a href="modules.html">
+
+                <i class="fas fa-book-open"></i>
+
+                <span>
+                    Modules
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Classes -->
+
+        <li>
+
+            <a href="classes.html">
+
+                <i class="fas fa-calendar-days"></i>
+
+                <span>
+                    Classes
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Assignments -->
+
+        <li>
+
+            <a href="assignment.html">
+
+                <i class="fas fa-file-pen"></i>
+
+                <span>
+                    Assignments
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Resources -->
+
+        <li>
+
+            <a href="resources.html">
+
+                <i class="fas fa-folder-open"></i>
+
+                <span>
+                    Resources
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Announcements -->
+
+        <li class="active">
+
+            <a
+                href="announcement.html"
+                aria-current="page"
+            >
+
+                <i class="fas fa-bullhorn"></i>
+
+                <span>
+                    Announcements
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <!-- Grades -->
+
+        <li>
+
+            <a href="grades.html">
+
+                <i class="fas fa-chart-line"></i>
+
+                <span>
+                    Grades
+                </span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+
+    <!-- =================================================
+         LOGOUT
+    ================================================== -->
+
+    <a
+        href="index.html"
+        class="logout"
+    >
+
+        <i class="fas fa-right-from-bracket"></i>
+
+        <span>
+            Logout
+        </span>
+
+    </a>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="content">
+
+
+    <!-- =================================================
+         TOP BAR
+    ================================================== -->
+
+    <header class="topbar">
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open navigation"
+            aria-controls="sidebar"
+            aria-expanded="false"
+            type="button"
+        >
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================== -->
+
+        <div class="welcome">
+
+            <span class="welcome-label">
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                Announcements
+                <span>&amp; Updates</span>
+            </h1>
+
+            <p>
+                Stay updated with the latest news, events,
+                classes and important notices.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             HEADER ACTIONS
+        ================================================== -->
+
+        <div class="header-actions">
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fas fa-search"></i>
+
+                <input
+                    type="search"
+                    id="announcementSearch"
+                    placeholder="Search announcements..."
+                    aria-label="Search announcements"
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    class="search-clear"
+                    id="searchClear"
+                    aria-label="Clear search"
+                    hidden
+                >
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- THEME -->
+
+            <button
+                class="header-icon"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode"
+            >
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+            ================================================== -->
+
+            <div class="notification-wrapper">
+
+
+                <button
+                    class="header-icon notification-btn"
+                    id="notificationBtn"
+                    type="button"
+                    aria-label="Notifications"
+                    aria-expanded="false"
+                    aria-controls="notificationDropdown"
+                >
+
+                    <i class="fas fa-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+
+                <!-- NOTIFICATION DROPDOWN -->
+
+                <div
+                    class="notification-dropdown"
+                    id="notificationDropdown"
+                >
+
+                    <div class="notification-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                ACTIVITY
+                            </span>
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                        </div>
+
+                        <span class="notification-new-count">
+                            3 New
+                        </span>
+
+                    </div>
+
+
+                    <!-- Notification -->
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon blue">
+
+                            <i class="fas fa-bullhorn"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                New announcement
+                            </strong>
+
+                            <p>
+                                A new announcement has been
+                                posted by the administration.
+                            </p>
+
+                            <small>
+                                5 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Notification -->
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon orange">
+
+                            <i class="fas fa-file-circle-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Assignment reminder
+                            </strong>
+
+                            <p>
+                                Your current assignment is
+                                due soon.
+                            </p>
+
+                            <small>
+                                1 hour ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Notification -->
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon green">
+
+                            <i class="fas fa-calendar-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Upcoming class
+                            </strong>
+
+                            <p>
+                                Your next live class starts
+                                tomorrow.
+                            </p>
+
+                            <small>
+                                3 hours ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-footer">
+
+                        <button
+                            type="button"
+                            id="markNotificationsRead"
+                        >
+                            Mark all as read
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROFILE
+            ================================================== -->
+
+            <button
+                class="profile"
+                type="button"
+                id="profileButton"
+                aria-label="Open student profile"
+            >
+
+                <img
+                    src="assets/images/profile.jpg"
+                    alt="Antonio Cruz profile"
+                    onerror="this.onerror=null;this.src='https://i.pravatar.cc/100?img=12';"
+                >
+
+                <span class="profile-info">
+
+                    <strong>
+                        Antonio Cruz
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </span>
+
+                <i class="fas fa-chevron-down profile-chevron"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PAGE CONTENT
+    ====================================================== -->
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <section
+        class="announcement-stats"
+        aria-label="Announcement statistics"
+    >
+
+
+        <!-- TOTAL -->
+
+        <div class="announcement-stat-card card">
+
+            <div class="stat-icon blue">
+
+                <i class="fas fa-bullhorn"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Total Announcements
+                </span>
+
+                <h3 id="totalAnnouncements">
+                    24
+                </h3>
+
+                <small>
+
+                    <i class="fas fa-arrow-up"></i>
+
+                    4 this week
+
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNREAD -->
+
+        <div class="announcement-stat-card card">
+
+            <div class="stat-icon red">
+
+                <i class="fas fa-envelope"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Unread
+                </span>
+
+                <h3 id="unreadAnnouncements">
+                    5
+                </h3>
+
+                <small>
+                    Need your attention
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENTS -->
+
+        <div class="announcement-stat-card card">
+
+            <div class="stat-icon purple">
+
+                <i class="fas fa-calendar-days"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Upcoming Events
+                </span>
+
+                <h3 id="upcomingEvents">
+                    4
+                </h3>
+
+                <small>
+                    Next event in 2 days
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMPORTANT -->
+
+        <div class="announcement-stat-card card">
+
+            <div class="stat-icon orange">
+
+                <i class="fas fa-star"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Important Notices
+                </span>
+
+                <h3 id="importantNotices">
+                    3
+                </h3>
+
+                <small>
+
+                    <i class="fas fa-circle-exclamation"></i>
+
+                    Please review
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ANNOUNCEMENT CONTROLS
+    ================================================== -->
+
+    <section
+        class="announcement-controls card"
+        aria-label="Announcement filters"
+    >
+
+
+        <!-- FILTER -->
+
+        <div class="filter-group">
+
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+                type="button"
+                aria-pressed="true"
+            >
+                All
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="unread"
+                type="button"
+                aria-pressed="false"
+            >
+                Unread
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="pinned"
+                type="button"
+                aria-pressed="false"
+            >
+
+                <i class="fas fa-thumbtack"></i>
+
+                Pinned
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="events"
+                type="button"
+                aria-pressed="false"
+            >
+                Events
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="assignments"
+                type="button"
+                aria-pressed="false"
+            >
+                Assignments
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="general"
+                type="button"
+                aria-pressed="false"
+            >
+                General
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="live"
+                type="button"
+                aria-pressed="false"
+            >
+                Live Classes
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-filter="important"
+                type="button"
+                aria-pressed="false"
+            >
+
+                <i class="fas fa-star"></i>
+
+                Important
+
+            </button>
+
+        </div>
+
+
+        <!-- SORT -->
+
+        <div class="sort-group">
+
+            <label for="announcementSort">
+                Sort by
+            </label>
+
+            <select id="announcementSort">
+
+                <option value="latest">
+                    Latest
+                </option>
+
+                <option value="oldest">
+                    Oldest
+                </option>
+
+                <option value="important">
+                    Important
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MAIN GRID
+    ================================================== -->
+
+    <div class="announcement-grid">
+
+
+        <!-- =================================================
+             ANNOUNCEMENT FEED
+        ================================================== -->
+
+        <section class="announcement-feed">
+
+
+            <!-- SECTION HEADER -->
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="panel-label">
+                        CAMPUS UPDATES
+                    </span>
+
+                    <h2>
+                        Latest Announcements
+                    </h2>
+
+                </div>
+
+                <span
+                    class="announcement-count"
+                    id="announcementCount"
+                >
+                    5 updates
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 ANNOUNCEMENT 1
+            ================================================== -->
+
+            <article
+                class="announcement-card pinned unread animate"
+                data-category="general"
+                data-status="unread"
+                data-pinned="true"
+                data-important="true"
+                data-date="2026-08-29"
+                data-title="Welcome to the New Jabico Learning Portal"
+                data-author="Jabico Administration"
+                data-time="2 hours ago"
+                data-icon="fas fa-bullhorn"
+                data-color="blue"
+            >
+
+
+                <div class="pinned-label">
+
+                    <i class="fas fa-thumbtack"></i>
+
+                    Pinned Announcement
+
+                </div>
+
+
+                <div class="announcement-card-header">
+
+
+                    <div class="announcement-icon blue">
+
+                        <i class="fas fa-bullhorn"></i>
+
+                    </div>
+
+
+                    <div class="announcement-meta">
+
+
+                        <div class="announcement-top">
+
+                            <span class="announcement-category general">
+                                GENERAL
+                            </span>
+
+                            <span class="unread-badge">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Welcome to the New Jabico Learning Portal
+                        </h3>
+
+
+                        <p class="announcement-author">
+
+                            <i class="fas fa-user"></i>
+
+                            Posted by
+
+                            <strong>
+                                Jabico Administration
+                            </strong>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                August 29, 2026
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p>
+                        Welcome to the upgraded Jabico Consultancy
+                        Student Portal. This platform has been
+                        designed to make your learning experience
+                        easier, faster and more engaging.
+                    </p>
+
+                    <p>
+                        You can now access your modules, assignments,
+                        classes, learning resources and important
+                        announcements from one convenient location.
+                        Please take some time to explore the new
+                        portal and update your profile information.
+                    </p>
+
+                </div>
+
+
+                <!-- ATTACHMENT -->
+
+                <div class="announcement-attachment">
+
+                    <div class="attachment-icon">
+
+                        <i class="fas fa-file-pdf"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Student Portal Guide.pdf
+                        </strong>
+
+                        <span>
+                            2.4 MB • PDF Document
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="attachment-download"
+                        aria-label="Download Student Portal Guide"
+                        data-download
+                    >
+
+                        <i class="fas fa-download"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="announcement-footer">
+
+                    <span class="announcement-time">
+
+                        <i class="far fa-clock"></i>
+
+                        Posted 2 hours ago
+
+                    </span>
+
+
+                    <div class="announcement-actions">
+
+                        <button
+                            class="read-btn"
+                            type="button"
+                            data-action="read"
+                        >
+
+                            <i class="fas fa-check"></i>
+
+                            Mark as Read
+
+                        </button>
+
+
+                        <button
+                            class="details-btn"
+                            type="button"
+                            data-action="details"
+                        >
+
+                            Read More
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ANNOUNCEMENT 2
+            ================================================== -->
+
+            <article
+                class="announcement-card unread animate"
+                data-category="events"
+                data-status="unread"
+                data-pinned="false"
+                data-important="true"
+                data-date="2026-08-28"
+                data-title="Career Development Workshop"
+                data-author="Career Development Team"
+                data-time="yesterday"
+                data-icon="fas fa-calendar-star"
+                data-color="purple"
+            >
+
+                <div class="announcement-card-header">
+
+                    <div class="announcement-icon purple">
+
+                        <i class="fas fa-calendar-star"></i>
+
+                    </div>
+
+
+                    <div class="announcement-meta">
+
+                        <div class="announcement-top">
+
+                            <span class="announcement-category events">
+                                EVENT
+                            </span>
+
+                            <span class="unread-badge">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Career Development Workshop
+                        </h3>
+
+
+                        <p class="announcement-author">
+
+                            <i class="fas fa-user"></i>
+
+                            Posted by
+
+                            <strong>
+                                Career Development Team
+                            </strong>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                August 28, 2026
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p>
+                        Join us for an interactive career development
+                        workshop focused on CV writing, interview
+                        preparation and building a professional
+                        online presence.
+                    </p>
+
+                </div>
+
+
+                <!-- EVENT DETAILS -->
+
+                <div class="event-preview">
+
+                    <div class="event-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            02
+                        </strong>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h4>
+                            Career Development Workshop
+                        </h4>
+
+                        <p>
+
+                            <i class="far fa-clock"></i>
+
+                            10:00 AM – 12:00 PM
+
+                        </p>
+
+                        <p>
+
+                            <i class="fas fa-location-dot"></i>
+
+                            Online • Zoom
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="event-status">
+                        UPCOMING
+                    </span>
+
+                </div>
+
+
+                <div class="announcement-footer">
+
+                    <span class="announcement-time">
+
+                        <i class="far fa-clock"></i>
+
+                        Posted yesterday
+
+                    </span>
+
+
+                    <div class="announcement-actions">
+
+                        <button
+                            class="read-btn"
+                            type="button"
+                            data-action="read"
+                        >
+
+                            <i class="fas fa-check"></i>
+
+                            Mark as Read
+
+                        </button>
+
+
+                        <button
+                            class="details-btn"
+                            type="button"
+                            data-action="details"
+                        >
+
+                            View Event
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ANNOUNCEMENT 3
+            ================================================== -->
+
+            <article
+                class="announcement-card animate"
+                data-category="assignments"
+                data-status="read"
+                data-pinned="false"
+                data-important="false"
+                data-date="2026-08-27"
+                data-title="Assignment Submission Deadline Extended"
+                data-author="Academic Team"
+                data-time="2 days ago"
+                data-icon="fas fa-file-circle-check"
+                data-color="orange"
+            >
+
+                <div class="announcement-card-header">
+
+                    <div class="announcement-icon orange">
+
+                        <i class="fas fa-file-circle-check"></i>
+
+                    </div>
+
+
+                    <div class="announcement-meta">
+
+                        <div class="announcement-top">
+
+                            <span class="announcement-category assignments">
+                                ASSIGNMENT
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Assignment Submission Deadline Extended
+                        </h3>
+
+
+                        <p class="announcement-author">
+
+                            <i class="fas fa-user"></i>
+
+                            Posted by
+
+                            <strong>
+                                Academic Team
+                            </strong>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                August 27, 2026
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p>
+                        The deadline for the current Digital Marketing
+                        Strategy assignment has been extended.
+                        Students now have additional time to complete
+                        and submit their work.
+                    </p>
+
+                </div>
+
+
+                <!-- DEADLINE -->
+
+                <div class="deadline-box">
+
+                    <div class="deadline-icon">
+
+                        <i class="fas fa-hourglass-half"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            NEW DEADLINE
+                        </span>
+
+                        <strong>
+                            September 5, 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="deadline-countdown">
+
+                        <small>
+                            Remaining
+                        </small>
+
+                        <strong>
+                            7 days
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-footer">
+
+                    <span class="announcement-time">
+
+                        <i class="far fa-clock"></i>
+
+                        Posted 2 days ago
+
+                    </span>
+
+
+                    <div class="announcement-actions">
+
+                        <a
+                            href="assignment.html"
+                            class="details-btn"
+                        >
+
+                            View Assignment
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ANNOUNCEMENT 4
+            ================================================== -->
+
+            <article
+                class="announcement-card unread animate"
+                data-category="live"
+                data-status="unread"
+                data-pinned="false"
+                data-important="true"
+                data-date="2026-08-26"
+                data-title="Live Class Schedule Updated"
+                data-author="Learning Team"
+                data-time="3 days ago"
+                data-icon="fas fa-video"
+                data-color="green"
+            >
+
+                <div class="announcement-card-header">
+
+                    <div class="announcement-icon green">
+
+                        <i class="fas fa-video"></i>
+
+                    </div>
+
+
+                    <div class="announcement-meta">
+
+                        <div class="announcement-top">
+
+                            <span class="announcement-category live">
+                                LIVE CLASS
+                            </span>
+
+                            <span class="unread-badge">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Live Class Schedule Updated
+                        </h3>
+
+
+                        <p class="announcement-author">
+
+                            <i class="fas fa-user"></i>
+
+                            Posted by
+
+                            <strong>
+                                Learning Team
+                            </strong>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                August 26, 2026
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p>
+                        Please note that this week's live class
+                        schedule has been updated. Students should
+                        review the revised timetable before joining
+                        their next session.
+                    </p>
+
+                </div>
+
+
+                <!-- CLASS NOTICE -->
+
+                <div class="class-notice">
+
+                    <div class="class-notice-icon">
+
+                        <i class="fas fa-calendar-days"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Next Live Class
+                        </strong>
+
+                        <p>
+                            Digital Marketing Strategy
+                        </p>
+
+                        <span>
+                            Monday • 10:00 AM
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="classes.html"
+                        class="class-link"
+                    >
+                        View Schedule
+                    </a>
+
+                </div>
+
+
+                <div class="announcement-footer">
+
+                    <span class="announcement-time">
+
+                        <i class="far fa-clock"></i>
+
+                        Posted 3 days ago
+
+                    </span>
+
+
+                    <div class="announcement-actions">
+
+                        <button
+                            class="read-btn"
+                            type="button"
+                            data-action="read"
+                        >
+
+                            <i class="fas fa-check"></i>
+
+                            Mark as Read
+
+                        </button>
+
+
+                        <a
+                            href="classes.html"
+                            class="details-btn"
+                        >
+
+                            View Classes
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ANNOUNCEMENT 5
+            ================================================== -->
+
+            <article
+                class="announcement-card animate"
+                data-category="general"
+                data-status="read"
+                data-pinned="false"
+                data-important="false"
+                data-date="2026-08-24"
+                data-title="Student Profile Information Update"
+                data-author="Student Services"
+                data-time="5 days ago"
+                data-icon="fas fa-circle-info"
+                data-color="blue"
+            >
+
+                <div class="announcement-card-header">
+
+                    <div class="announcement-icon blue">
+
+                        <i class="fas fa-circle-info"></i>
+
+                    </div>
+
+
+                    <div class="announcement-meta">
+
+                        <div class="announcement-top">
+
+                            <span class="announcement-category general">
+                                GENERAL
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Student Profile Information Update
+                        </h3>
+
+
+                        <p class="announcement-author">
+
+                            <i class="fas fa-user"></i>
+
+                            Posted by
+
+                            <strong>
+                                Student Services
+                            </strong>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                August 24, 2026
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="announcement-body">
+
+                    <p>
+                        All students are encouraged to review their
+                        profile information and ensure that their
+                        contact details are accurate and up to date.
+                    </p>
+
+                </div>
+
+
+                <!-- PROFILE CHECK -->
+
+                <div class="profile-check">
+
+                    <div>
+
+                        <i class="fas fa-user-check"></i>
+
+                    </div>
+
+                    <span>
+                        Keep your student information up to date.
+                    </span>
+
+                    <a href="#">
+                        Update Profile
+                    </a>
+
+                </div>
+
+
+                <div class="announcement-footer">
+
+                    <span class="announcement-time">
+
+                        <i class="far fa-clock"></i>
+
+                        Posted 5 days ago
+
+                    </span>
+
+
+                    <div class="announcement-actions">
+
+                        <button
+                            class="details-btn"
+                            type="button"
+                            data-action="details"
+                        >
+
+                            Read More
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 EMPTY SEARCH STATE
+            ================================================== -->
+
+            <div
+                class="announcement-empty"
+                id="announcementEmpty"
+                hidden
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fas fa-magnifying-glass"></i>
+
+                </div>
+
+                <h3>
+                    No announcements found
+                </h3>
+
+                <p>
+                    Try changing your search or selecting
+                    another category.
+                </p>
+
+                <button
+                    type="button"
+                    id="clearAnnouncementFilters"
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOAD MORE
+            ================================================== -->
+
+            <div class="load-more-wrapper">
+
+                <button
+                    class="load-more-btn"
+                    id="loadMoreBtn"
+                    type="button"
+                >
+
+                    <span>
+                        Load More Announcements
+                    </span>
+
+                    <i class="fas fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+
+        <aside class="announcement-sidebar">
+
+
+            <!-- =================================================
+                 UPCOMING EVENTS
+            ================================================== -->
+
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            CALENDAR
+                        </span>
+
+                        <h2>
+                            Upcoming Events
+                        </h2>
+
+                    </div>
+
+                    <a href="classes.html">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <!-- EVENT -->
+
+                <div class="side-event">
+
+                    <div class="side-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            02
+                        </strong>
+
+                    </div>
+
+
+                    <div class="side-event-info">
+
+                        <h3>
+                            Career Workshop
+                        </h3>
+
+                        <p>
+
+                            <i class="far fa-clock"></i>
+
+                            10:00 AM
+
+                        </p>
+
+                        <span>
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT -->
+
+                <div class="side-event">
+
+                    <div class="side-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            05
+                        </strong>
+
+                    </div>
+
+
+                    <div class="side-event-info">
+
+                        <h3>
+                            Assignment Deadline
+                        </h3>
+
+                        <p>
+
+                            <i class="far fa-clock"></i>
+
+                            11:59 PM
+
+                        </p>
+
+                        <span>
+                            Submission
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT -->
+
+                <div class="side-event">
+
+                    <div class="side-date">
+
+                        <span>
+                            SEP
+                        </span>
+
+                        <strong>
+                            08
+                        </strong>
+
+                    </div>
+
+
+                    <div class="side-event-info">
+
+                        <h3>
+                            Mentorship Session
+                        </h3>
+
+                        <p>
+
+                            <i class="far fa-clock"></i>
+
+                            2:00 PM
+
+                        </p>
+
+                        <span>
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 IMPORTANT NOTICE
+            ================================================== -->
+
+            <div class="side-panel important-panel panel">
+
+                <div class="important-icon">
+
+                    <i class="fas fa-triangle-exclamation"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="panel-label">
+                        IMPORTANT
+                    </span>
+
+                    <h2>
+                        Attendance Requirement
+                    </h2>
+
+                    <p>
+                        Students are expected to attend all
+                        scheduled live sessions. Please notify
+                        the academic team if you cannot attend.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="panel-link"
+                    >
+
+                        Learn more
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RECENT FILES
+            ================================================== -->
+
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            DOCUMENTS
+                        </span>
+
+                        <h2>
+                            Recent Files
+                        </h2>
+
+                    </div>
+
+                    <a href="resources.html">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <!-- FILE -->
+
+                <a
+                    href="#"
+                    class="recent-file"
+                    data-download
+                >
+
+                    <div class="file-icon pdf">
+
+                        <i class="fas fa-file-pdf"></i>
+
+                    </div>
+
+                    <div class="file-info">
+
+                        <strong>
+                            Student Handbook
+                        </strong>
+
+                        <span>
+                            PDF • 2.4 MB
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-download file-download"></i>
+
+                </a>
+
+
+                <!-- FILE -->
+
+                <a
+                    href="#"
+                    class="recent-file"
+                    data-download
+                >
+
+                    <div class="file-icon doc">
+
+                        <i class="fas fa-file-word"></i>
+
+                    </div>
+
+                    <div class="file-info">
+
+                        <strong>
+                            CV Template
+                        </strong>
+
+                        <span>
+                            DOCX • 845 KB
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-download file-download"></i>
+
+                </a>
+
+
+                <!-- FILE -->
+
+                <a
+                    href="#"
+                    class="recent-file"
+                    data-download
+                >
+
+                    <div class="file-icon slide">
+
+                        <i class="fas fa-file-powerpoint"></i>
+
+                    </div>
+
+                    <div class="file-info">
+
+                        <strong>
+                            Lecture Slides
+                        </strong>
+
+                        <span>
+                            PPTX • 4.2 MB
+                        </span>
+
+                    </div>
+
+                    <i class="fas fa-download file-download"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CATEGORIES
+            ================================================== -->
+
+            <div class="side-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            BROWSE
+                        </span>
+
+                        <h2>
+                            Categories
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category-list">
+
+
+                    <button
+                        class="category-item"
+                        data-filter="general"
+                        type="button"
+                    >
+
+                        <span>
+
+                            <i class="fas fa-circle-info"></i>
+
+                            General
+
+                        </span>
+
+                        <strong>
+                            15
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="category-item"
+                        data-filter="assignments"
+                        type="button"
+                    >
+
+                        <span>
+
+                            <i class="fas fa-file-pen"></i>
+
+                            Assignments
+
+                        </span>
+
+                        <strong>
+                            9
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="category-item"
+                        data-filter="events"
+                        type="button"
+                    >
+
+                        <span>
+
+                            <i class="fas fa-calendar"></i>
+
+                            Events
+
+                        </span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="category-item"
+                        data-filter="live"
+                        type="button"
+                    >
+
+                        <span>
+
+                            <i class="fas fa-video"></i>
+
+                            Live Classes
+
+                        </span>
+
+                        <strong>
+                            4
+                        </strong>
+
+                    </button>
+
+
+                    <button
+                        class="category-item"
+                        data-filter="important"
+                        type="button"
+                    >
+
+                        <span>
+
+                            <i class="fas fa-star"></i>
+
+                            Important
+
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ANNOUNCEMENT DETAIL MODAL
+    ================================================== -->
+
+    <div
+        class="modal"
+        id="announcementModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay"></div>
+
+
+        <div
+            class="announcement-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalAnnouncementTitle"
+        >
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <div class="modal-header-info">
+
+
+                    <div
+                        class="modal-icon"
+                        id="modalIcon"
+                    >
+
+                        <i class="fas fa-bullhorn"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span
+                            class="modal-category"
+                            id="modalCategory"
+                        >
+                            GENERAL
+                        </span>
+
+                        <h2 id="modalAnnouncementTitle">
+                            Welcome to the New Jabico Learning Portal
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="closeAnnouncementModal"
+                    type="button"
+                    aria-label="Close announcement"
+                >
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MODAL META -->
+
+            <div class="modal-meta">
+
+                <div>
+
+                    <i class="fas fa-user"></i>
+
+                    <span id="modalAuthor">
+                        Jabico Administration
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="far fa-calendar"></i>
+
+                    <span id="modalDate">
+                        August 29, 2026
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="far fa-clock"></i>
+
+                    <span id="modalTime">
+                        2 hours ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MODAL BODY -->
+
+            <div
+                class="modal-body"
+                id="modalBody"
+            >
+
+                <p>
+                    Welcome to the upgraded Jabico Consultancy
+                    Student Portal.
+                </p>
+
+                <p>
+                    This platform has been designed to make your
+                    learning experience easier, faster and more
+                    engaging.
+                </p>
+
+                <p>
+                    You can now access your modules, assignments,
+                    classes, learning resources and important
+                    announcements from one convenient location.
+                </p>
+
+            </div>
+
+
+
+            <!-- MODAL ATTACHMENTS -->
+
+            <div class="modal-attachments">
+
+                <h3>
+                    Attachments
+                </h3>
+
+
+                <a
+                    href="#"
+                    class="modal-file"
+                    data-download
+                >
+
+                    <div class="file-icon pdf">
+
+                        <i class="fas fa-file-pdf"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Student Portal Guide.pdf
+                        </strong>
+
+                        <span>
+                            2.4 MB
+                        </span>
+
+                    </div>
+
+
+                    <i class="fas fa-download"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MODAL FOOTER -->
+
+            <div class="modal-footer">
+
+                <button
+                    class="modal-read-btn"
+                    id="modalMarkRead"
+                    type="button"
+                >
+
+                    <i class="fas fa-check"></i>
+
+                    Mark as Read
+
+                </button>
+
+
+                <button
+                    class="modal-close-secondary"
+                    id="modalCloseSecondary"
+                    type="button"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROFILE DROPDOWN
+    ================================================== -->
+
+    <div
+        class="profile-dropdown"
+        id="profileDropdown"
+        hidden
+    >
+
+        <div class="profile-dropdown-header">
+
+            <img
+                src="assets/images/profile.jpg"
+                alt="Antonio Cruz"
+                onerror="this.onerror=null;this.src='https://i.pravatar.cc/100?img=12';"
+            >
+
+            <div>
+
+                <strong>
+                    Antonio Cruz
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <a href="#">
+
+            <i class="fas fa-user"></i>
+
+            My Profile
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fas fa-gear"></i>
+
+            Settings
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="profile-logout"
+        >
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="page-footer">
+
+        <p>
+            © 2026 Jabico Consultancy.
+            All rights reserved.
+        </p>
+
+        <div>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Support
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</main>
+```
+
+</div>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/announcement.js"></script>
+
+</body>
+
+</html>

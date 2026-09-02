@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classes | Jabico Consultancy</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Classes CSS -->
+   <link rel="stylesheet" href="css/classes.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+                <h2>JABICO</h2>
+                <span>CONSULTANCY</span>
+            </div>
+
+        </div>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="modules.html">
+                    <i class="fas fa-book-open"></i>
+                    <span>Modules</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="classes.html">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <span>Classes</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="resources.html">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Resources</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="assignment.html">
+                    <i class="fas fa-file-lines"></i>
+                    <span>Assignments</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="announcement.html">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a href="index.html" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    LEARNING SPACE
+                </span>
+
+                <h1>
+                    My <span>Classes</span>
+                </h1>
+
+                <p>
+                    View your upcoming classes, live sessions and class schedule.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="classSearch"
+                        placeholder="Search classes..."
+                        aria-label="Search classes">
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    class="header-icon"
+                    id="themeToggle"
+                    aria-label="Toggle theme">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATION -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        class="header-icon"
+                        id="notificationBtn"
+                        aria-label="Notifications">
+
+                        <i class="fas fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown">
+
+                        <div class="notification-header">
+
+                            <h3>Notifications</h3>
+
+                            <span>3 New</span>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon blue">
+                                <i class="fas fa-video"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Live class starting soon
+                                </strong>
+
+                                <p>
+                                    Digital Marketing class starts in 30 minutes.
+                                </p>
+
+                                <small>
+                                    10 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon purple">
+                                <i class="fas fa-book"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New module available
+                                </strong>
+
+                                <p>
+                                    A new learning module has been added.
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon green">
+                                <i class="fas fa-check"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Assignment submitted
+                                </strong>
+
+                                <p>
+                                    Your latest assignment was submitted successfully.
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="profile">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Student profile">
+
+                    <div class="profile-info">
+
+                        <strong>Student</strong>
+
+                        <span>Jabico Cohort</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTROLS
+        ================================================== -->
+
+        <section class="page-controls">
+
+            <div>
+
+                <span class="section-label">
+                    CLASSROOM
+                </span>
+
+                <h2>
+                    Your Learning Schedule
+                </h2>
+
+                <p>
+                    Stay up to date with your live and upcoming learning sessions.
+                </p>
+
+            </div>
+
+
+            <div class="view-controls">
+
+                <button
+                    class="view-btn active"
+                    data-view="cards">
+
+                    <i class="fas fa-grid-2"></i>
+
+                    Cards
+
+                </button>
+
+                <button
+                    class="view-btn"
+                    data-view="schedule">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    Schedule
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK STATS
+        ================================================== -->
+
+        <section class="class-stats">
+
+            <div class="class-stat">
+
+                <div class="class-stat-icon blue">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+
+                <div>
+
+                    <span>Upcoming</span>
+
+                    <strong>04</strong>
+
+                    <small>Classes this week</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="class-stat">
+
+                <div class="class-stat-icon purple">
+                    <i class="fas fa-video"></i>
+                </div>
+
+                <div>
+
+                    <span>Live Today</span>
+
+                    <strong>01</strong>
+
+                    <small>Session scheduled</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="class-stat">
+
+                <div class="class-stat-icon green">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+
+                <div>
+
+                    <span>Completed</span>
+
+                    <strong>12</strong>
+
+                    <small>Sessions attended</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="class-stat">
+
+                <div class="class-stat-icon orange">
+                    <i class="fas fa-clock"></i>
+                </div>
+
+                <div>
+
+                    <span>Learning Hours</span>
+
+                    <strong>36h</strong>
+
+                    <small>This month</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIVE CLASS
+        ================================================== -->
+
+        <section class="live-class">
+
+            <div class="live-content">
+
+                <div class="live-badge">
+
+                    <span></span>
+
+                    LIVE NOW
+
+                </div>
+
+                <span class="live-label">
+                    CURRENT SESSION
+                </span>
+
+                <h2>
+                    Digital Marketing Strategy
+                </h2>
+
+                <p>
+                    Join today's live session and learn practical strategies
+                    for building and growing digital brands.
+                </p>
+
+
+                <div class="live-meta">
+
+                    <span>
+                        <i class="fas fa-user"></i>
+                        Mr. Daniel
+                    </span>
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        10:00 AM – 12:00 PM
+                    </span>
+
+                    <span>
+                        <i class="fas fa-users"></i>
+                        28 Students
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="join-live">
+
+                    <i class="fas fa-video"></i>
+
+                    Join Live Class
+
+                </a>
+
+            </div>
+
+
+            <div class="live-visual">
+
+                <div class="live-circle">
+
+                    <i class="fas fa-chalkboard-user"></i>
+
+                </div>
+
+                <span>
+                    Session in progress
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLASS CONTENT
+        ================================================== -->
+
+        <section class="classes-section" id="classesSection">
+
+
+            <!-- HEADER -->
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="panel-label">
+                        UPCOMING
+                    </span>
+
+                    <h2>
+                        Upcoming Classes
+                    </h2>
+
+                </div>
+
+                <button class="calendar-btn">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    View Calendar
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CLASS CARDS
+            ================================================== -->
+
+            <div class="classes-grid" id="classesGrid">
+
+
+                <!-- CLASS 1 -->
+
+                <article
+                    class="class-card"
+                    data-class="digital marketing strategy">
+
+                    <div class="class-card-top">
+
+                        <div class="date-box">
+
+                            <span>SEP</span>
+
+                            <strong>02</strong>
+
+                        </div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-icon blue">
+
+                        <i class="fas fa-bullhorn"></i>
+
+                    </div>
+
+
+                    <span class="class-category">
+                        DIGITAL MARKETING
+                    </span>
+
+                    <h3>
+                        Digital Marketing Strategy
+                    </h3>
+
+                    <p>
+                        Learn how to build effective digital marketing
+                        campaigns and reach the right audience.
+                    </p>
+
+
+                    <div class="class-details">
+
+                        <div>
+
+                            <i class="fas fa-clock"></i>
+
+                            <span>
+                                10:00 AM
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span>
+                                2 Hours
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=11"
+                            alt="Instructor">
+
+                        <div>
+
+                            <strong>
+                                Daniel Johnson
+                            </strong>
+
+                            <span>
+                                Lead Instructor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="class-button">
+
+                        View Class
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- CLASS 2 -->
+
+                <article
+                    class="class-card"
+                    data-class="business communication">
+
+                    <div class="class-card-top">
+
+                        <div class="date-box">
+
+                            <span>SEP</span>
+
+                            <strong>04</strong>
+
+                        </div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-icon purple">
+
+                        <i class="fas fa-comments"></i>
+
+                    </div>
+
+
+                    <span class="class-category">
+                        COMMUNICATION
+                    </span>
+
+                    <h3>
+                        Business Communication
+                    </h3>
+
+                    <p>
+                        Develop professional communication skills for
+                        modern business environments.
+                    </p>
+
+
+                    <div class="class-details">
+
+                        <div>
+
+                            <i class="fas fa-clock"></i>
+
+                            <span>
+                                2:00 PM
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span>
+                                1.5 Hours
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=32"
+                            alt="Instructor">
+
+                        <div>
+
+                            <strong>
+                                Sarah Williams
+                            </strong>
+
+                            <span>
+                                Instructor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="class-button">
+
+                        View Class
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- CLASS 3 -->
+
+                <article
+                    class="class-card"
+                    data-class="entrepreneurship">
+
+                    <div class="class-card-top">
+
+                        <div class="date-box">
+
+                            <span>SEP</span>
+
+                            <strong>07</strong>
+
+                        </div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-icon green">
+
+                        <i class="fas fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <span class="class-category">
+                        ENTREPRENEURSHIP
+                    </span>
+
+                    <h3>
+                        Entrepreneurship & Innovation
+                    </h3>
+
+                    <p>
+                        Explore business ideas, innovation and practical
+                        entrepreneurship strategies.
+                    </p>
+
+
+                    <div class="class-details">
+
+                        <div>
+
+                            <i class="fas fa-clock"></i>
+
+                            <span>
+                                11:00 AM
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span>
+                                2 Hours
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=13"
+                            alt="Instructor">
+
+                        <div>
+
+                            <strong>
+                                Michael Adams
+                            </strong>
+
+                            <span>
+                                Instructor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="class-button">
+
+                        View Class
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- CLASS 4 -->
+
+                <article
+                    class="class-card"
+                    data-class="financial management">
+
+                    <div class="class-card-top">
+
+                        <div class="date-box">
+
+                            <span>SEP</span>
+
+                            <strong>09</strong>
+
+                        </div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-icon orange">
+
+                        <i class="fas fa-chart-line"></i>
+
+                    </div>
+
+
+                    <span class="class-category">
+                        FINANCE
+                    </span>
+
+                    <h3>
+                        Financial Management
+                    </h3>
+
+                    <p>
+                        Understand budgeting, financial planning and
+                        managing business resources.
+                    </p>
+
+
+                    <div class="class-details">
+
+                        <div>
+
+                            <i class="fas fa-clock"></i>
+
+                            <span>
+                                3:00 PM
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span>
+                                2 Hours
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=68"
+                            alt="Instructor">
+
+                        <div>
+
+                            <strong>
+                                David Miller
+                            </strong>
+
+                            <span>
+                                Finance Instructor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="class-button">
+
+                        View Class
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NO RESULTS
+            ================================================== -->
+
+            <div
+                class="no-results"
+                id="noResults">
+
+                <i class="fas fa-magnifying-glass"></i>
+
+                <h3>
+                    No classes found
+                </h3>
+
+                <p>
+                    Try searching for another class.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCHEDULE
+        ================================================== -->
+
+        <section
+            class="schedule-section"
+            id="scheduleSection">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="panel-label">
+                        SCHEDULE
+                    </span>
+
+                    <h2>
+                        Weekly Schedule
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-card">
+
+                <div class="schedule-header">
+
+                    <div></div>
+
+                    <span>MON</span>
+                    <span>TUE</span>
+                    <span>WED</span>
+                    <span>THU</span>
+                    <span>FRI</span>
+
+                </div>
+
+
+                <div class="schedule-row">
+
+                    <strong>10 AM</strong>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-class blue-bg">
+                        Digital Marketing
+                    </div>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-class purple-bg">
+                        Communication
+                    </div>
+
+                    <div class="schedule-empty"></div>
+
+                </div>
+
+
+                <div class="schedule-row">
+
+                    <strong>12 PM</strong>
+
+                    <div class="schedule-class green-bg">
+                        Entrepreneurship
+                    </div>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-class orange-bg">
+                        Finance
+                    </div>
+
+                    <div class="schedule-empty"></div>
+
+                </div>
+
+
+                <div class="schedule-row">
+
+                    <strong>2 PM</strong>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-class purple-bg">
+                        Communication
+                    </div>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-empty"></div>
+
+                    <div class="schedule-class blue-bg">
+                        Digital Marketing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="page-footer">
+
+            <span>
+                © 2026 Jabico Consultancy
+            </span>
+
+            <span>
+                Student Learning Portal
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="js/classes.js"></script>
+
+</body>
+</html>

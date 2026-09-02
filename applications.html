@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Jabico Consultancy | Applications</title>
+
+<link rel="stylesheet" href="css/admin-dashboard.css">
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+```
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+```
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo">
+            J
+        </div>
+
+        <div class="brand-text">
+            <h2>JABICO</h2>
+            <span>CONSULTANCY</span>
+        </div>
+
+    </div>
+
+    <div class="admin-profile">
+
+        <div class="admin-avatar">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <div>
+            <strong>Administrator</strong>
+            <span>Admin Portal</span>
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-label">MAIN</p>
+
+        <a href="admin-dashboard.html" class="nav-link">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <p class="nav-label">STUDENTS</p>
+
+        <a href="admin-students.html" class="nav-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Students</span>
+        </a>
+
+        <a href="applications.html" class="nav-link active">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <span>Applications</span>
+            <span class="nav-badge" id="sidebarPendingCount">0</span>
+        </a>
+
+        <p class="nav-label">ACADEMIC</p>
+
+        <a href="admin-cohorts.html" class="nav-link">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Cohorts</span>
+        </a>
+
+        <a href="modules.html" class="nav-link">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Modules</span>
+        </a>
+
+        <a href="classes.html" class="nav-link">
+            <i class="fa-solid fa-chalkboard"></i>
+            <span>Classes</span>
+        </a>
+
+        <a href="assignments.html" class="nav-link">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Assignments</span>
+        </a>
+
+        <a href="grades.html" class="nav-link">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Grades</span>
+        </a>
+
+        <p class="nav-label">CONTENT</p>
+
+        <a href="admin-resources.html" class="nav-link">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>Resources</span>
+        </a>
+
+        <a href="announcements.html" class="nav-link">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Announcements</span>
+        </a>
+
+        <p class="nav-label">SYSTEM</p>
+
+        <a href="settings.html" class="nav-link">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <button class="sidebar-logout" id="logoutButton">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </button>
+
+</aside>
+
+
+<!-- MOBILE OVERLAY -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="main-area">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            type="button"
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-title">
+
+            <span>STUDENT MANAGEMENT</span>
+
+            <h1>Applications</h1>
+
+        </div>
+
+        <div class="topbar-actions">
+
+            <button
+                type="button"
+                class="icon-button"
+                id="notificationButton"
+                aria-label="Notifications"
+            >
+                <i class="fa-regular fa-bell"></i>
+                <span
+                    class="notification-dot"
+                    id="notificationDot"
+                ></span>
+            </button>
+
+            <button
+                type="button"
+                class="admin-top-profile"
+                id="profileButton"
+            >
+
+                <div class="top-avatar">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="top-profile-text">
+                    <strong>Administrator</strong>
+                    <span>Admin</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================== -->
+
+    <section class="page-content">
+
+        <!-- PAGE INTRO -->
+
+        <div class="welcome-card">
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    STUDENT APPLICATIONS
+                </span>
+
+                <h2>
+                    Review Student Applications
+                </h2>
+
+                <p>
+                    Review student registrations and decide
+                    whether to approve or reject their applications.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             APPLICATION STATISTICS
+        ================================================== -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon gold">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="stat-info">
+
+                    <span>Pending</span>
+
+                    <strong id="pendingCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Awaiting review
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="stat-info">
+
+                    <span>Approved</span>
+
+                    <strong id="approvedCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Approved students
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+
+                <div class="stat-info">
+
+                    <span>Rejected</span>
+
+                    <strong id="rejectedCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Rejected applications
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="stat-info">
+
+                    <span>Total Applications</span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                    <small>
+                        All registrations
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             APPLICATION SECTION
+        ================================================== -->
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    APPLICATION REVIEW
+                </span>
+
+                <h2>
+                    Student Applications
+                </h2>
+
+                <p>
+                    Select an application to view the student's
+                    registration information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH / FILTER -->
+
+        <div class="applications-toolbar">
+
+            <div class="application-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="applicationSearch"
+                    placeholder="Search by name, email or student ID..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <select
+                id="statusFilter"
+                class="application-filter"
+            >
+
+                <option value="all">
+                    All Applications
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="approved">
+                    Approved
+                </option>
+
+                <option value="rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- APPLICATION TABLE -->
+
+        <div class="applications-card">
+
+            <div class="table-wrapper">
+
+                <table class="applications-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Student</th>
+                            <th>Email</th>
+                            <th>Student ID</th>
+                            <th>Registered</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="applicationsTableBody">
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="empty-state"
+                    id="emptyApplications"
+                    hidden
+                >
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <h3 id="emptyTitle">
+                        No Applications Found
+                    </h3>
+
+                    <p id="emptyMessage">
+                        There are currently no applications matching
+                        your search.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<!-- =========================================================
+     APPLICATION DETAILS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="applicationModal"
+    hidden
+>
+
+```
+<div class="student-modal application-modal">
+
+    <button
+        type="button"
+        class="modal-close"
+        id="closeApplicationModal"
+        aria-label="Close application"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="modal-heading">
+
+        <div
+            class="modal-avatar"
+            id="modalAvatar"
+        >
+            JD
+        </div>
+
+        <div>
+
+            <span>
+                STUDENT APPLICATION
+            </span>
+
+            <h2 id="modalStudentName">
+                Student Name
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-details">
+
+        <div class="detail-item">
+
+            <span>
+                <i class="fa-solid fa-id-card"></i>
+                Student ID
+            </span>
+
+            <strong id="modalStudentId">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                Email Address
+            </span>
+
+            <strong id="modalStudentEmail">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <span>
+                <i class="fa-solid fa-calendar"></i>
+                Registration Date
+            </span>
+
+            <strong id="modalStudentDate">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <span>
+                <i class="fa-solid fa-user-tag"></i>
+                Account Status
+            </span>
+
+            <strong id="modalStudentStatus">
+                —
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADDITIONAL APPLICATION INFORMATION -->
+
+    <div class="application-information">
+
+        <div class="application-info-header">
+            <span class="section-kicker">
+                APPLICATION INFORMATION
+            </span>
+
+            <h3>
+                Registration Details
+            </h3>
+        </div>
+
+        <div
+            class="application-extra-details"
+            id="applicationExtraDetails"
+        >
+            <!-- JavaScript inserts additional student data -->
+        </div>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+        <button
+            type="button"
+            class="reject-button"
+            id="modalReject"
+        >
+            <i class="fa-solid fa-xmark"></i>
+            Reject Application
+        </button>
+
+        <button
+            type="button"
+            class="approve-button"
+            id="modalApprove"
+        >
+            <i class="fa-solid fa-check"></i>
+            Approve Student
+        </button>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    hidden
+>
+
+```
+<div class="confirm-modal">
+
+    <div class="confirm-icon">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </div>
+
+    <h2>
+        Logout?
+    </h2>
+
+    <p>
+        Are you sure you want to leave the administrator portal?
+    </p>
+
+    <div class="confirm-actions">
+
+        <button
+            type="button"
+            class="cancel-button"
+            id="cancelLogout"
+        >
+            Cancel
+        </button>
+
+        <button
+            type="button"
+            class="confirm-logout"
+            id="confirmLogout"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<script src="js/api-config.js"></script>
+<script src="js/applications.js"></script>
+
+</body>
+</html>

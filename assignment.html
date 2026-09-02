@@ -1,0 +1,514 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments | JABICO Consultancy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/assignment.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ==========================================
+SIDEBAR
+=========================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+        <div class="logo-box">J</div>
+
+        <div class="logo-text">
+            <h2>JABICO</h2>
+            <span>CONSULTANCY</span>
+        </div>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fas fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="modules.html">
+                <i class="fas fa-book-open"></i>
+                <span>Modules</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="classes.html">
+                <i class="fas fa-video"></i>
+                <span>Classes</span>
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="assignment.html">
+                <i class="fas fa-file-lines"></i>
+                <span>Assignments</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="resources.html">
+                <i class="fas fa-folder-open"></i>
+                <span>Resources</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="progress.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Progress</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="certificate.html">
+                <i class="fas fa-certificate"></i>
+                <span>Certificates</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html">
+                <i class="fas fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+
+    </ul>
+
+    <a href="index.html" class="logout">
+        <i class="fas fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+
+</aside>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ==========================================
+CONTENT
+=========================================== -->
+
+<main class="content">
+
+    <!-- ================= TOPBAR ================= -->
+
+    <header class="topbar">
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="welcome">
+            <span class="welcome-label">
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                Assignments
+            </h1>
+
+            <p>
+                View, complete and submit all coursework.
+            </p>
+        </div>
+
+        <div class="header-actions">
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input
+                    type="text"
+                    placeholder="Search assignments..."
+                >
+            </div>
+
+            <button class="header-icon"
+                id="themeToggle">
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+            <div class="notification-wrapper">
+
+                <button class="header-icon"
+                    id="notificationBtn">
+
+                    <i class="fas fa-bell"></i>
+
+                </button>
+
+                <span class="notification-dot"></span>
+
+                <div
+                    class="notification-dropdown"
+                    id="notificationDropdown">
+
+                    <div class="notification-header">
+
+                        <h3>Notifications</h3>
+
+                        <span>3 New</span>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon blue">
+                            <i class="fas fa-file"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Assignment Uploaded
+                            </strong>
+
+                            <p>
+                                Module 4 Practical Assignment has been added.
+                            </p>
+
+                            <small>10 mins ago</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Assignment Graded
+                            </strong>
+
+                            <p>
+                                Your HTML Project received 92%.
+                            </p>
+
+                            <small>Yesterday</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+
+                <img src="images/profile.jpg"
+                     alt="Student">
+
+                <div class="profile-info">
+
+                    <strong>John Doe</strong>
+
+                    <span>Web Development</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="card stat-card">
+
+            <div class="stat-icon blue">
+                <i class="fas fa-file-lines"></i>
+            </div>
+
+            <div>
+
+                <span>Total</span>
+
+                <h3>18</h3>
+
+                <small>Assignments</small>
+
+            </div>
+
+        </div>
+
+        <div class="card stat-card">
+
+            <div class="stat-icon green">
+                <i class="fas fa-circle-check"></i>
+            </div>
+
+            <div>
+
+                <span>Completed</span>
+
+                <h3>12</h3>
+
+                <small>Submitted</small>
+
+            </div>
+
+        </div>
+
+        <div class="card stat-card">
+
+            <div class="stat-icon orange">
+                <i class="fas fa-clock"></i>
+            </div>
+
+            <div>
+
+                <span>Pending</span>
+
+                <h3>4</h3>
+
+                <small>Need Attention</small>
+
+            </div>
+
+        </div>
+
+        <div class="card stat-card">
+
+            <div class="stat-icon purple">
+                <i class="fas fa-star"></i>
+            </div>
+
+            <div>
+
+                <span>Average</span>
+
+                <h3>91%</h3>
+
+                <small>Performance</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <section class="main-grid">
+
+        <!-- LEFT -->
+
+        <section class="panel">
+
+            <div class="section-title">
+
+                <h2>Assignment List</h2>
+
+                <a href="#">
+                    View All
+                </a>
+
+            </div>
+
+            <table class="assignment-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Assignment</th>
+
+                        <th>Module</th>
+
+                        <th>Due Date</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>HTML Portfolio</td>
+
+                        <td>Week 2</td>
+
+                        <td>12 July</td>
+
+                        <td>
+                            <span class="badge completed">
+                                Completed
+                            </span>
+                        </td>
+
+                        <td>
+                            <button class="action-btn view">
+                                View
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CSS Landing Page</td>
+
+                        <td>Week 3</td>
+
+                        <td>18 July</td>
+
+                        <td>
+                            <span class="badge pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <button class="action-btn submit">
+                                Submit
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>JavaScript Quiz</td>
+
+                        <td>Week 5</td>
+
+                        <td>23 July</td>
+
+                        <td>
+                            <span class="badge overdue">
+                                Overdue
+                            </span>
+                        </td>
+
+                        <td>
+                            <button class="action-btn submit">
+                                Submit
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Responsive Website</td>
+
+                        <td>Final Project</td>
+
+                        <td>30 July</td>
+
+                        <td>
+                            <span class="badge current">
+                                In Progress
+                            </span>
+                        </td>
+
+                        <td>
+                            <button class="action-btn continue">
+                                Continue
+                            </button>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- RIGHT -->
+
+        <aside class="right-column">
+
+            <section class="panel">
+
+                <h2>Upcoming Deadlines</h2>
+
+                <ul>
+
+                    <li>
+                        HTML Portfolio
+                        <strong>Tomorrow</strong>
+                    </li>
+
+                    <li>
+                        CSS Landing Page
+                        <strong>18 July</strong>
+                    </li>
+
+                    <li>
+                        JavaScript Quiz
+                        <strong>23 July</strong>
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <section class="panel">
+
+                <h2>Submission Progress</h2>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         style="width:67%;"></div>
+
+                </div>
+
+                <span>
+                    12 of 18 assignments completed
+                </span>
+
+            </section>
+
+        </aside>
+
+    </section>
+
+</main>
+
+<!-- ================= JS ================= -->
+
+<script src="js/assignment.js"></script>
+
+</body>
+</html>
+```

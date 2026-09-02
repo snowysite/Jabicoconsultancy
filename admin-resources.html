@@ -1,0 +1,5100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Jabico Consultancy | Resources</title>
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         INTERNAL CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+
+            --primary: #0B1F3A;
+            --secondary: #132C52;
+            --accent: #D4AF37;
+            --accent-light: #F0D77A;
+
+            --white: #ffffff;
+            --text: #172033;
+            --muted: #718096;
+
+            --background: #f5f7fb;
+            --card: #ffffff;
+            --border: #e7ebf2;
+
+            --success: #16a34a;
+            --danger: #dc2626;
+            --warning: #f59e0b;
+            --info: #2563eb;
+
+            --sidebar-width: 270px;
+
+            --shadow:
+                0 12px 35px rgba(11, 31, 58, 0.08);
+
+            --transition:
+                all 0.25s ease;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Poppins", sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+
+        }
+
+
+        button,
+        input,
+        select,
+        textarea {
+
+            font-family: inherit;
+
+        }
+
+
+        button {
+            cursor: pointer;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================================
+           DASHBOARD
+        ====================================================== */
+
+        .dashboard {
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        .sidebar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: var(--sidebar-width);
+
+            height: 100vh;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0B1F3A 0%,
+                    #09192f 100%
+                );
+
+            color: var(--white);
+
+            padding: 28px 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            z-index: 1000;
+
+            transition: var(--transition);
+
+            box-shadow:
+                8px 0 30px rgba(0,0,0,0.08);
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding:
+                5px 12px
+                28px;
+
+        }
+
+
+        .logo-box {
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 12px;
+
+            background: var(--accent);
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 8px 18px
+                rgba(212,175,55,0.25);
+
+        }
+
+
+        .logo-text h2 {
+
+            font-size: 20px;
+
+            line-height: 1;
+
+            letter-spacing: 1px;
+
+            font-weight: 800;
+
+        }
+
+
+        .logo-text span {
+
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            color:
+                rgba(255,255,255,0.6);
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ====================================================== */
+
+        .menu {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .menu li a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 14px 16px;
+
+            border-radius: 12px;
+
+            color:
+                rgba(255,255,255,0.68);
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: var(--transition);
+
+        }
+
+
+        .menu li a i {
+
+            width: 21px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            transition: var(--transition);
+
+        }
+
+
+        .menu li a:hover {
+
+            color: var(--white);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            transform:
+                translateX(3px);
+
+        }
+
+
+        .menu li.active a {
+
+            color: var(--primary);
+
+            background: var(--accent);
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 20px
+                rgba(212,175,55,0.18);
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR BOTTOM
+        ====================================================== */
+
+        .sidebar-bottom {
+
+            margin-top: auto;
+
+        }
+
+
+        .admin-label {
+
+            margin:
+                0 10px
+                12px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            font-size: 10px;
+
+            color:
+                rgba(255,255,255,0.4);
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .logout {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 14px 16px;
+
+            color:
+                rgba(255,255,255,0.65);
+
+            border-radius: 12px;
+
+            transition: var(--transition);
+
+            font-size: 14px;
+
+        }
+
+
+        .logout:hover {
+
+            background:
+                rgba(220,38,38,0.12);
+
+            color: #ff8585;
+
+        }
+
+
+        /* =====================================================
+           OVERLAY
+        ====================================================== */
+
+        .sidebar-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.45);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 900;
+
+            transition: var(--transition);
+
+        }
+
+
+        .sidebar-overlay.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ====================================================== */
+
+        .content {
+
+            margin-left: var(--sidebar-width);
+
+            min-height: 100vh;
+
+            padding: 28px 35px 50px;
+
+        }
+
+
+        /* =====================================================
+           TOPBAR
+        ====================================================== */
+
+        .topbar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .welcome {
+
+            flex: 1;
+
+        }
+
+
+        .welcome-label {
+
+            display: inline-block;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: 700;
+
+            color: var(--accent);
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .welcome h1 {
+
+            font-size: 28px;
+
+            line-height: 1.3;
+
+            color: var(--primary);
+
+        }
+
+
+        .welcome p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin-top: 5px;
+
+        }
+
+
+        .header-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        .search-box {
+
+            position: relative;
+
+            width: 250px;
+
+        }
+
+
+        .search-box i {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: var(--muted);
+
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            height: 45px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            padding:
+                0 15px
+                0 42px;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            transition: var(--transition);
+
+        }
+
+
+        .search-box input:focus {
+
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(212,175,55,0.1);
+
+        }
+
+
+        /* =====================================================
+           HEADER BUTTON
+        ====================================================== */
+
+        .header-icon {
+
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            background: var(--card);
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            transition: var(--transition);
+
+        }
+
+
+        .header-icon:hover {
+
+            border-color: var(--accent);
+
+            color: var(--accent);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .notification-dot {
+
+            position: absolute;
+
+            top: 8px;
+            right: 9px;
+
+            width: 7px;
+            height: 7px;
+
+            background: #ef4444;
+
+            border-radius: 50%;
+
+            border: 2px solid var(--card);
+
+        }
+
+
+        .notification-dot.hidden {
+            display: none;
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        .mobile-menu-btn {
+
+            display: none;
+
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            background: var(--card);
+
+            color: var(--primary);
+
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ====================================================== */
+
+        .admin-profile {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding-left: 7px;
+
+        }
+
+
+        .admin-avatar {
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            color: var(--accent);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 800;
+
+            border:
+                2px solid
+                rgba(212,175,55,0.5);
+
+        }
+
+
+        .admin-profile-text strong {
+
+            display: block;
+
+            font-size: 12px;
+
+            color: var(--primary);
+
+        }
+
+
+        .admin-profile-text span {
+
+            display: block;
+
+            font-size: 10px;
+
+            color: var(--muted);
+
+        }
+
+
+        /* =====================================================
+           PAGE HEADER
+        ====================================================== */
+
+        .page-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 20px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .page-heading h2 {
+
+            font-size: 23px;
+
+            color: var(--primary);
+
+        }
+
+
+        .page-heading p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
+           PRIMARY BUTTON
+        ====================================================== */
+
+        .primary-btn {
+
+            border: none;
+
+            background: var(--accent);
+
+            color: var(--primary);
+
+            padding:
+                12px 18px;
+
+            border-radius: 11px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            transition: var(--transition);
+
+        }
+
+
+        .primary-btn:hover {
+
+            background: var(--accent-light);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(212,175,55,0.2);
+
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 17px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .stat-card {
+
+            background: var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+
+        }
+
+
+        .stat-card:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        .stat-icon {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 18px;
+
+        }
+
+
+        .stat-icon.blue {
+
+            background:
+                rgba(37,99,235,0.1);
+
+            color: #2563eb;
+
+        }
+
+
+        .stat-icon.purple {
+
+            background:
+                rgba(124,58,237,0.1);
+
+            color: #7c3aed;
+
+        }
+
+
+        .stat-icon.green {
+
+            background:
+                rgba(22,163,74,0.1);
+
+            color: #16a34a;
+
+        }
+
+
+        .stat-icon.orange {
+
+            background:
+                rgba(245,158,11,0.1);
+
+            color: #f59e0b;
+
+        }
+
+
+        .stat-card span {
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+        }
+
+
+        .stat-card h3 {
+
+            font-size: 23px;
+
+            color: var(--primary);
+
+            line-height: 1.2;
+
+        }
+
+
+        /* =====================================================
+           MAIN PANEL
+        ====================================================== */
+
+        .panel {
+
+            background: var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 17px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .resources-panel {
+
+            padding: 23px;
+
+        }
+
+
+        .panel-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding-bottom: 20px;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+        }
+
+
+        .panel-header h2 {
+
+            color: var(--primary);
+
+            font-size: 18px;
+
+        }
+
+
+        .panel-label {
+
+            display: block;
+
+            font-size: 9px;
+
+            color: var(--accent);
+
+            font-weight: 700;
+
+            letter-spacing: 1.7px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        /* =====================================================
+           FILTERS
+        ====================================================== */
+
+        .resource-tools {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin:
+                20px 0;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .filter-select {
+
+            min-width: 160px;
+
+            height: 42px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            border-radius: 10px;
+
+            padding:
+                0 12px;
+
+            outline: none;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
+           RESOURCE GRID
+        ====================================================== */
+
+        .resource-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 17px;
+
+        }
+
+
+        .resource-card {
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 15px;
+
+            padding: 18px;
+
+            background: var(--card);
+
+            transition: var(--transition);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .resource-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(11,31,58,0.1);
+
+            border-color:
+                rgba(212,175,55,0.5);
+
+        }
+
+
+        .resource-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .resource-file-icon {
+
+            width: 46px;
+            height: 46px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 18px;
+
+        }
+
+
+        .file-pdf {
+
+            color: #dc2626;
+
+            background:
+                rgba(220,38,38,0.1);
+
+        }
+
+
+        .file-doc {
+
+            color: #2563eb;
+
+            background:
+                rgba(37,99,235,0.1);
+
+        }
+
+
+        .file-ppt {
+
+            color: #ea580c;
+
+            background:
+                rgba(234,88,12,0.1);
+
+        }
+
+
+        .file-xls {
+
+            color: #16a34a;
+
+            background:
+                rgba(22,163,74,0.1);
+
+        }
+
+
+        .file-image {
+
+            color: #7c3aed;
+
+            background:
+                rgba(124,58,237,0.1);
+
+        }
+
+
+        .file-default {
+
+            color: var(--accent);
+
+            background:
+                rgba(212,175,55,0.12);
+
+        }
+
+
+        .resource-status {
+
+            padding:
+                5px 9px;
+
+            border-radius: 30px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .status-published {
+
+            background:
+                rgba(22,163,74,0.1);
+
+            color: var(--success);
+
+        }
+
+
+        .status-draft {
+
+            background:
+                rgba(245,158,11,0.12);
+
+            color: var(--warning);
+
+        }
+
+
+        .resource-card h3 {
+
+            color: var(--primary);
+
+            font-size: 14px;
+
+            margin-bottom: 6px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+        }
+
+
+        .resource-description {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            min-height: 35px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .resource-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .meta-tag {
+
+            background:
+                var(--background);
+
+            color: var(--muted);
+
+            border-radius: 6px;
+
+            padding:
+                4px 7px;
+
+            font-size: 9px;
+
+        }
+
+
+        .resource-actions {
+
+            display: flex;
+
+            gap: 7px;
+
+            padding-top: 13px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+        }
+
+
+        .resource-action {
+
+            flex: 1;
+
+            height: 35px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 8px;
+
+            background: var(--card);
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 5px;
+
+            transition: var(--transition);
+
+        }
+
+
+        .resource-action:hover {
+
+            border-color: var(--accent);
+
+            color: var(--accent);
+
+        }
+
+
+        .resource-action.delete:hover {
+
+            border-color: var(--danger);
+
+            color: var(--danger);
+
+        }
+
+
+        /* =====================================================
+           EMPTY STATE
+        ====================================================== */
+
+        .empty-state {
+
+            text-align: center;
+
+            padding: 65px 20px;
+
+            color: var(--muted);
+
+            display: none;
+
+        }
+
+
+        .empty-state.show {
+
+            display: block;
+
+        }
+
+
+        .empty-state i {
+
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(212,175,55,0.1);
+
+            color: var(--accent);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin:
+                0 auto 15px;
+
+            font-size: 24px;
+
+        }
+
+
+        .empty-state h3 {
+
+            color: var(--primary);
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .empty-state p {
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           MODAL
+        ====================================================== */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 3000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+        .modal.show {
+
+            display: flex;
+
+        }
+
+
+        .modal-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(5,15,30,0.7);
+
+            backdrop-filter:
+                blur(5px);
+
+        }
+
+
+        .modal-box {
+
+            width: min(620px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            position: relative;
+
+            z-index: 1;
+
+            background: var(--card);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.25);
+
+            padding: 25px;
+
+            animation:
+                modalIn 0.25s ease;
+
+        }
+
+
+        @keyframes modalIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px)
+                    scale(0.98);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        .modal-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .modal-header h2 {
+
+            color: var(--primary);
+
+            font-size: 19px;
+
+        }
+
+
+        .modal-close {
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background:
+                var(--background);
+
+            color: var(--muted);
+
+        }
+
+
+        .modal-close:hover {
+
+            color: var(--danger);
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ====================================================== */
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .form-group.full {
+
+            grid-column: 1 / -1;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            color: var(--primary);
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            border:
+                1px solid
+                var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            padding:
+                11px 12px;
+
+            font-size: 12px;
+
+            transition: var(--transition);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 90px;
+
+            resize: vertical;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(212,175,55,0.1);
+
+        }
+
+
+        /* =====================================================
+           FILE DROP
+        ====================================================== */
+
+        .file-drop {
+
+            border:
+                2px dashed
+                var(--border);
+
+            border-radius: 13px;
+
+            padding: 27px 15px;
+
+            text-align: center;
+
+            transition: var(--transition);
+
+            cursor: pointer;
+
+        }
+
+
+        .file-drop:hover,
+        .file-drop.dragover {
+
+            border-color: var(--accent);
+
+            background:
+                rgba(212,175,55,0.04);
+
+        }
+
+
+        .file-drop i {
+
+            font-size: 28px;
+
+            color: var(--accent);
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .file-drop strong {
+
+            display: block;
+
+            font-size: 12px;
+
+            color: var(--primary);
+
+        }
+
+
+        .file-drop span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            margin-top: 4px;
+
+        }
+
+
+        .file-name {
+
+            margin-top: 9px;
+
+            color: var(--success);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        .modal-footer {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            padding-top: 10px;
+
+        }
+
+
+        .secondary-btn {
+
+            height: 40px;
+
+            padding:
+                0 17px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background: var(--card);
+
+            color: var(--muted);
+
+            border-radius: 10px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+        }
+
+
+        .secondary-btn:hover {
+
+            border-color: var(--accent);
+
+            color: var(--accent);
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        .toast-container {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            z-index: 5000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+        }
+
+
+        .toast {
+
+            min-width: 280px;
+
+            max-width: 370px;
+
+            padding: 13px 15px;
+
+            border-radius: 12px;
+
+            background: var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.15);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            font-size: 11px;
+
+            animation:
+                toastIn 0.3s ease;
+
+        }
+
+
+        @keyframes toastIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+
+            }
+
+        }
+
+
+        .toast.success i {
+            color: var(--success);
+        }
+
+
+        .toast.error i {
+            color: var(--danger);
+        }
+
+
+        .toast.warning i {
+            color: var(--warning);
+        }
+
+
+        .toast.info i {
+            color: var(--info);
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ====================================================== */
+
+        body.dark-mode {
+
+            --background: #071426;
+
+            --card: #0d1d32;
+
+            --text: #e8edf5;
+
+            --muted: #9aa8ba;
+
+            --border:
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        body.dark-mode .welcome h1,
+        body.dark-mode .page-heading h2,
+        body.dark-mode .panel-header h2,
+        body.dark-mode .stat-card h3,
+        body.dark-mode .resource-card h3,
+        body.dark-mode .empty-state h3,
+        body.dark-mode .modal-header h2,
+        body.dark-mode .form-group label,
+        body.dark-mode .admin-profile-text strong {
+
+            color: #f2f5f9;
+
+        }
+
+
+        body.dark-mode .filter-select,
+        body.dark-mode .search-box input {
+
+            background: var(--card);
+
+            color: var(--text);
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 1200px) {
+
+            .resource-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .stats {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .search-box {
+
+                width: 200px;
+
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+
+                transform:
+                    translateX(-100%);
+
+            }
+
+
+            .sidebar.open {
+
+                transform:
+                    translateX(0);
+
+            }
+
+
+            .content {
+
+                margin-left: 0;
+
+                padding:
+                    22px 18px 40px;
+
+            }
+
+
+            .mobile-menu-btn {
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+            }
+
+
+            .topbar {
+
+                align-items: flex-start;
+
+            }
+
+
+            .welcome h1 {
+
+                font-size: 22px;
+
+            }
+
+
+            .header-actions {
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .stats {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .resource-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .search-box {
+
+                width: 100%;
+
+                order: 5;
+
+            }
+
+
+            .topbar {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .header-actions {
+
+                width: 100%;
+
+            }
+
+
+            .page-heading {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .form-group.full {
+
+                grid-column: auto;
+
+            }
+
+
+            .modal-box {
+
+                padding: 18px;
+
+            }
+
+
+            .admin-profile-text {
+
+                display: none;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+
+                <h2>
+                    JABICO
+                </h2>
+
+                <span>
+                    CONSULTANCY
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <ul class="menu">
+
+            <li>
+
+                <a href="admin-dashboard.html">
+
+                    <i class="fas fa-house"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-students.html">
+
+                    <i class="fas fa-user-graduate"></i>
+
+                    <span>
+                        Students
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="admin-resources.html">
+
+                    <i class="fas fa-folder-open"></i>
+
+                    <span>
+                        Resources
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-announcements.html">
+
+                    <i class="fas fa-bullhorn"></i>
+
+                    <span>
+                        Announcements
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-assignments.html">
+
+                    <i class="fas fa-file-pen"></i>
+
+                    <span>
+                        Assignments
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-classes.html">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    <span>
+                        Classes
+                    </span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <!-- BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-label">
+                ADMINISTRATION
+            </div>
+
+            <a
+                href="admin-login.html"
+                class="logout"
+                id="logoutBtn">
+
+                <i class="fas fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation"
+                aria-expanded="false">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    ADMIN PORTAL
+                </span>
+
+                <h1>
+                    Learning Resources
+                </h1>
+
+                <p>
+                    Manage the materials students can access
+                    from their learning portal.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="resourceSearch"
+                        placeholder="Search resources..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    class="header-icon"
+                    id="themeToggle"
+                    title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATION -->
+
+                <button
+                    class="header-icon"
+                    id="notificationBtn"
+                    title="Notifications">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationDot">
+                    </span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-profile-text">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Jabico Admin
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE HEADING
+        ================================================== -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <h2>
+                    Resources
+                </h2>
+
+                <p>
+                    Upload, edit and manage learning materials
+                    for your students.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                id="openUploadBtn">
+
+                <i class="fas fa-cloud-arrow-up"></i>
+
+                Upload Resource
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fas fa-folder-open"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Resources
+                    </span>
+
+                    <h3 id="totalResources">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fas fa-cloud-arrow-up"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Published
+                    </span>
+
+                    <h3 id="publishedResources">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="fas fa-file-circle-question"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Drafts
+                    </span>
+
+                    <h3 id="draftResources">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fas fa-download"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Downloads
+                    </span>
+
+                    <h3 id="totalDownloads">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESOURCES PANEL
+        ================================================== -->
+
+        <section class="panel resources-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        LEARNING LIBRARY
+                    </span>
+
+                    <h2>
+                        Student Resources
+                    </h2>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="openUploadBtn2">
+
+                    <i class="fas fa-plus"></i>
+
+                    Add Resource
+
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="resource-tools">
+
+                <select
+                    class="filter-select"
+                    id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="module">
+                        Modules
+                    </option>
+
+                    <option value="assignment">
+                        Assignments
+                    </option>
+
+                    <option value="lecture">
+                        Lecture Materials
+                    </option>
+
+                    <option value="document">
+                        Documents
+                    </option>
+
+                    <option value="recording">
+                        Recordings
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <select
+                    class="filter-select"
+                    id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="published">
+                        Published
+                    </option>
+
+                    <option value="draft">
+                        Draft
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RESOURCE GRID -->
+
+            <div
+                class="resource-grid"
+                id="resourceGrid">
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="empty-state"
+                id="emptyState">
+
+                <i class="fas fa-folder-open"></i>
+
+                <h3>
+                    No resources found
+                </h3>
+
+                <p>
+                    Upload your first learning resource
+                    for the student portal.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     UPLOAD / EDIT MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="resourceModal"
+    aria-hidden="true">
+
+
+    <div
+        class="modal-overlay"
+        id="modalOverlay">
+    </div>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="panel-label">
+                    RESOURCE MANAGEMENT
+                </span>
+
+                <h2 id="modalTitle">
+                    Upload Resource
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button">
+
+                <i class="fas fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="resourceForm">
+
+
+            <input
+                type="hidden"
+                id="resourceId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <!-- TITLE -->
+
+                <div class="form-group full">
+
+                    <label for="resourceTitle">
+                        Resource Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resourceTitle"
+                        placeholder="e.g. Python Fundamentals Notes"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="resourceCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="resourceCategory"
+                        required>
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="module">
+                            Module
+                        </option>
+
+                        <option value="assignment">
+                            Assignment
+                        </option>
+
+                        <option value="lecture">
+                            Lecture Material
+                        </option>
+
+                        <option value="document">
+                            Document
+                        </option>
+
+                        <option value="recording">
+                            Recording
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="resourceStatus">
+                        Status
+                    </label>
+
+                    <select id="resourceStatus">
+
+                        <option value="published">
+                            Publish to Students
+                        </option>
+
+                        <option value="draft">
+                            Save as Draft
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group full">
+
+                    <label for="resourceDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="resourceDescription"
+                        placeholder="Briefly describe what students will find in this resource..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- FILE -->
+
+                <div
+                    class="form-group full"
+                    id="fileUploadGroup">
+
+                    <label>
+                        Resource File
+                    </label>
+
+                    <div
+                        class="file-drop"
+                        id="fileDrop">
+
+                        <i
+                            class="fas fa-cloud-arrow-up">
+                        </i>
+
+                        <strong>
+                            Click to choose a file
+                        </strong>
+
+                        <span>
+                            or drag and drop it here
+                        </span>
+
+                        <div
+                            class="file-name"
+                            id="fileName">
+                        </div>
+
+                    </div>
+
+                    <input
+                        type="file"
+                        id="resourceFile"
+                        hidden
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    <i class="fas fa-save"></i>
+
+                    <span id="saveButtonText">
+                        Save Resource
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST CONTAINER
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer">
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+"use strict";
+
+
+/* =========================================================
+   JABICO ADMIN RESOURCES
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+
+        /* =====================================================
+           AUTHENTICATION
+        ====================================================== */
+
+        const authenticated =
+            localStorage.getItem(
+                "jabicoAdminAuthenticated"
+            );
+
+
+        if (authenticated !== "true") {
+
+            window.location.href =
+                "admin-login.html";
+
+            return;
+
+        }
+
+
+        /* =====================================================
+           DOM
+        ====================================================== */
+
+        const body =
+            document.body;
+
+        const sidebar =
+            document.getElementById(
+                "sidebar"
+            );
+
+        const sidebarOverlay =
+            document.getElementById(
+                "sidebarOverlay"
+            );
+
+        const mobileMenuBtn =
+            document.getElementById(
+                "mobileMenuBtn"
+            );
+
+        const themeToggle =
+            document.getElementById(
+                "themeToggle"
+            );
+
+        const resourceGrid =
+            document.getElementById(
+                "resourceGrid"
+            );
+
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
+
+        const searchInput =
+            document.getElementById(
+                "resourceSearch"
+            );
+
+        const categoryFilter =
+            document.getElementById(
+                "categoryFilter"
+            );
+
+        const statusFilter =
+            document.getElementById(
+                "statusFilter"
+            );
+
+        const modal =
+            document.getElementById(
+                "resourceModal"
+            );
+
+        const modalOverlay =
+            document.getElementById(
+                "modalOverlay"
+            );
+
+        const modalClose =
+            document.getElementById(
+                "modalClose"
+            );
+
+        const cancelBtn =
+            document.getElementById(
+                "cancelBtn"
+            );
+
+        const uploadButtons =
+            document.querySelectorAll(
+                "#openUploadBtn, #openUploadBtn2"
+            );
+
+        const resourceForm =
+            document.getElementById(
+                "resourceForm"
+            );
+
+        const resourceId =
+            document.getElementById(
+                "resourceId"
+            );
+
+        const resourceTitle =
+            document.getElementById(
+                "resourceTitle"
+            );
+
+        const resourceCategory =
+            document.getElementById(
+                "resourceCategory"
+            );
+
+        const resourceDescription =
+            document.getElementById(
+                "resourceDescription"
+            );
+
+        const resourceStatus =
+            document.getElementById(
+                "resourceStatus"
+            );
+
+        const resourceFile =
+            document.getElementById(
+                "resourceFile"
+            );
+
+        const fileDrop =
+            document.getElementById(
+                "fileDrop"
+            );
+
+        const fileName =
+            document.getElementById(
+                "fileName"
+            );
+
+        const modalTitle =
+            document.getElementById(
+                "modalTitle"
+            );
+
+        const saveButtonText =
+            document.getElementById(
+                "saveButtonText"
+            );
+
+        const fileUploadGroup =
+            document.getElementById(
+                "fileUploadGroup"
+            );
+
+
+        /* =====================================================
+           DATABASE
+        ====================================================== */
+
+        const DB_NAME =
+            "JabicoAdminResourcesDB";
+
+        const DB_VERSION = 1;
+
+        const STORE_NAME =
+            "resources";
+
+        let database = null;
+
+
+        /* =====================================================
+           APPLICATION STATE
+        ====================================================== */
+
+        let resources = [];
+
+        let editingId = null;
+
+        let selectedFile = null;
+
+
+        /* =====================================================
+           OPEN INDEXED DB
+        ====================================================== */
+
+        function openDatabase() {
+
+            return new Promise(
+                (resolve, reject) => {
+
+                    const request =
+                        indexedDB.open(
+                            DB_NAME,
+                            DB_VERSION
+                        );
+
+
+                    request.onupgradeneeded =
+                        (event) => {
+
+                            const db =
+                                event.target.result;
+
+
+                            if (
+                                !db.objectStoreNames
+                                    .contains(STORE_NAME)
+                            ) {
+
+                                const store =
+                                    db.createObjectStore(
+                                        STORE_NAME,
+                                        {
+                                            keyPath: "id"
+                                        }
+                                    );
+
+
+                                store.createIndex(
+                                    "status",
+                                    "status",
+                                    {
+                                        unique: false
+                                    }
+                                );
+
+
+                                store.createIndex(
+                                    "category",
+                                    "category",
+                                    {
+                                        unique: false
+                                    }
+                                );
+
+                            }
+
+                        };
+
+
+                    request.onsuccess =
+                        (event) => {
+
+                            database =
+                                event.target.result;
+
+                            resolve(database);
+
+                        };
+
+
+                    request.onerror =
+                        () => {
+
+                            reject(
+                                request.error
+                            );
+
+                        };
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           GET ALL RESOURCES
+        ====================================================== */
+
+        function getResources() {
+
+            return new Promise(
+                (resolve, reject) => {
+
+                    const transaction =
+                        database.transaction(
+                            STORE_NAME,
+                            "readonly"
+                        );
+
+
+                    const store =
+                        transaction.objectStore(
+                            STORE_NAME
+                        );
+
+
+                    const request =
+                        store.getAll();
+
+
+                    request.onsuccess =
+                        () => {
+
+                            resolve(
+                                request.result || []
+                            );
+
+                        };
+
+
+                    request.onerror =
+                        () => {
+
+                            reject(
+                                request.error
+                            );
+
+                        };
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           SAVE RESOURCE
+        ====================================================== */
+
+        function saveResource(resource) {
+
+            return new Promise(
+                (resolve, reject) => {
+
+                    const transaction =
+                        database.transaction(
+                            STORE_NAME,
+                            "readwrite"
+                        );
+
+
+                    const store =
+                        transaction.objectStore(
+                            STORE_NAME
+                        );
+
+
+                    const request =
+                        store.put(resource);
+
+
+                    request.onsuccess =
+                        () => resolve();
+
+
+                    request.onerror =
+                        () =>
+                            reject(
+                                request.error
+                            );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           DELETE RESOURCE
+        ====================================================== */
+
+        function deleteResource(id) {
+
+            return new Promise(
+                (resolve, reject) => {
+
+                    const transaction =
+                        database.transaction(
+                            STORE_NAME,
+                            "readwrite"
+                        );
+
+
+                    const store =
+                        transaction.objectStore(
+                            STORE_NAME
+                        );
+
+
+                    const request =
+                        store.delete(id);
+
+
+                    request.onsuccess =
+                        () => resolve();
+
+
+                    request.onerror =
+                        () =>
+                            reject(
+                                request.error
+                            );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           LOAD RESOURCES
+        ====================================================== */
+
+        async function loadResources() {
+
+            try {
+
+                resources =
+                    await getResources();
+
+
+                resources.sort(
+                    (a, b) =>
+                        new Date(b.createdAt)
+                        -
+                        new Date(a.createdAt)
+                );
+
+
+                renderResources();
+
+                updateStatistics();
+
+            }
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+                showToast(
+                    "Unable to load resources.",
+                    "error"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RENDER RESOURCES
+        ====================================================== */
+
+        function renderResources() {
+
+            if (!resourceGrid)
+                return;
+
+
+            const query =
+                (
+                    searchInput.value ||
+                    ""
+                )
+                .trim()
+                .toLowerCase();
+
+
+            const category =
+                categoryFilter.value;
+
+
+            const status =
+                statusFilter.value;
+
+
+            const filtered =
+                resources.filter(
+                    (resource) => {
+
+
+                        const matchesSearch =
+                            !query ||
+                            resource.title
+                                .toLowerCase()
+                                .includes(query) ||
+                            resource.description
+                                .toLowerCase()
+                                .includes(query) ||
+                            resource.fileName
+                                .toLowerCase()
+                                .includes(query);
+
+
+                        const matchesCategory =
+                            category === "all" ||
+                            resource.category === category;
+
+
+                        const matchesStatus =
+                            status === "all" ||
+                            resource.status === status;
+
+
+                        return (
+                            matchesSearch &&
+                            matchesCategory &&
+                            matchesStatus
+                        );
+
+                    }
+                );
+
+
+            resourceGrid.innerHTML = "";
+
+
+            filtered.forEach(
+                (resource) => {
+
+                    resourceGrid.appendChild(
+                        createResourceCard(
+                            resource
+                        )
+                    );
+
+                }
+            );
+
+
+            if (
+                filtered.length === 0
+            ) {
+
+                emptyState.classList.add(
+                    "show"
+                );
+
+            }
+            else {
+
+                emptyState.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CREATE RESOURCE CARD
+        ====================================================== */
+
+        function createResourceCard(
+            resource
+        ) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "resource-card";
+
+
+            const extension =
+                getFileExtension(
+                    resource.fileName
+                );
+
+
+            const fileType =
+                getFileType(
+                    extension
+                );
+
+
+            const icon =
+                getFileIcon(
+                    extension
+                );
+
+
+            const statusClass =
+                resource.status === "published"
+                    ? "status-published"
+                    : "status-draft";
+
+
+            const statusText =
+                resource.status === "published"
+                    ? "PUBLISHED"
+                    : "DRAFT";
+
+
+            const formattedDate =
+                formatDate(
+                    resource.createdAt
+                );
+
+
+            card.innerHTML = `
+
+                <div class="resource-top">
+
+                    <div
+                        class="resource-file-icon ${fileType}"
+                    >
+
+                        <i class="${icon}"></i>
+
+                    </div>
+
+                    <span
+                        class="resource-status ${statusClass}"
+                    >
+
+                        ${statusText}
+
+                    </span>
+
+                </div>
+
+
+                <h3
+                    title="${escapeHTML(resource.title)}"
+                >
+
+                    ${escapeHTML(resource.title)}
+
+                </h3>
+
+
+                <p class="resource-description">
+
+                    ${
+                        escapeHTML(
+                            resource.description ||
+                            "No description provided."
+                        )
+                    }
+
+                </p>
+
+
+                <div class="resource-meta">
+
+                    <span class="meta-tag">
+
+                        <i class="fas fa-tag"></i>
+
+                        ${escapeHTML(
+                            formatCategory(
+                                resource.category
+                            )
+                        )}
+
+                    </span>
+
+
+                    <span class="meta-tag">
+
+                        <i class="fas fa-file"></i>
+
+                        ${escapeHTML(
+                            resource.fileName
+                        )}
+
+                    </span>
+
+
+                    <span class="meta-tag">
+
+                        <i class="fas fa-calendar"></i>
+
+                        ${formattedDate}
+
+                    </span>
+
+                </div>
+
+
+                <div class="resource-actions">
+
+                    <button
+                        class="resource-action"
+                        data-action="view"
+                        data-id="${resource.id}"
+                    >
+
+                        <i class="fas fa-eye"></i>
+
+                        View
+
+                    </button>
+
+
+                    <button
+                        class="resource-action"
+                        data-action="edit"
+                        data-id="${resource.id}"
+                    >
+
+                        <i class="fas fa-pen"></i>
+
+                        Edit
+
+                    </button>
+
+
+                    <button
+                        class="resource-action delete"
+                        data-action="delete"
+                        data-id="${resource.id}"
+                    >
+
+                        <i class="fas fa-trash"></i>
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        function updateStatistics() {
+
+            const total =
+                resources.length;
+
+
+            const published =
+                resources.filter(
+                    resource =>
+                        resource.status ===
+                        "published"
+                ).length;
+
+
+            const drafts =
+                resources.filter(
+                    resource =>
+                        resource.status ===
+                        "draft"
+                ).length;
+
+
+            const downloads =
+                resources.reduce(
+                    (
+                        total,
+                        resource
+                    ) =>
+                        total +
+                        (
+                            Number(
+                                resource.downloads
+                            ) || 0
+                        ),
+                    0
+                );
+
+
+            document.getElementById(
+                "totalResources"
+            ).textContent = total;
+
+
+            document.getElementById(
+                "publishedResources"
+            ).textContent = published;
+
+
+            document.getElementById(
+                "draftResources"
+            ).textContent = drafts;
+
+
+            document.getElementById(
+                "totalDownloads"
+            ).textContent = downloads;
+
+        }
+
+
+        /* =====================================================
+           OPEN UPLOAD MODAL
+        ====================================================== */
+
+        function openUploadModal() {
+
+            editingId = null;
+
+            selectedFile = null;
+
+            resourceForm.reset();
+
+            resourceId.value = "";
+
+            fileName.textContent = "";
+
+            modalTitle.textContent =
+                "Upload Resource";
+
+            saveButtonText.textContent =
+                "Save Resource";
+
+            fileUploadGroup.style.display =
+                "block";
+
+
+            modal.classList.add(
+                "show"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            setTimeout(
+                () =>
+                    resourceTitle.focus(),
+                100
+            );
+
+        }
+
+
+        /* =====================================================
+           OPEN EDIT MODAL
+        ====================================================== */
+
+        function openEditModal(
+            id
+        ) {
+
+            const resource =
+                resources.find(
+                    item =>
+                        item.id === id
+                );
+
+
+            if (!resource)
+                return;
+
+
+            editingId = id;
+
+            selectedFile = null;
+
+
+            resourceId.value =
+                resource.id;
+
+            resourceTitle.value =
+                resource.title;
+
+            resourceCategory.value =
+                resource.category;
+
+            resourceDescription.value =
+                resource.description || "";
+
+            resourceStatus.value =
+                resource.status;
+
+
+            fileName.textContent =
+                resource.fileName
+                    ? `Current file: ${resource.fileName}`
+                    : "";
+
+
+            modalTitle.textContent =
+                "Edit Resource";
+
+            saveButtonText.textContent =
+                "Save Changes";
+
+
+            modal.classList.add(
+                "show"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+
+        /* =====================================================
+           CLOSE MODAL
+        ====================================================== */
+
+        function closeModal() {
+
+            modal.classList.remove(
+                "show"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            editingId = null;
+
+            selectedFile = null;
+
+            resourceForm.reset();
+
+            fileName.textContent = "";
+
+        }
+
+
+        /* =====================================================
+           FILE SELECTION
+        ====================================================== */
+
+        fileDrop.addEventListener(
+            "click",
+            () => {
+
+                resourceFile.click();
+
+            }
+        );
+
+
+        resourceFile.addEventListener(
+            "change",
+            () => {
+
+                if (
+                    resourceFile.files.length
+                ) {
+
+                    selectedFile =
+                        resourceFile.files[0];
+
+                    fileName.textContent =
+                        `Selected: ${selectedFile.name}`;
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           DRAG AND DROP
+        ====================================================== */
+
+        [
+            "dragenter",
+            "dragover"
+        ].forEach(
+            eventName => {
+
+                fileDrop.addEventListener(
+                    eventName,
+                    event => {
+
+                        event.preventDefault();
+
+                        fileDrop.classList.add(
+                            "dragover"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        [
+            "dragleave",
+            "drop"
+        ].forEach(
+            eventName => {
+
+                fileDrop.addEventListener(
+                    eventName,
+                    event => {
+
+                        event.preventDefault();
+
+                        fileDrop.classList.remove(
+                            "dragover"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        fileDrop.addEventListener(
+            "drop",
+            event => {
+
+                const files =
+                    event.dataTransfer.files;
+
+
+                if (!files.length)
+                    return;
+
+
+                selectedFile =
+                    files[0];
+
+
+                fileName.textContent =
+                    `Selected: ${selectedFile.name}`;
+
+            }
+        );
+
+
+        /* =====================================================
+           SAVE FORM
+        ====================================================== */
+
+        resourceForm.addEventListener(
+            "submit",
+            async event => {
+
+                event.preventDefault();
+
+
+                const title =
+                    resourceTitle.value
+                        .trim();
+
+
+                const category =
+                    resourceCategory.value;
+
+
+                const description =
+                    resourceDescription.value
+                        .trim();
+
+
+                const status =
+                    resourceStatus.value;
+
+
+                if (!title) {
+
+                    showToast(
+                        "Please enter a resource title.",
+                        "warning"
+                    );
+
+                    return;
+
+                }
+
+
+                if (!category) {
+
+                    showToast(
+                        "Please select a category.",
+                        "warning"
+                    );
+
+                    return;
+
+                }
+
+
+                try {
+
+
+                    /* =========================================
+                       EDIT EXISTING RESOURCE
+                    ========================================== */
+
+                    if (editingId) {
+
+                        const existing =
+                            resources.find(
+                                item =>
+                                    item.id ===
+                                    editingId
+                            );
+
+
+                        if (!existing)
+                            return;
+
+
+                        existing.title =
+                            title;
+
+                        existing.category =
+                            category;
+
+                        existing.description =
+                            description;
+
+                        existing.status =
+                            status;
+
+                        existing.updatedAt =
+                            new Date().toISOString();
+
+
+                        if (selectedFile) {
+
+                            existing.file =
+                                selectedFile;
+
+                            existing.fileName =
+                                selectedFile.name;
+
+                            existing.fileType =
+                                selectedFile.type;
+
+                            existing.fileSize =
+                                selectedFile.size;
+
+                        }
+
+
+                        await saveResource(
+                            existing
+                        );
+
+
+                        showToast(
+                            "Resource updated successfully.",
+                            "success"
+                        );
+
+                    }
+
+
+                    /* =========================================
+                       CREATE NEW RESOURCE
+                    ========================================== */
+
+                    else {
+
+                        if (!selectedFile) {
+
+                            showToast(
+                                "Please select a file to upload.",
+                                "warning"
+                            );
+
+                            return;
+
+                        }
+
+
+                        const newResource = {
+
+                            id:
+                                crypto.randomUUID
+                                ? crypto.randomUUID()
+                                : (
+                                    Date.now() +
+                                    "-" +
+                                    Math.random()
+                                ),
+
+                            title,
+
+                            category,
+
+                            description,
+
+                            status,
+
+                            file:
+                                selectedFile,
+
+                            fileName:
+                                selectedFile.name,
+
+                            fileType:
+                                selectedFile.type,
+
+                            fileSize:
+                                selectedFile.size,
+
+                            downloads: 0,
+
+                            createdAt:
+                                new Date()
+                                .toISOString(),
+
+                            updatedAt:
+                                new Date()
+                                .toISOString()
+
+                        };
+
+
+                        await saveResource(
+                            newResource
+                        );
+
+
+                        showToast(
+                            status === "published"
+                                ? "Resource published to students."
+                                : "Resource saved as draft.",
+                            "success"
+                        );
+
+                    }
+
+
+                    closeModal();
+
+                    await loadResources();
+
+                }
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+                    showToast(
+                        "Unable to save resource.",
+                        "error"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           RESOURCE ACTIONS
+        ====================================================== */
+
+        resourceGrid.addEventListener(
+            "click",
+            async event => {
+
+                const button =
+                    event.target.closest(
+                        "[data-action]"
+                    );
+
+
+                if (!button)
+                    return;
+
+
+                const action =
+                    button.dataset.action;
+
+
+                const id =
+                    button.dataset.id;
+
+
+                const resource =
+                    resources.find(
+                        item =>
+                            item.id === id
+                    );
+
+
+                if (!resource)
+                    return;
+
+
+                /* VIEW */
+
+                if (
+                    action === "view"
+                ) {
+
+                    viewResource(
+                        resource
+                    );
+
+                    return;
+
+                }
+
+
+                /* EDIT */
+
+                if (
+                    action === "edit"
+                ) {
+
+                    openEditModal(
+                        id
+                    );
+
+                    return;
+
+                }
+
+
+                /* DELETE */
+
+                if (
+                    action === "delete"
+                ) {
+
+                    const confirmed =
+                        window.confirm(
+                            `Delete "${resource.title}"?`
+                        );
+
+
+                    if (!confirmed)
+                        return;
+
+
+                    try {
+
+                        await deleteResource(
+                            id
+                        );
+
+
+                        showToast(
+                            "Resource deleted.",
+                            "success"
+                        );
+
+
+                        await loadResources();
+
+                    }
+                    catch (error) {
+
+                        console.error(
+                            error
+                        );
+
+                        showToast(
+                            "Unable to delete resource.",
+                            "error"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           VIEW RESOURCE
+        ====================================================== */
+
+        function viewResource(
+            resource
+        ) {
+
+            if (!resource.file) {
+
+                showToast(
+                    "This resource has no file attached.",
+                    "warning"
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                const url =
+                    URL.createObjectURL(
+                        resource.file
+                    );
+
+
+                window.open(
+                    url,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+
+                resource.downloads =
+                    (
+                        Number(
+                            resource.downloads
+                        ) || 0
+                    ) + 1;
+
+
+                saveResource(
+                    resource
+                ).then(
+                    () =>
+                        updateStatistics()
+                );
+
+
+                setTimeout(
+                    () =>
+                        URL.revokeObjectURL(url),
+                    60000
+                );
+
+            }
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+                showToast(
+                    "Unable to open this file.",
+                    "error"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SEARCH / FILTER
+        ====================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            renderResources
+        );
+
+
+        categoryFilter.addEventListener(
+            "change",
+            renderResources
+        );
+
+
+        statusFilter.addEventListener(
+            "change",
+            renderResources
+        );
+
+
+        /* =====================================================
+           UPLOAD BUTTONS
+        ====================================================== */
+
+        uploadButtons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    openUploadModal
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           MODAL CLOSE
+        ====================================================== */
+
+        modalClose.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+        cancelBtn.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+        modalOverlay.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+        /* =====================================================
+           THEME
+        ====================================================== */
+
+        const savedTheme =
+            localStorage.getItem(
+                "jabico_admin_theme"
+            );
+
+
+        if (
+            savedTheme === "dark"
+        ) {
+
+            body.classList.add(
+                "dark-mode"
+            );
+
+            themeToggle.innerHTML =
+                '<i class="fas fa-sun"></i>';
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const isDark =
+                    body.classList.toggle(
+                        "dark-mode"
+                    );
+
+
+                localStorage.setItem(
+                    "jabico_admin_theme",
+                    isDark
+                        ? "dark"
+                        : "light"
+                );
+
+
+                themeToggle.innerHTML =
+                    isDark
+                        ? '<i class="fas fa-sun"></i>'
+                        : '<i class="fas fa-moon"></i>';
+
+            }
+        );
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        function openSidebar() {
+
+            sidebar.classList.add(
+                "open"
+            );
+
+            sidebarOverlay.classList.add(
+                "show"
+            );
+
+            mobileMenuBtn.innerHTML =
+                '<i class="fas fa-xmark"></i>';
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+
+        function closeSidebar() {
+
+            sidebar.classList.remove(
+                "open"
+            );
+
+            sidebarOverlay.classList.remove(
+                "show"
+            );
+
+            mobileMenuBtn.innerHTML =
+                '<i class="fas fa-bars"></i>';
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+
+        mobileMenuBtn.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.contains(
+                    "open"
+                )
+                    ? closeSidebar()
+                    : openSidebar();
+
+            }
+        );
+
+
+        sidebarOverlay.addEventListener(
+            "click",
+            closeSidebar
+        );
+
+
+        /* =====================================================
+           LOGOUT
+        ====================================================== */
+
+        document.getElementById(
+            "logoutBtn"
+        ).addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+
+                const confirmed =
+                    window.confirm(
+                        "Are you sure you want to logout?"
+                    );
+
+
+                if (!confirmed)
+                    return;
+
+
+                localStorage.removeItem(
+                    "jabicoAdminAuthenticated"
+                );
+
+
+                localStorage.removeItem(
+                    "jabicoAdminEmail"
+                );
+
+
+                window.location.href =
+                    "admin-login.html";
+
+            }
+        );
+
+
+        /* =====================================================
+           ESCAPE
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    if (
+                        modal.classList.contains(
+                            "show"
+                        )
+                    ) {
+
+                        closeModal();
+
+                    }
+
+
+                    if (
+                        sidebar.classList.contains(
+                            "open"
+                        )
+                    ) {
+
+                        closeSidebar();
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           HELPERS
+        ====================================================== */
+
+        function getFileExtension(
+            fileName
+        ) {
+
+            if (!fileName)
+                return "";
+
+
+            const parts =
+                fileName
+                    .split(".");
+
+
+            return (
+                parts.length > 1
+                    ? parts.pop()
+                        .toLowerCase()
+                    : ""
+            );
+
+        }
+
+
+        function getFileType(
+            extension
+        ) {
+
+            if (
+                extension === "pdf"
+            )
+                return "file-pdf";
+
+
+            if (
+                [
+                    "doc",
+                    "docx"
+                ].includes(
+                    extension
+                )
+            )
+                return "file-doc";
+
+
+            if (
+                [
+                    "ppt",
+                    "pptx"
+                ].includes(
+                    extension
+                )
+            )
+                return "file-ppt";
+
+
+            if (
+                [
+                    "xls",
+                    "xlsx",
+                    "csv"
+                ].includes(
+                    extension
+                )
+            )
+                return "file-xls";
+
+
+            if (
+                [
+                    "jpg",
+                    "jpeg",
+                    "png",
+                    "gif",
+                    "webp"
+                ].includes(
+                    extension
+                )
+            )
+                return "file-image";
+
+
+            return "file-default";
+
+        }
+
+
+        function getFileIcon(
+            extension
+        ) {
+
+            if (
+                extension === "pdf"
+            )
+                return "fas fa-file-pdf";
+
+
+            if (
+                [
+                    "doc",
+                    "docx"
+                ].includes(
+                    extension
+                )
+            )
+                return "fas fa-file-word";
+
+
+            if (
+                [
+                    "ppt",
+                    "pptx"
+                ].includes(
+                    extension
+                )
+            )
+                return "fas fa-file-powerpoint";
+
+
+            if (
+                [
+                    "xls",
+                    "xlsx",
+                    "csv"
+                ].includes(
+                    extension
+                )
+            )
+                return "fas fa-file-excel";
+
+
+            if (
+                [
+                    "jpg",
+                    "jpeg",
+                    "png",
+                    "gif",
+                    "webp"
+                ].includes(
+                    extension
+                )
+            )
+                return "fas fa-file-image";
+
+
+            return "fas fa-file";
+
+        }
+
+
+        function formatCategory(
+            category
+        ) {
+
+            const names = {
+
+                module:
+                    "Module",
+
+                assignment:
+                    "Assignment",
+
+                lecture:
+                    "Lecture",
+
+                document:
+                    "Document",
+
+                recording:
+                    "Recording",
+
+                other:
+                    "Other"
+
+            };
+
+
+            return (
+                names[category] ||
+                category
+            );
+
+        }
+
+
+        function formatDate(
+            value
+        ) {
+
+            try {
+
+                return new Date(
+                    value
+                ).toLocaleDateString(
+                    [],
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                );
+
+            }
+            catch {
+
+                return "";
+
+            }
+
+        }
+
+
+        function escapeHTML(
+            value
+        ) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                String(value);
+
+
+            return div.innerHTML;
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        function showToast(
+            message,
+            type = "info"
+        ) {
+
+            const container =
+                document.getElementById(
+                    "toastContainer"
+                );
+
+
+            const toast =
+                document.createElement(
+                    "div"
+                );
+
+
+            toast.className =
+                `toast ${type}`;
+
+
+            const icons = {
+
+                success:
+                    "fa-circle-check",
+
+                error:
+                    "fa-circle-xmark",
+
+                warning:
+                    "fa-triangle-exclamation",
+
+                info:
+                    "fa-circle-info"
+
+            };
+
+
+            toast.innerHTML = `
+
+                <i
+                    class="fas ${
+                        icons[type] ||
+                        icons.info
+                    }"
+                ></i>
+
+                <span>
+                    ${escapeHTML(message)}
+                </span>
+
+            `;
+
+
+            container.appendChild(
+                toast
+            );
+
+
+            setTimeout(
+                () => {
+
+                    toast.style.opacity =
+                        "0";
+
+                    toast.style.transform =
+                        "translateX(20px)";
+
+
+                    setTimeout(
+                        () =>
+                            toast.remove(),
+                        300
+                    );
+
+                },
+                3500
+            );
+
+        }
+
+
+        /* =====================================================
+           NOTIFICATION
+        ====================================================== */
+
+        document.getElementById(
+            "notificationBtn"
+        ).addEventListener(
+            "click",
+            () => {
+
+                const dot =
+                    document.getElementById(
+                        "notificationDot"
+                    );
+
+
+                dot.classList.add(
+                    "hidden"
+                );
+
+
+                showToast(
+                    "You're viewing your latest admin notifications.",
+                    "info"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           KEYBOARD SHORTCUT
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    (event.ctrlKey ||
+                        event.metaKey) &&
+                    event.key.toLowerCase() ===
+                    "k"
+                ) {
+
+                    event.preventDefault();
+
+                    searchInput.focus();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIALIZE
+        ====================================================== */
+
+        async function initialize() {
+
+            try {
+
+                await openDatabase();
+
+                await loadResources();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Jabico Resources DB error:",
+                    error
+                );
+
+
+                showToast(
+                    "Resource storage could not be initialized.",
+                    "error"
+                );
+
+            }
+
+        }
+
+
+        initialize();
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>

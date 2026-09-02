@@ -1,0 +1,1176 @@
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jabico Consultancy | Student Dashboard</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    </head>
+
+    <body>
+
+    <div class="dashboard">
+
+
+    <!-- =========================================
+        MOBILE OVERLAY
+    ========================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================================
+        SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-box">
+                J
+            </div>
+
+            <div class="logo-text">
+
+                <h2>JABICO</h2>
+
+                <span>CONSULTANCY</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <a href="#dashboard">
+
+                    <i class="fas fa-home"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+            <a href="modules.html">
+        <i class="fas fa-book-open"></i>
+        <span>Modules</span>
+    </a>
+            </li>
+
+
+            <li>
+
+                <a href="resources.html">
+
+                    <i class="fas fa-folder-open"></i>
+
+                    <span>Resources</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="announcement.html">
+
+                    <i class="fas fa-bullhorn"></i>
+
+                    <span>Announcements</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="progress.html">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span>Progress</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="profile.html">
+
+                    <i class="fas fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <!-- Logout -->
+
+        <a href="index.html" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =========================================
+        MAIN CONTENT
+    ========================================== -->
+
+    <main class="content" id="dashboard">
+
+
+        <!-- =====================================
+            TOPBAR
+        ====================================== -->
+
+        <header class="topbar">
+
+            <!-- Mobile Menu -->
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+
+            <!-- Greeting -->
+
+            <div class="welcome">
+
+                <span class="welcome-label">
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="studentName">Student</span>
+                    👋
+                </h1>
+
+                <p>
+                    Here's an overview of your learning journey.
+                </p>
+
+            </div>
+
+
+            <!-- Header Actions -->
+
+            <div class="header-actions">
+
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search modules...">
+
+                </div>
+
+
+                <!-- Theme Toggle -->
+
+                <button
+                    class="header-icon"
+                    id="themeToggle"
+                    title="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- Notification -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        class="header-icon notification-btn"
+                        id="notificationBtn"
+                        title="Notifications">
+
+                        <i class="fas fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- Notification Dropdown -->
+
+                    <div
+                        class="notification-dropdown"
+                        id="notificationDropdown">
+
+                        <div class="notification-header">
+
+                            <h3>Notifications</h3>
+
+                            <span>3 new</span>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon blue">
+
+                                <i class="fas fa-video"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Live class reminder</strong>
+
+                                <p>
+                                    Live class starts Saturday at 10 AM.
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon orange">
+
+                                <i class="fas fa-file-lines"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Assignment due</strong>
+
+                                <p>
+                                    Assignment 2 is due Monday.
+                                </p>
+
+                                <small>
+                                    5 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-item">
+
+                            <div class="notification-icon green">
+
+                                <i class="fas fa-circle-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Module completed</strong>
+
+                                <p>
+                                    Great job completing Week 1!
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="profile" id="profile">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Student profile">
+
+                    <div class="profile-info">
+
+                        <strong id="profileName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+            STATISTICS
+        ====================================== -->
+
+        <section class="stats">
+
+
+            <div class="card stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fas fa-book-open"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Total Modules</span>
+
+                    <h3>8</h3>
+
+                    <small>
+                        <i class="fas fa-arrow-up"></i>
+                        2 this month
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="card stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fas fa-file-lines"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Resources</span>
+
+                    <h3>24</h3>
+
+                    <small>
+                        Learning materials
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="card stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fas fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Completed</span>
+
+                    <h3>5</h3>
+
+                    <small>
+                        3 modules remaining
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="card stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="fas fa-chart-simple"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Overall Progress</span>
+
+                    <h3>63%</h3>
+
+                    <small>
+                        <i class="fas fa-arrow-up"></i>
+                        Keep going!
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+            ANALYTICS AREA
+        ====================================== -->
+
+        <section class="analytics-grid">
+
+
+            <!-- Progress -->
+
+            <div class="panel progress-card" id="progress">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            LEARNING
+                        </span>
+
+                        <h2>Your Progress</h2>
+
+                    </div>
+
+                    <button class="more-btn">
+                        <i class="fas fa-ellipsis"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="progress-content">
+
+                    <div class="circular-progress">
+
+                        <canvas id="progressChart"></canvas>
+
+                        <div class="progress-center">
+
+                            <strong>63%</strong>
+
+                            <span>Complete</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-details">
+
+                        <div class="progress-stat">
+
+                            <span class="progress-dot completed"></span>
+
+                            <div>
+
+                                <strong>5</strong>
+
+                                <span>Completed</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-stat">
+
+                            <span class="progress-dot remaining"></span>
+
+                            <div>
+
+                                <strong>3</strong>
+
+                                <span>Remaining</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-message">
+
+                            <i class="fas fa-fire"></i>
+
+                            <p>
+                                You're doing great!
+                                Keep up your learning streak.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Analytics -->
+
+            <div class="panel analytics-card">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            PERFORMANCE
+                        </span>
+
+                        <h2>Learning Activity</h2>
+
+                    </div>
+
+                    <select id="chartPeriod">
+
+                        <option value="weekly">
+                            Weekly
+                        </option>
+
+                        <option value="monthly">
+                            Monthly
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="activityChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+            LOWER GRID
+        ====================================== -->
+
+        <section class="main-grid">
+
+
+            <!-- =================================
+                MODULES
+            ================================== -->
+
+            <div class="modules panel" id="modules">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <span class="panel-label">
+                            LEARNING PATH
+                        </span>
+
+                        <h2>Weekly Modules</h2>
+
+                    </div>
+
+                    <a href="#">
+                        View All
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="module-list">
+
+
+                    <!-- Module 1 -->
+
+                    <article class="module">
+
+                        <div class="module-icon blue">
+
+                            <i class="fas fa-compass"></i>
+
+                        </div>
+
+                        <div class="module-info">
+
+                            <div class="module-top">
+
+                                <span class="week">
+                                    WEEK 01
+                                </span>
+
+                                <span class="badge completed">
+                                    <i class="fas fa-check"></i>
+                                    Completed
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Introduction to the Cohort
+                            </h3>
+
+                            <p>
+                                Learn about the program,
+                                expectations and learning roadmap.
+                            </p>
+
+                            <div class="module-progress">
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-value"
+                                        style="width: 100%;">
+                                    </div>
+
+                                </div>
+
+                                <span>100%</span>
+
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="module-button completed-btn">
+                            Review
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Module 2 -->
+
+                    <article class="module">
+
+                        <div class="module-icon purple">
+
+                            <i class="fab fa-python"></i>
+
+                        </div>
+
+                        <div class="module-info">
+
+                            <div class="module-top">
+
+                                <span class="week">
+                                    WEEK 02
+                                </span>
+
+                                <span class="badge current">
+                                    In Progress
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Python Fundamentals
+                            </h3>
+
+                            <p>
+                                Master Python basics,
+                                variables, functions and data structures.
+                            </p>
+
+                            <div class="module-progress">
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-value"
+                                        style="width: 65%;">
+                                    </div>
+
+                                </div>
+
+                                <span>65%</span>
+
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="module-button">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Module 3 -->
+
+                    <article class="module">
+
+                        <div class="module-icon orange">
+
+                            <i class="fas fa-server"></i>
+
+                        </div>
+
+                        <div class="module-info">
+
+                            <div class="module-top">
+
+                                <span class="week">
+                                    WEEK 03
+                                </span>
+
+                                <span class="badge locked">
+                                    Upcoming
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Working with Flask
+                            </h3>
+
+                            <p>
+                                Build web applications using
+                                Python and Flask.
+                            </p>
+
+                            <div class="module-progress">
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-value"
+                                        style="width: 25%;">
+                                    </div>
+
+                                </div>
+
+                                <span>25%</span>
+
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="module-button">
+                            Open
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Module 4 -->
+
+                    <article class="module">
+
+                        <div class="module-icon green">
+
+                            <i class="fas fa-database"></i>
+
+                        </div>
+
+                        <div class="module-info">
+
+                            <div class="module-top">
+
+                                <span class="week">
+                                    WEEK 04
+                                </span>
+
+                                <span class="badge locked">
+                                    Upcoming
+                                </span>
+
+                            </div>
+
+                            <h3>
+                                Databases & APIs
+                            </h3>
+
+                            <p>
+                                Understand databases,
+                                APIs and backend integration.
+                            </p>
+
+                            <div class="module-progress">
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-value"
+                                        style="width: 0%;">
+                                    </div>
+
+                                </div>
+
+                                <span>0%</span>
+
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="module-button disabled">
+                            Locked
+                            <i class="fas fa-lock"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                RIGHT COLUMN
+            ================================== -->
+
+            <div class="right-column">
+
+
+                <!-- Upcoming Classes -->
+
+                <div class="panel upcoming-panel">
+
+                    <div class="section-title">
+
+                        <div>
+
+                            <span class="panel-label">
+                                SCHEDULE
+                            </span>
+
+                            <h2>Upcoming Classes</h2>
+
+                        </div>
+
+                        <i class="fas fa-calendar-days"></i>
+
+                    </div>
+
+
+                    <div class="class-item">
+
+                        <div class="date-box">
+
+                            <span>SAT</span>
+
+                            <strong>30</strong>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Live Python Class
+                            </h3>
+
+                            <p>
+                                <i class="far fa-clock"></i>
+                                10:00 AM – 12:00 PM
+                            </p>
+
+                        </div>
+
+                        <span class="live">
+                            LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-item">
+
+                        <div class="date-box">
+
+                            <span>MON</span>
+
+                            <strong>01</strong>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Assignment Review
+                            </h3>
+
+                            <p>
+                                <i class="far fa-clock"></i>
+                                4:00 PM – 5:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="class-item">
+
+                        <div class="date-box">
+
+                            <span>WED</span>
+
+                            <strong>03</strong>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Flask Workshop
+                            </h3>
+
+                            <p>
+                                <i class="far fa-clock"></i>
+                                6:00 PM – 8:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Announcements -->
+
+                <div
+                    class="panel"
+                    id="announcements">
+
+                    <div class="section-title">
+
+                        <div>
+
+                            <span class="panel-label">
+                                UPDATES
+                            </span>
+
+                            <h2>Announcements</h2>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <div class="announcement-icon blue">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Live class this Saturday
+                            </h3>
+
+                            <p>
+                                Join the live Python class
+                                at 10:00 AM.
+                            </p>
+
+                            <small>
+                                Today
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <div class="announcement-icon orange">
+                            <i class="fas fa-file-lines"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Assignment 2
+                            </h3>
+
+                            <p>
+                                Assignment 2 is due Monday.
+                            </p>
+
+                            <small>
+                                Yesterday
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Quick Resources -->
+
+                <div
+                    class="panel"
+                    id="resources">
+
+                    <div class="section-title">
+
+                        <div>
+
+                            <span class="panel-label">
+                                LEARNING TOOLS
+                            </span>
+
+                            <h2>Quick Resources</h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-grid">
+
+                        <a href="documents.html" class="resource">
+
+                            <i class="fas fa-file-lines"></i>
+
+                            <span>
+                                Google Docs
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="resource">
+
+                            <i class="fas fa-table"></i>
+
+                            <span>
+                                Google Sheets
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="resource">
+
+                            <i class="fas fa-display"></i>
+
+                            <span>
+                                Google Slides
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="resource">
+
+                            <i class="fas fa-video"></i>
+
+                            <span>
+                                Recordings
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    </div>
+
+    <!-- Dashboard JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/dashboard.js"></script>
+
+    </body>
+    </html>

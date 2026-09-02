@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Jabico Consultancy Admin Portal - Cohort Management"
+>
+
+<meta
+    name="theme-color"
+    content="#2563eb"
+>
+
+<title>Cohorts | Jabico Admin</title>
+
+<!-- =====================================================
+     GOOGLE FONT
+====================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- =====================================================
+     ADMIN COHORT CSS
+====================================================== -->
+
+<link
+    rel="stylesheet"
+    href="css/admin-cohorts.css"
+>
+```
+
+</head>
+
+<body>
+
+<div class="admin-app">
+
+```
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="admin-sidebar"
+    id="adminSidebar"
+>
+
+    <!-- LOGO -->
+
+    <div class="admin-logo">
+
+        <div class="admin-logo-box">
+            J
+        </div>
+
+        <div class="admin-logo-text">
+            <h2>JABICO</h2>
+
+            <span>
+                CONSULTANCY
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN PROFILE -->
+
+    <div class="sidebar-admin-profile">
+
+        <div class="admin-avatar">
+            AC
+        </div>
+
+        <div>
+            <strong>
+                Admin
+            </strong>
+
+            <span>
+                Administrator
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="admin-navigation">
+
+        <span class="nav-section-title">
+            MAIN MENU
+        </span>
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a
+            href="admin-students.html"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-user-graduate"></i>
+            <span>Students</span>
+            <span class="nav-badge">128</span>
+        </a>
+
+        <a
+            href="admin-cohorts.html"
+            class="admin-nav-link active"
+            aria-current="page"
+        >
+            <i class="fas fa-users-rectangle"></i>
+            <span>Cohorts</span>
+        </a>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-book-open"></i>
+            <span>Modules</span>
+        </a>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-calendar-days"></i>
+            <span>Classes</span>
+        </a>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-file-circle-check"></i>
+            <span>Assignments</span>
+        </a>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-bullhorn"></i>
+            <span>Announcements</span>
+        </a>
+
+        <span class="nav-section-title">
+            MANAGEMENT
+        </span>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-chart-line"></i>
+            <span>Reports</span>
+        </a>
+
+        <a
+            href="#"
+            class="admin-nav-link"
+        >
+            <i class="fas fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR FOOTER -->
+
+    <div class="sidebar-footer">
+
+        <a
+            href="admin-login.html"
+            class="admin-logout"
+        >
+            <i class="fas fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="admin-main">
+
+    <!-- =================================================
+         TOPBAR
+    ================================================== -->
+
+    <header class="admin-topbar">
+
+        <div class="topbar-left">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Open navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="page-heading">
+
+                <span>
+                    ADMINISTRATION
+                </span>
+
+                <h1>
+                    Cohort Management
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <!-- SEARCH -->
+
+            <div class="topbar-search">
+
+                <i class="fas fa-search"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search cohorts..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="clearSearch"
+                    hidden
+                >
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- NOTIFICATION -->
+
+            <button
+                class="topbar-icon"
+                type="button"
+                id="notificationButton"
+                aria-label="Notifications"
+            >
+                <i class="fas fa-bell"></i>
+                <span></span>
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <button
+                class="admin-profile-button"
+                type="button"
+                id="profileButton"
+            >
+
+                <div class="topbar-avatar">
+                    AC
+                </div>
+
+                <div class="topbar-profile-text">
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+                <i class="fas fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================== -->
+
+    <section class="admin-content">
+
+
+        <!-- =================================================
+             PAGE INTRO
+        ================================================== -->
+
+        <div class="content-intro">
+
+            <div>
+
+                <span class="section-label">
+                    COHORTS
+                </span>
+
+                <h2>
+                    Manage Your Cohorts
+                </h2>
+
+                <p>
+                    Create, organize and monitor student cohorts
+                    across all Jabico Consultancy programs.
+                </p>
+
+            </div>
+
+            <button
+                class="primary-button"
+                id="createCohortButton"
+                type="button"
+            >
+                <i class="fas fa-plus"></i>
+                Create Cohort
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="cohort-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Cohorts
+                    </span>
+
+                    <strong id="totalCohorts">
+                        8
+                    </strong>
+
+                    <small>
+                        All cohorts
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fas fa-circle-play"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Active Cohorts
+                    </span>
+
+                    <strong id="activeCohorts">
+                        5
+                    </strong>
+
+                    <small class="positive">
+                        Currently running
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        128
+                    </strong>
+
+                    <small>
+                        Across all cohorts
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    <i class="fas fa-clock"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Upcoming
+                    </span>
+
+                    <strong id="upcomingCohorts">
+                        2
+                    </strong>
+
+                    <small>
+                        Starting soon
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTER TOOLBAR
+        ================================================== -->
+
+        <section class="cohort-toolbar">
+
+            <div class="toolbar-left">
+
+                <div class="filter-tabs">
+
+                    <button
+                        class="filter-tab active"
+                        data-filter="all"
+                        type="button"
+                    >
+                        All
+                        <span>8</span>
+                    </button>
+
+                    <button
+                        class="filter-tab"
+                        data-filter="active"
+                        type="button"
+                    >
+                        Active
+                        <span>5</span>
+                    </button>
+
+                    <button
+                        class="filter-tab"
+                        data-filter="upcoming"
+                        type="button"
+                    >
+                        Upcoming
+                        <span>2</span>
+                    </button>
+
+                    <button
+                        class="filter-tab"
+                        data-filter="completed"
+                        type="button"
+                    >
+                        Completed
+                        <span>1</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="toolbar-right">
+
+                <select
+                    id="programFilter"
+                    class="toolbar-select"
+                >
+                    <option value="all">
+                        All Programs
+                    </option>
+
+                    <option value="digital-marketing">
+                        Digital Marketing
+                    </option>
+
+                    <option value="business">
+                        Business Management
+                    </option>
+
+                    <option value="technology">
+                        Technology
+                    </option>
+                </select>
+
+
+                <select
+                    id="sortCohorts"
+                    class="toolbar-select"
+                >
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="students">
+                        Most Students
+                    </option>
+
+                    <option value="name">
+                        Name A-Z
+                    </option>
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COHORT GRID
+        ================================================== -->
+
+        <section
+            class="cohort-grid"
+            id="cohortGrid"
+        >
+
+
+            <!-- COHORT 1 -->
+
+            <article
+                class="cohort-card"
+                data-status="active"
+                data-program="digital-marketing"
+                data-name="Digital Marketing Cohort 01"
+                data-students="32"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon blue">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                            aria-label="Cohort options"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status active">
+                            ACTIVE
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-001
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Digital Marketing Cohort 01
+                    </h3>
+
+                    <p>
+                        Professional Digital Marketing
+                        Certification Program
+                    </p>
+
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Aug 05 – Nov 30, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                32 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Admin Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:68%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 2 -->
+
+            <article
+                class="cohort-card"
+                data-status="active"
+                data-program="business"
+                data-name="Business Management Cohort 02"
+                data-students="24"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon purple">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status active">
+                            ACTIVE
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-002
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Management Cohort 02
+                    </h3>
+
+                    <p>
+                        Business Management and Leadership
+                        Program
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Jul 15 – Oct 30, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                24 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Admin Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong>
+                                74%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:74%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 3 -->
+
+            <article
+                class="cohort-card"
+                data-status="upcoming"
+                data-program="technology"
+                data-name="Technology Cohort 03"
+                data-students="28"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon green">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status upcoming">
+                            UPCOMING
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-003
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Technology Cohort 03
+                    </h3>
+
+                    <p>
+                        Technology and Software Development
+                        Program
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Sep 15 – Dec 20, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                28 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Admin Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Enrollment
+                            </span>
+
+                            <strong>
+                                56%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:56%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 4 -->
+
+            <article
+                class="cohort-card"
+                data-status="active"
+                data-program="digital-marketing"
+                data-name="Digital Marketing Cohort 04"
+                data-students="18"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon orange">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status active">
+                            ACTIVE
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-004
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Digital Marketing Cohort 04
+                    </h3>
+
+                    <p>
+                        Advanced Digital Marketing Strategy
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Jun 10 – Sep 25, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                18 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Academic Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:82%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 5 -->
+
+            <article
+                class="cohort-card"
+                data-status="upcoming"
+                data-program="business"
+                data-name="Business Management Cohort 05"
+                data-students="16"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon blue">
+                        <i class="fas fa-building"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status upcoming">
+                            UPCOMING
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-005
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Management Cohort 05
+                    </h3>
+
+                    <p>
+                        Entrepreneurship and Business Growth
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Oct 01 – Dec 20, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                16 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Admin Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Enrollment
+                            </span>
+
+                            <strong>
+                                42%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:42%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 6 -->
+
+            <article
+                class="cohort-card"
+                data-status="active"
+                data-program="technology"
+                data-name="Software Development Cohort 06"
+                data-students="20"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon purple">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status active">
+                            ACTIVE
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-006
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Software Development Cohort 06
+                    </h3>
+
+                    <p>
+                        Full Stack Web Development Program
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Aug 12 – Dec 05, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                20 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Technology Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong>
+                                35%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:35%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 7 -->
+
+            <article
+                class="cohort-card"
+                data-status="completed"
+                data-program="digital-marketing"
+                data-name="Digital Marketing Cohort 07"
+                data-students="22"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon green">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status completed">
+                            COMPLETED
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-007
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Digital Marketing Cohort 07
+                    </h3>
+
+                    <p>
+                        Digital Marketing Professional Program
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Mar 01 – Jun 15, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                22 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Academic Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Completed
+                            </span>
+
+                            <strong>
+                                100%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar completed">
+                            <span style="width:100%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COHORT 8 -->
+
+            <article
+                class="cohort-card"
+                data-status="active"
+                data-program="business"
+                data-name="Business Essentials Cohort 08"
+                data-students="12"
+            >
+
+                <div class="cohort-card-top">
+
+                    <div class="cohort-program-icon orange">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+
+                    <div class="cohort-menu-wrapper">
+
+                        <button
+                            class="cohort-menu-button"
+                            type="button"
+                        >
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div class="cohort-menu">
+
+                            <button data-action="edit">
+                                <i class="fas fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button data-action="view">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+
+                            <button
+                                data-action="delete"
+                                class="danger"
+                            >
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-body">
+
+                    <div class="status-row">
+
+                        <span class="cohort-status active">
+                            ACTIVE
+                        </span>
+
+                        <span class="cohort-id">
+                            #JBC-008
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Essentials Cohort 08
+                    </h3>
+
+                    <p>
+                        Business Essentials Certification
+                    </p>
+
+                    <div class="cohort-details">
+
+                        <div>
+                            <i class="fas fa-calendar"></i>
+                            <span>
+                                Aug 20 – Nov 20, 2026
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-group"></i>
+                            <span>
+                                12 Students
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-user-tie"></i>
+                            <span>
+                                Admin Team
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cohort-card-footer">
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong>
+                                25%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width:25%"></span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="view-cohort"
+                        data-action="view"
+                        type="button"
+                    >
+                        View Cohort
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+            class="empty-state"
+            id="emptyState"
+            hidden
+        >
+
+            <div class="empty-state-icon">
+                <i class="fas fa-users-slash"></i>
+            </div>
+
+            <h3>
+                No cohorts found
+            </h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+            <button
+                type="button"
+                id="resetFilters"
+            >
+                Reset Filters
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="admin-footer">
+
+            <span>
+                © 2026 Jabico Consultancy.
+                All rights reserved.
+            </span>
+
+            <div>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <a href="#">
+                    Support
+                </a>
+
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     CREATE / EDIT COHORT MODAL
+====================================================== -->
+
+<div
+    class="modal"
+    id="cohortModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-overlay"></div>
+
+    <div
+        class="cohort-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    COHORT MANAGEMENT
+                </span>
+
+                <h2 id="modalTitle">
+                    Create New Cohort
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="closeModal"
+                type="button"
+                aria-label="Close modal"
+            >
+                <i class="fas fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="cohortForm">
+
+            <div class="form-grid">
+
+                <div class="form-group full">
+
+                    <label for="cohortName">
+                        Cohort Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cohortName"
+                        placeholder="e.g. Digital Marketing Cohort 09"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cohortProgram">
+                        Program
+                    </label>
+
+                    <select
+                        id="cohortProgram"
+                        required
+                    >
+
+                        <option value="">
+                            Select Program
+                        </option>
+
+                        <option value="digital-marketing">
+                            Digital Marketing
+                        </option>
+
+                        <option value="business">
+                            Business Management
+                        </option>
+
+                        <option value="technology">
+                            Technology
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cohortStatus">
+                        Status
+                    </label>
+
+                    <select id="cohortStatus">
+
+                        <option value="upcoming">
+                            Upcoming
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="startDate">
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="startDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="endDate">
+                        End Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="endDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="maxStudents">
+                        Maximum Students
+                    </label>
+
+                    <input
+                        type="number"
+                        id="maxStudents"
+                        min="1"
+                        placeholder="e.g. 30"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cohortInstructor">
+                        Instructor / Team
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cohortInstructor"
+                        placeholder="e.g. Academic Team"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="cohortDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="cohortDescription"
+                        rows="4"
+                        placeholder="Describe this cohort..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    <i class="fas fa-plus"></i>
+                    Save Cohort
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DELETE CONFIRMATION MODAL
+====================================================== -->
+
+<div
+    class="modal"
+    id="deleteModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-overlay"></div>
+
+    <div
+        class="delete-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div class="delete-icon">
+            <i class="fas fa-trash"></i>
+        </div>
+
+        <h2>
+            Delete Cohort?
+        </h2>
+
+        <p>
+            Are you sure you want to delete
+            <strong id="deleteCohortName">
+                this cohort
+            </strong>?
+            This action cannot be undone.
+        </p>
+
+        <div class="delete-actions">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelDelete"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="danger-button"
+                id="confirmDelete"
+            >
+                Delete Cohort
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/api-config.js"></script>
+<script src="js/admin-cohorts.js"></script>
+
+
+</div>
+
+</body>
+</html>

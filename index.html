@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jabico Consultancy | Student Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                J
+            </div>
+
+            <div class="logo-text">
+
+                <h1>
+                    JABICO
+                </h1>
+
+                <span>
+                    CONSULTANCY
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+   
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+<main class="main-content">
+
+    <!-- =================================================
+         PORTAL INFORMATION
+    ================================================== -->
+    <section class="portal-info">
+
+        <div class="info-content">
+
+            <h2>
+                Private Cohort<br>
+                Learning Portal
+            </h2>
+
+            <p>
+                Welcome to Jabico Consultancy Cohort Portal.
+                Create your account or log in to access your
+                learning materials, announcements and progress.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         AUTHENTICATION SECTION
+    ================================================== -->
+    <section class="login-section">
+
+        <div class="login-card">
+
+            <!-- =========================================
+                 LOGIN VIEW
+            ========================================== -->
+            <div id="loginView">
+
+                <div class="login-heading">
+                    <h2>
+                        Welcome Back!
+                    </h2>
+
+                    <p>
+                        Login to access your cohort portal.
+                    </p>
+                </div>
+
+
+                <!-- Login Form -->
+                <form
+                    id="loginForm"
+                    novalidate
+                >
+
+                    <!-- First Name -->
+                    <div class="input-group">
+
+                        <label for="loginFirstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginFirstName"
+                            placeholder="Enter your first name"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Last Name -->
+                    <div class="input-group">
+
+                        <label for="loginLastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginLastName"
+                            placeholder="Enter your last name"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        <span>
+                            ENTER COHORT
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Registration Switch -->
+                <div
+                    class="login-help"
+                    style="margin-top:24px;"
+                >
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a
+                        href="#"
+                        id="showRegister"
+                    >
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <!-- Admin Login -->
+                <div
+                    style="
+                        text-align:center;
+                        margin-top:18px;
+                    "
+                >
+
+                    <a
+                        href="admin-login.html"
+                        class="admin-login-link"
+                    >
+
+                        <i class="fas fa-shield-halved"></i>
+
+                        <span>
+                            Admin Login
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REGISTRATION VIEW
+            ================================================== -->
+            <div
+                id="registerView"
+                hidden
+            >
+
+                <div class="login-heading">
+
+                    <h2>
+                        Join the Cohort
+                    </h2>
+
+                    <p>
+                        Create your student account to get started.
+                    </p>
+
+                </div>
+
+
+                <!-- Registration Form -->
+                <form
+                    id="registerForm"
+                    novalidate
+                >
+
+                    <!-- First Name -->
+                    <div class="input-group">
+
+                        <label for="registerFirstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerFirstName"
+                            placeholder="Enter your first name"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Last Name -->
+                    <div class="input-group">
+
+                        <label for="registerLastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerLastName"
+                            placeholder="Enter your last name"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="input-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="input-group">
+
+                        <label for="registerConfirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerConfirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Register Button -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        <span>
+                            CREATE ACCOUNT
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Back To Login -->
+                <div
+                    class="login-help"
+                    style="margin-top:24px;"
+                >
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <a
+                        href="#"
+                        id="showLogin"
+                    >
+                        Login here
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PENDING APPROVAL VIEW
+            ================================================== -->
+            <div
+                id="pendingView"
+                hidden
+                style="text-align:center;"
+            >
+
+                <div
+                    style="
+                        width:76px;
+                        height:76px;
+                        margin:0 auto 24px;
+                        border-radius:50%;
+                        background:rgba(242,183,25,0.13);
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        color:#F2B719;
+                        font-size:32px;
+                    "
+                >
+
+                    <i class="fas fa-hourglass-half"></i>
+
+                </div>
+
+
+                <div class="login-heading">
+
+                    <h2>
+                        Registration Received
+                    </h2>
+
+                    <p>
+                        Your account has been successfully created.
+                    </p>
+
+                </div>
+
+
+                <div
+                    style="
+                        background:#F7F8FA;
+                        border:1px solid #DCE2EA;
+                        border-radius:14px;
+                        padding:20px;
+                        margin-bottom:25px;
+                        text-align:left;
+                    "
+                >
+
+                    <p
+                        style="
+                            color:#697386;
+                            font-size:14px;
+                            line-height:1.7;
+                        "
+                    >
+
+                        Your account is currently
+
+                        <strong style="color:#102544;">
+                            awaiting administrator approval
+                        </strong>.
+
+                        You will be able to log in and access
+                        the student portal after an administrator
+                        approves your account.
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="login-button"
+                    id="pendingBackToLogin"
+                >
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    <span>
+                        BACK TO LOGIN
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PORTAL FEATURES
+    ================================================== -->
+    <section class="portal-features">
+
+        <div class="features">
+
+            <!-- Secure Access -->
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="feature-text">
+
+                    <h3>
+                        Secure Access
+                    </h3>
+
+                    <p>
+                        Student access is controlled by the administrator.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Learning Resources -->
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div class="feature-text">
+
+                    <h3>
+                        Quality Learning
+                    </h3>
+
+                    <p>
+                        Access premium learning materials and resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Expert Support -->
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="feature-text">
+
+                    <h3>
+                        Expert Support
+                    </h3>
+
+                    <p>
+                        Receive important information from the Jabico team.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</div>
+
+
+
+<!-- =========================================================
+     STUDENT AUTHENTICATION SYSTEM
+========================================================= -->
+
+<script src="js/api-config.js"></script>
+<script>
+"use strict";
+
+const SESSION_KEY = "jabicoStudentSession";
+
+const loginView = document.getElementById("loginView");
+const registerView = document.getElementById("registerView");
+const pendingView = document.getElementById("pendingView");
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
+const showRegister = document.getElementById("showRegister");
+const showLogin = document.getElementById("showLogin");
+const pendingBackToLogin = document.getElementById("pendingBackToLogin");
+
+function showLoginView() { loginView.hidden = false; registerView.hidden = true; pendingView.hidden = true; }
+function showRegisterView() { loginView.hidden = true; registerView.hidden = false; pendingView.hidden = true; }
+function showPendingView() { loginView.hidden = true; registerView.hidden = true; pendingView.hidden = false; }
+
+showRegister?.addEventListener("click", e => { e.preventDefault(); showRegisterView(); });
+showLogin?.addEventListener("click", e => { e.preventDefault(); showLoginView(); });
+pendingBackToLogin?.addEventListener("click", e => { e.preventDefault(); showLoginView(); });
+
+registerForm?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const firstName = document.getElementById("registerFirstName").value.trim();
+    const lastName = document.getElementById("registerLastName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("registerConfirmPassword").value;
+
+    if (!firstName || !lastName || !email || !password || !confirmPassword) return alert("Please complete all registration fields.");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert("Please enter a valid email address.");
+    if (password.length < 6) return alert("Password must contain at least 6 characters.");
+    if (password !== confirmPassword) return alert("Passwords do not match.");
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/student/auth/register`, {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ firstName, lastName, email, password, confirmPassword })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.success) throw new Error(data.message || "Registration failed.");
+        registerForm.reset();
+        showPendingView();
+        alert(data.message || "Registration received. Please wait for administrator approval.");
+    } catch (error) {
+        alert(error.message === "Failed to fetch" ? "Cannot connect to the Jabico server. Please make sure the backend is running." : error.message);
+    }
+});
+
+loginForm?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const firstName = document.getElementById("loginFirstName").value.trim();
+    const lastName = document.getElementById("loginLastName").value.trim();
+    const password = document.getElementById("loginPassword").value;
+    if (!firstName || !lastName || !password) return alert("Please enter your first name, last name and password.");
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/student/auth/login`, {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ firstName, lastName, password })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.success || !data.token) throw new Error(data.message || "Login failed.");
+        localStorage.setItem(SESSION_KEY, JSON.stringify({ ...data.student, token: data.token, loginTime: new Date().toISOString() }));
+        localStorage.setItem("jabicoFirstName", data.student.firstName);
+        localStorage.setItem("jabicoLastName", data.student.lastName);
+        window.location.href = "dashboard.html";
+    } catch (error) {
+        alert(error.message === "Failed to fetch" ? "Cannot connect to the Jabico server. Please make sure the backend is running." : error.message);
+    }
+});
+
+showLoginView();
+</script>
+
+
+</body>
+
+</html>

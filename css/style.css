@@ -1,0 +1,1514 @@
+/* =========================================================
+   JABICO CONSULTANCY
+   PRIVATE COHORT LEARNING PORTAL
+   LOGIN PAGE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+
+    --primary: #0B1F3A;
+    --secondary: #132C52;
+
+    --accent: #F2B719;
+    --accent-dark: #D9A30E;
+
+    --white: #ffffff;
+
+    --light: #F7F8FA;
+
+    --text: #13233F;
+    --muted: #697386;
+
+    --border: #DCE2EA;
+
+    --radius: 20px;
+
+    --shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071A32 0%,
+            #0B2445 48%,
+            #102E58 100%
+        );
+
+    color: var(--white);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIVE CIRCLES
+========================================================= */
+
+/* Large top-right circle */
+
+.container::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 470px;
+    height: 470px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    top: -205px;
+    right: -95px;
+
+    pointer-events: none;
+
+}
+
+
+/* Lower-left circle */
+
+.container::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 410px;
+    height: 410px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    left: -180px;
+    bottom: -115px;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   HEADER / LOGO
+========================================================= */
+
+.site-header {
+
+    width: 100%;
+
+    padding:
+
+        30px
+        60px
+        0
+        60px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+/* Yellow J box */
+
+.logo-icon {
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #F5C12A,
+            #E8AA08
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+
+    font-size: 31px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* Logo text */
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.logo h1 {
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+}
+
+
+.logo span {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    line-height: 1;
+
+    letter-spacing: 4px;
+
+    font-weight: 400;
+
+    color: #ffffff;
+
+    opacity: 0.95;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   LOGIN SECTION
+========================================================= */
+
+.login-section {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding:
+
+        48px
+        30px
+        42px;
+
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+
+    width: 570px;
+
+    max-width: 100%;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    border-radius: 23px;
+
+    padding:
+
+        48px
+        54px
+        42px;
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(0, 0, 0, 0.18);
+
+    animation:
+        fadeUp 0.7s ease forwards;
+
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.login-heading {
+
+    text-align: center;
+
+    margin-bottom: 33px;
+
+}
+
+
+.login-card h2 {
+
+    color: #102544;
+
+    font-size: 34px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+.login-card .login-heading p {
+
+    color: #697386;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#loginForm {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.input-group {
+
+    width: 100%;
+
+    margin-bottom: 21px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #142642;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-group input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+
+        0
+        18px;
+
+    border:
+
+        1.5px solid
+        #D7DEE8;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #FBFBFC;
+
+    color: #172945;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.input-group input::placeholder {
+
+    color: #697386;
+
+    opacity: 0.95;
+
+}
+
+
+.input-group input:focus {
+
+    border-color: var(--accent);
+
+    background: #ffffff;
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(242, 183, 25, 0.12);
+
+}
+
+
+/* =========================================================
+   ENTER COHORT BUTTON
+========================================================= */
+
+.login-button {
+
+    width: 100%;
+
+    height: 53px;
+
+    margin-top: 2px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #F0B51A,
+            #F5BC20
+        );
+
+    color: #102544;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.login-button i {
+
+    font-size: 15px;
+
+}
+
+
+.login-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 10px 22px
+        rgba(242, 183, 25, 0.30);
+
+}
+
+
+.login-button:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+.admin-login-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    color: #542DA2;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+
+    text-underline-offset: 2px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.admin-login-link i {
+
+    font-size: 16px;
+
+}
+
+
+.admin-login-link:hover {
+
+    color: #3E1E80;
+
+}
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.login-help {
+
+    margin-top: 31px;
+
+    text-align: center;
+
+    color: #697386;
+
+    font-size: 14px;
+
+}
+
+
+.login-help span {
+
+    font-weight: 400;
+
+}
+
+
+.login-help a {
+
+    color: #142642;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.login-help a:hover {
+
+    color: var(--accent-dark);
+
+}
+
+
+/* =========================================================
+   PORTAL INFORMATION
+========================================================= */
+
+.portal-info {
+
+    width: 100%;
+
+    position: relative;
+
+    border-top:
+
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    padding:
+
+        50px
+        60px
+        80px;
+
+}
+
+
+/* Additional large circle on right */
+
+.portal-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    top: -165px;
+
+    right: -100px;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   INFO CONTENT
+========================================================= */
+
+.info-content {
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.info-content > h2 {
+
+    color: #ffffff;
+
+    font-size: 43px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.info-content > p {
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    font-weight: 400;
+
+    margin-bottom: 34px;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.feature-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-icon {
+
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #F2B719;
+
+    font-size: 21px;
+
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature-text h3 {
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    margin-bottom: 4px;
+
+}
+
+
+.feature-text p {
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   DECORATIVE DOT PATTERN
+========================================================= */
+
+.portal-info::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 150px;
+
+    left: 0;
+    bottom: 15px;
+
+    opacity: 0.45;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.38) 2px,
+            transparent 3px
+        );
+
+    background-size: 26px 26px;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   REMOVE OLD PANEL STYLING
+========================================================= */
+
+/*
+   These rules prevent the old split-screen
+   layout from interfering with the new design.
+*/
+
+.left-panel,
+.right-panel {
+
+    width: auto;
+
+    padding: 0;
+
+    background: transparent;
+
+    display: block;
+
+}
+
+
+.left-panel {
+
+    order: initial;
+
+}
+
+
+.right-panel {
+
+    order: initial;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+
+        padding-left: 35px;
+        padding-right: 35px;
+
+    }
+
+
+    .login-section {
+
+        padding:
+
+            42px
+            25px
+            40px;
+
+    }
+
+
+    .portal-info {
+
+        padding:
+
+            45px
+            35px
+            70px;
+
+    }
+
+
+    .info-content > h2 {
+
+        font-size: 38px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        min-height: 100vh;
+
+    }
+
+
+    .site-header {
+
+        padding:
+
+            25px
+            24px
+            0;
+
+    }
+
+
+    .logo {
+
+        gap: 13px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 54px;
+        height: 54px;
+
+        border-radius: 13px;
+
+        font-size: 26px;
+
+    }
+
+
+    .logo h1 {
+
+        font-size: 25px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-top: 6px;
+
+    }
+
+
+    .login-section {
+
+        padding:
+
+            32px
+            18px
+            35px;
+
+    }
+
+
+    .login-card {
+
+        width: 100%;
+
+        padding:
+
+            34px
+            23px
+            30px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .login-heading {
+
+        margin-bottom: 27px;
+
+    }
+
+
+    .login-card h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .login-card .login-heading p {
+
+        font-size: 13px;
+
+    }
+
+
+    .input-group {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .input-group label {
+
+        font-size: 13px;
+
+    }
+
+
+    .input-group input {
+
+        height: 50px;
+
+        font-size: 13px;
+
+    }
+
+
+    .login-button {
+
+        height: 51px;
+
+        font-size: 13px;
+
+    }
+
+
+    .admin-login-link {
+
+        font-size: 13px;
+
+    }
+
+
+    .login-help {
+
+        font-size: 12px;
+
+        margin-top: 27px;
+
+    }
+
+
+    .portal-info {
+
+        padding:
+
+            38px
+            24px
+            65px;
+
+    }
+
+
+    .info-content > h2 {
+
+        font-size: 31px;
+
+        line-height: 1.25;
+
+        margin-bottom: 19px;
+
+    }
+
+
+    .info-content > p {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        margin-bottom: 27px;
+
+    }
+
+
+    .feature-item {
+
+        gap: 13px;
+
+    }
+
+
+    .feature-icon {
+
+        width: 45px;
+        height: 45px;
+
+        min-width: 45px;
+
+        font-size: 17px;
+
+    }
+
+
+    .feature-text h3 {
+
+        font-size: 15px;
+
+    }
+
+
+    .feature-text p {
+
+        font-size: 11px;
+
+    }
+
+
+    .features {
+
+        gap: 15px;
+
+    }
+
+
+    .container::before {
+
+        width: 300px;
+        height: 300px;
+
+        right: -150px;
+        top: -120px;
+
+    }
+
+
+    .portal-info::before {
+
+        width: 330px;
+        height: 330px;
+
+        right: -190px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .login-card {
+
+        padding:
+
+            30px
+            18px
+            27px;
+
+    }
+
+
+    .login-card h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .info-content > h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .site-header {
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+    }
+
+
+    .login-section {
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+    }
+
+
+    .portal-info {
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+    }
+
+}
+
+/* =========================================================
+   AUTHENTICATION VIEW TRANSITIONS
+========================================================= */
+
+#loginView,
+#registerView,
+#pendingView {
+    animation: fadeUp 0.45s ease forwards;
+}
+
+#registerView[hidden],
+#pendingView[hidden],
+#loginView[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   PASSWORD INPUT
+========================================================= */
+
+.input-group input[type="password"] {
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   AUTH STATUS BOX
+========================================================= */
+
+#pendingView strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE AUTH STATUS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #pendingView p {
+        font-size: 13px !important;
+    }
+
+}
+
+
+/* =========================================================
+   JABICO - NEW PORTAL LAYOUT
+   Portal Information → Login Form → Features
+========================================================= */
+
+/* Main page alignment */
+.main-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px 60px;
+}
+
+
+/* =========================================================
+   PORTAL INFORMATION
+========================================================= */
+
+.portal-info {
+    width: 100%;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.info-content {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.info-content h2 {
+    margin: 0 0 12px;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #fff;
+}
+
+.info-content p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #697386;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LOGIN SECTION
+========================================================= */
+
+.login-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.login-heading {
+    text-align: center;
+}
+
+.login-heading h2 {
+    margin-bottom: 8px;
+}
+
+.login-heading p {
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.portal-features {
+    width: 100%;
+    margin: 35px auto 0;
+}
+
+.portal-features .features {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   FEATURE ITEMS
+========================================================= */
+
+.portal-features .feature-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.portal-features .feature-text {
+    flex: 1;
+}
+
+.portal-features .feature-text h3 {
+    margin-bottom: 4px;
+}
+
+.portal-features .feature-text p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        max-width: 100%;
+        padding: 10px 16px 45px;
+    }
+
+    .info-content h2 {
+        font-size: 28px;
+    }
+
+    .info-content p {
+        font-size: 14px;
+    }
+
+    .login-card {
+        max-width: 100%;
+    }
+
+    .portal-features {
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .info-content h2 {
+        font-size: 25px;
+    }
+
+    .portal-features .feature-item {
+        align-items: flex-start;
+    }
+
+}

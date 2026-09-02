@@ -1,0 +1,815 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Schedule | Jabico Consultancy
+    </title>
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/schedule.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+            J
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                JABICO
+            </h2>
+
+            <span>
+                CONSULTANCY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Learning Materials
+            </span>
+
+        </a>
+
+
+        <a href="my-courses.html">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>
+                My Courses
+            </span>
+
+        </a>
+
+
+        <a
+            href="schedule.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span>
+                Schedule
+            </span>
+
+        </a>
+
+
+        <a href="notifications.html">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span>
+                Notifications
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <div class="sidebar-bottom">
+
+
+        <a href="help-support.html">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <span>
+                Help & Support
+            </span>
+
+        </a>
+
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <span>
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                Schedule
+            </h1>
+
+        </div>
+
+
+        <div class="student-area">
+
+
+            <button
+                type="button"
+                class="notification-button"
+                aria-label="Notifications"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="student-profile">
+
+
+                <div class="student-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="student-details">
+
+                    <strong id="studentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         PAGE CONTENT
+    ========================================= -->
+
+    <section class="content-container">
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <div class="schedule-hero">
+
+
+            <div class="hero-content">
+
+
+                <span class="eyebrow">
+                    YOUR LEARNING CALENDAR
+                </span>
+
+
+                <h2>
+                    Class Schedule
+                </h2>
+
+
+                <p>
+                    Keep track of your classes, upcoming sessions,
+                    assignments and important learning activities.
+                </p>
+
+
+            </div>
+
+
+            <div class="hero-icon">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             SCHEDULE STATS
+        ====================================== -->
+
+        <div class="schedule-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Today's Classes
+                    </span>
+
+                    <strong id="todayCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Upcoming
+                    </span>
+
+                    <strong id="upcomingCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-video"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Online Classes
+                    </span>
+
+                    <strong id="onlineCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        This Week
+                    </span>
+
+                    <strong id="weekCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             DATE NAVIGATION
+        ====================================== -->
+
+        <div class="calendar-toolbar">
+
+
+            <button
+                type="button"
+                class="date-navigation"
+                id="previousWeek"
+                aria-label="Previous week"
+            >
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <div class="current-week">
+
+                <span>
+                    CURRENT WEEK
+                </span>
+
+                <strong id="weekLabel">
+                    Loading...
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="date-navigation"
+                id="nextWeek"
+                aria-label="Next week"
+            >
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="today-button"
+                id="todayButton"
+            >
+
+                Today
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             SEARCH / FILTER
+        ====================================== -->
+
+        <div class="schedule-filter">
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search classes..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="course-filter">
+
+                <i class="fa-solid fa-filter"></i>
+
+                <select id="courseFilter">
+
+                    <option value="all">
+                        All Courses
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="refresh-button"
+                id="refreshButton"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TODAY
+        ====================================== -->
+
+        <div class="section-header">
+
+
+            <div>
+
+                <h2>
+                    Today's Schedule
+                </h2>
+
+                <p id="todayDate">
+                    Loading date...
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="today-classes"
+            id="todayClasses"
+        >
+        </div>
+
+
+
+        <!-- =====================================
+             WEEKLY SCHEDULE
+        ====================================== -->
+
+        <div class="section-header weekly-header">
+
+
+            <div>
+
+                <h2>
+                    Weekly Schedule
+                </h2>
+
+                <p>
+                    Your classes for the selected week
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="weekly-calendar"
+            id="weeklyCalendar"
+        >
+        </div>
+
+
+
+        <!-- =====================================
+             EMPTY STATE
+        ====================================== -->
+
+        <div
+            class="empty-state"
+            id="emptyState"
+            hidden
+        >
+
+
+            <div class="empty-icon">
+
+                <i class="fa-regular fa-calendar-xmark"></i>
+
+            </div>
+
+
+            <h3>
+                No classes found
+            </h3>
+
+
+            <p>
+                There are no classes matching your current selection.
+            </p>
+
+
+            <button
+                type="button"
+                id="clearFilters"
+            >
+                Clear Filters
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         CLASS DETAILS MODAL
+    ========================================== -->
+
+    <div
+        class="class-modal"
+        id="classModal"
+        hidden
+    >
+
+
+        <div
+            class="modal-overlay"
+            id="modalOverlay"
+        ></div>
+
+
+        <div class="modal-box">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-icon">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+
+            <span
+                class="modal-category"
+                id="modalCategory"
+            >
+                CLASS
+            </span>
+
+
+            <h2 id="modalTitle">
+                Class Title
+            </h2>
+
+
+            <p id="modalDescription">
+                Class description
+            </p>
+
+
+            <div class="modal-details">
+
+
+                <div>
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span>
+                        Date
+                    </span>
+
+                    <strong id="modalDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    <span>
+                        Time
+                    </span>
+
+                    <strong id="modalTime">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <span>
+                        Instructor
+                    </span>
+
+                    <strong id="modalInstructor">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="modalLocation">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="#"
+                class="join-class-button"
+                id="joinClassButton"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <i class="fa-solid fa-video"></i>
+
+                Join Class
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+
+            ©
+            <span id="currentYear"></span>
+            Jabico Consultancy.
+            All rights reserved.
+
+        </p>
+
+
+        <span>
+            Private Cohort Learning Portal
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- MOBILE SIDEBAR OVERLAY -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/api-config.js"></script>
+<script src="js/schedule.js"></script>
+
+
+</body>
+
+</html>

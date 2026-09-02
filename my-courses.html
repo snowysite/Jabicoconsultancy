@@ -1,0 +1,744 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Courses | Jabico Consultancy</title>
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/my-courses.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+            J
+        </div>
+
+        <div class="logo-text">
+
+            <h2>
+                JABICO
+            </h2>
+
+            <span>
+                CONSULTANCY
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="documents.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <span>
+                Learning Materials
+            </span>
+
+        </a>
+
+
+        <a
+            href="my-courses.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>
+                My Courses
+            </span>
+
+        </a>
+
+
+        <a href="schedule.html">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span>
+                Schedule
+            </span>
+
+        </a>
+
+
+        <a href="notifications.html">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span>
+                Notifications
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <div class="sidebar-bottom">
+
+
+        <a href="help-support.html">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <span>
+                Help & Support
+            </span>
+
+        </a>
+
+
+        <a href="index.html">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <span>
+                STUDENT PORTAL
+            </span>
+
+            <h1>
+                My Courses
+            </h1>
+
+        </div>
+
+
+        <div class="student-area">
+
+
+            <button
+                class="notification-button"
+                type="button"
+                aria-label="Notifications"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="student-profile">
+
+
+                <div class="student-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="student-details">
+
+                    <strong id="studentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         PAGE CONTENT
+    ========================================= -->
+
+    <section class="content-container">
+
+
+        <!-- HERO -->
+
+        <div class="courses-hero">
+
+
+            <div class="hero-content">
+
+
+                <span class="eyebrow">
+                    YOUR LEARNING JOURNEY
+                </span>
+
+
+                <h2>
+                    My Courses
+                </h2>
+
+
+                <p>
+                    View your enrolled courses, track your progress,
+                    and continue learning from where you stopped.
+                </p>
+
+
+            </div>
+
+
+            <div class="hero-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             COURSE STATISTICS
+        ====================================== -->
+
+        <div class="course-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Enrolled Courses
+                    </span>
+
+                    <strong id="totalCourses">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedCourses">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Average Progress
+                    </span>
+
+                    <strong id="averageProgress">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        In Progress
+                    </span>
+
+                    <strong id="activeCourses">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             TOOLBAR
+        ====================================== -->
+
+        <div class="courses-toolbar">
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search your courses..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="filter-box">
+
+                <i class="fa-solid fa-filter"></i>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Courses
+                    </option>
+
+                    <option value="in-progress">
+                        In Progress
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                    <option value="not-started">
+                        Not Started
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             SECTION HEADER
+        ====================================== -->
+
+        <div class="section-header">
+
+
+            <div>
+
+                <h2>
+                    Your Courses
+                </h2>
+
+                <p id="courseCount">
+                    Loading courses...
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="refresh-button"
+                id="refreshButton"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             COURSES
+        ====================================== -->
+
+        <div
+            class="courses-grid"
+            id="coursesGrid"
+        >
+        </div>
+
+
+
+        <!-- =====================================
+             EMPTY STATE
+        ====================================== -->
+
+        <div
+            class="empty-state"
+            id="emptyState"
+            hidden
+        >
+
+
+            <div class="empty-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+
+            <h3>
+                No courses found
+            </h3>
+
+
+            <p>
+                We couldn't find any courses matching your search.
+            </p>
+
+
+            <button
+                type="button"
+                id="clearSearch"
+            >
+                Clear Search
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         COURSE MODAL
+    ========================================= -->
+
+    <div
+        class="course-modal"
+        id="courseModal"
+        hidden
+    >
+
+
+        <div class="modal-overlay"></div>
+
+
+        <div class="modal-box">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <span
+                class="modal-category"
+                id="modalCategory"
+            >
+                COURSE
+            </span>
+
+
+            <h2 id="modalTitle">
+                Course Title
+            </h2>
+
+
+            <p id="modalDescription">
+                Course description
+            </p>
+
+
+            <div class="modal-information">
+
+
+                <div>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Instructor
+                    </span>
+
+                    <strong id="modalInstructor">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <span>
+                        Modules
+                    </span>
+
+                    <strong id="modalModules">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <span>
+                        Duration
+                    </span>
+
+                    <strong id="modalDuration">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-progress">
+
+
+                <div class="progress-heading">
+
+                    <span>
+                        Course Progress
+                    </span>
+
+                    <strong id="modalProgress">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        id="modalProgressBar"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="#"
+                class="modal-continue"
+                id="modalContinue"
+            >
+
+                Continue Learning
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            ©
+            <span id="currentYear"></span>
+            Jabico Consultancy.
+            All rights reserved.
+        </p>
+
+        <span>
+            Private Cohort Learning Portal
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- MOBILE OVERLAY -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/api-config.js"></script>
+<script src="js/my-courses.js"></script>
+
+
+</body>
+
+</html>
+

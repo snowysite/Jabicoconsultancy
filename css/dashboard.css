@@ -1,0 +1,2628 @@
+
+/* =========================================================
+   JABICO CONSULTANCY
+   STUDENT DASHBOARD — PREMIUM UI
+   dashboard.css
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --primary-light: #eef2ff;
+
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --green: #10b981;
+    --orange: #f59e0b;
+    --red: #ef4444;
+
+    --bg: #f5f7fb;
+    --card: #ffffff;
+
+    --sidebar: #111827;
+
+    --text: #111827;
+    --text-dark: #1f2937;
+    --muted: #6b7280;
+    --light-text: #9ca3af;
+
+    --border: #e5e7eb;
+
+    --shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+    --shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+
+    --shadow-lg:
+        0 20px 50px rgba(15, 23, 42, 0.10);
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 22px;
+
+    --sidebar-width: 255px;
+    --topbar-height: 90px;
+
+    --transition: all 0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(79, 70, 229, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #eef4ff 50%,
+            #e7efff 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   3. DARK MODE
+========================================================= */
+
+body.dark-mode {
+    --bg: #07111f;
+    --card: #0d1b2d;
+
+    --sidebar: #020617;
+
+    --text: #f8fafc;
+    --text-dark: #e5e7eb;
+    --muted: #94a3b8;
+    --light-text: #64748b;
+
+    --border: rgba(148, 163, 184, 0.14);
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0, 76, 153, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(0, 42, 100, 0.30),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #000000 0%,
+            #020617 30%,
+            #03132b 60%,
+            #061d3f 100%
+        );
+
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   4. DASHBOARD
+========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================================================
+   5. SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    padding: 28px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(79, 70, 229, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #111827 0%,
+            #0b1220 55%,
+            #07101d 100%
+        );
+
+    color: #ffffff;
+
+    z-index: 1000;
+
+    box-shadow:
+        10px 0 35px rgba(15, 23, 42, 0.08);
+
+    transition: var(--transition);
+
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   6. LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 10px;
+
+    margin-bottom: 48px;
+}
+
+.logo-box {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+.logo-text {
+    min-width: 0;
+}
+
+.logo-text h2 {
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.logo-text span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 2.5px;
+
+    color: #9ca3af;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   7. SIDEBAR MENU
+========================================================= */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    flex: 1;
+}
+
+.menu li {
+    width: 100%;
+}
+
+.menu li a {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.menu li a i {
+    width: 20px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    transition: var(--transition);
+}
+
+.menu li a span {
+    white-space: nowrap;
+}
+
+.menu li a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    transform: translateX(3px);
+}
+
+.menu li a:hover i {
+    color: #a5b4fc;
+}
+
+.menu li.active a {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(79, 70, 229, 0.95),
+            rgba(99, 102, 241, 0.85)
+        );
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+.menu li.active a i {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   8. LOGOUT
+========================================================= */
+
+.logout {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.logout:hover {
+    color: #ffffff;
+
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    transform: translateX(3px);
+}
+
+.logout i {
+    width: 20px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   9. MAIN CONTENT
+========================================================= */
+
+.content {
+    width: calc(100% - var(--sidebar-width));
+
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+
+    padding:
+        0
+        38px
+        50px;
+
+    transition: var(--transition);
+}
+
+
+/* =========================================================
+   10. TOPBAR
+========================================================= */
+
+.topbar {
+    min-height: var(--topbar-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding:
+        24px
+        0
+        20px;
+}
+
+
+/* =========================================================
+   11. WELCOME AREA
+========================================================= */
+
+.welcome {
+    min-width: 0;
+}
+
+.welcome-label {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+.welcome h1 {
+    font-size:
+        clamp(
+            22px,
+            2.5vw,
+            30px
+        );
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+.welcome h1 span {
+    color: var(--primary);
+}
+
+.welcome p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   12. HEADER ACTIONS
+========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   13. SEARCH
+========================================================= */
+
+.search-box {
+    width: 220px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 14px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--card);
+
+    border-radius: 12px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+}
+
+.search-box:focus-within {
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(79, 70, 229, 0.10);
+}
+
+.search-box i {
+    color:
+        var(--light-text);
+
+    font-size: 13px;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+.search-box input::placeholder {
+    color:
+        var(--light-text);
+}
+
+
+/* =========================================================
+   14. HEADER ICON
+========================================================= */
+
+.header-icon {
+    position: relative;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        var(--card);
+
+    color:
+        var(--muted);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+}
+
+.header-icon:hover {
+    color:
+        var(--primary);
+
+    border-color:
+        rgba(79, 70, 229, 0.3);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(79, 70, 229, 0.10);
+}
+
+.header-icon i {
+    transition:
+        transform 0.3s ease;
+}
+
+.header-icon:hover i {
+    transform:
+        rotate(15deg);
+}
+
+
+/* =========================================================
+   15. DARK MODE TOGGLE
+========================================================= */
+
+body.dark-mode .header-icon {
+    background:
+        rgba(15, 30, 55, 0.8);
+
+    border-color:
+        rgba(59, 130, 246, 0.2);
+
+    color:
+        #facc15;
+}
+
+body.dark-mode .header-icon:hover {
+    background:
+        #facc15;
+
+    color:
+        #111827;
+
+    border-color:
+        #facc15;
+
+    box-shadow:
+        0 8px 25px
+        rgba(250, 204, 21, 0.35);
+}
+
+
+/* =========================================================
+   16. NOTIFICATION
+========================================================= */
+
+.notification-wrapper {
+    position: relative;
+}
+
+.notification-dot {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--red);
+
+    border:
+        2px solid var(--card);
+}
+
+
+/* =========================================================
+   17. NOTIFICATION DROPDOWN
+========================================================= */
+
+.notification-dropdown {
+    position: absolute;
+
+    top:
+        calc(100% + 12px);
+
+    right: 0;
+
+    width: 350px;
+
+    padding: 18px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        var(--shadow-lg);
+
+    z-index: 2000;
+
+    display: none;
+}
+
+.notification-dropdown.show {
+    display: block;
+
+    animation:
+        dropdown 0.2s ease;
+}
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.notification-header h3 {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.notification-header span {
+    font-size: 10px;
+
+    color:
+        var(--primary);
+
+    background:
+        var(--primary-light);
+
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+.notification-item {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-icon {
+    min-width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.notification-item strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+.notification-item p {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.notification-item small {
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        var(--light-text);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   18. PROFILE
+========================================================= */
+
+.profile {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding-left: 7px;
+}
+
+.profile img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid var(--card);
+
+    box-shadow:
+        0 0 0 2px
+        var(--primary-light);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.profile-info strong {
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+.profile-info span {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   19. MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    color:
+        var(--text);
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color:
+        var(--primary);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   20. SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(15, 23, 42, 0.55);
+
+    backdrop-filter:
+        blur(3px);
+
+    z-index: 900;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+
+/* =========================================================
+   21. GENERAL CARD / PANEL
+========================================================= */
+
+.card,
+.panel {
+    min-width: 0;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card:hover,
+.panel:hover {
+    box-shadow:
+        var(--shadow);
+}
+
+.panel {
+    padding: 24px;
+}
+
+
+/* =========================================================
+   22. STATISTICS GRID
+========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 17px;
+
+    margin-top: 12px;
+}
+
+.stat-card {
+    min-height: 125px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.stat-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.stat-icon {
+    min-width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+}
+
+.stat-card span {
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+.stat-card h3 {
+    margin-top: 3px;
+
+    color:
+        var(--text);
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+.stat-card small {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+}
+
+.stat-card small i {
+    color:
+        var(--green);
+
+    margin-right: 2px;
+}
+
+
+/* =========================================================
+   23. STAT COLORS
+========================================================= */
+
+.blue {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.purple {
+    color: #7c3aed;
+    background: #f5f3ff;
+}
+
+.green {
+    color: #059669;
+    background: #ecfdf5;
+}
+
+.orange {
+    color: #d97706;
+    background: #fffbeb;
+}
+
+body.dark-mode .blue {
+    background:
+        rgba(37, 99, 235, 0.15);
+}
+
+body.dark-mode .purple {
+    background:
+        rgba(124, 58, 237, 0.15);
+}
+
+body.dark-mode .green {
+    background:
+        rgba(5, 150, 105, 0.15);
+}
+
+body.dark-mode .orange {
+    background:
+        rgba(217, 119, 6, 0.15);
+}
+
+
+/* =========================================================
+   24. ANALYTICS GRID
+========================================================= */
+
+.analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 17px;
+
+    margin-top: 17px;
+}
+
+
+/* =========================================================
+   25. PANEL HEADER
+========================================================= */
+
+.panel-header,
+.section-title {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.panel-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        var(--primary);
+
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+
+    font-weight: 700;
+}
+
+.panel-header h2,
+.section-title h2 {
+    color:
+        var(--text);
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.more-btn {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--muted);
+
+    transition:
+        var(--transition);
+}
+
+.more-btn:hover {
+    color:
+        var(--primary);
+
+    background:
+        var(--primary-light);
+}
+
+
+/* =========================================================
+   26. PROGRESS CONTENT
+========================================================= */
+
+.progress-content {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   27. CIRCULAR PROGRESS
+========================================================= */
+
+.circular-progress {
+    position: relative;
+
+    width: 170px;
+    height: 170px;
+
+    flex-shrink: 0;
+}
+
+.circular-progress canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.progress-center {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.progress-center strong {
+    color:
+        var(--text);
+
+    font-size: 28px;
+
+    line-height: 1;
+}
+
+.progress-center span {
+    margin-top: 5px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   28. PROGRESS DETAILS
+========================================================= */
+
+.progress-details {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.progress-stat {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.progress-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.progress-dot.completed {
+    background:
+        var(--primary);
+}
+
+.progress-dot.remaining {
+    background:
+        #e5e7eb;
+}
+
+.progress-stat div {
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-stat strong {
+    color:
+        var(--text);
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+.progress-stat span:not(.progress-dot) {
+    margin-top: 3px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+}
+
+.progress-message {
+    display: flex;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    margin-top: 12px;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+}
+
+.progress-message i {
+    margin-top: 2px;
+}
+
+.progress-message p {
+    color:
+        var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   29. ANALYTICS CHART
+========================================================= */
+
+.analytics-card select {
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
+    padding:
+        7px 10px;
+
+    border-radius:
+        8px;
+
+    font-size: 9px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.chart-container {
+    position: relative;
+
+    width: 100%;
+
+    height: 220px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   30. MAIN GRID
+========================================================= */
+
+.main-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(300px, 0.75fr);
+
+    gap: 17px;
+
+    margin-top: 17px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   31. SECTION TITLE
+========================================================= */
+
+.section-title {
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.section-title > a {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color:
+        var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.section-title > a:hover {
+    text-decoration:
+        underline;
+}
+
+.section-title > i {
+    color:
+        var(--primary);
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   32. MODULE LIST
+========================================================= */
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.module {
+    display: grid;
+
+    grid-template-columns:
+        48px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+
+    background:
+        var(--card);
+
+    transition:
+        var(--transition);
+}
+
+.module:hover {
+    border-color:
+        rgba(79, 70, 229, 0.25);
+
+    transform:
+        translateX(3px);
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+/* =========================================================
+   33. MODULE ICON
+========================================================= */
+
+.module-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 17px;
+}
+
+.module-info {
+    min-width: 0;
+}
+
+.module-top {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 4px;
+}
+
+.week {
+    color:
+        var(--light-text);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.badge {
+    padding:
+        4px 7px;
+
+    border-radius:
+        20px;
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+.badge.completed {
+    color:
+        #059669;
+
+    background:
+        #ecfdf5;
+}
+
+.badge.current {
+    color:
+        #7c3aed;
+
+    background:
+        #f5f3ff;
+}
+
+.badge.locked {
+    color:
+        #6b7280;
+
+    background:
+        #f3f4f6;
+}
+
+body.dark-mode .badge.completed {
+    background:
+        rgba(16, 185, 129, 0.12);
+}
+
+body.dark-mode .badge.current {
+    background:
+        rgba(139, 92, 246, 0.12);
+}
+
+body.dark-mode .badge.locked {
+    background:
+        #1f2937;
+}
+
+.module-info h3 {
+    color:
+        var(--text);
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+.module-info p {
+    max-width: 600px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   34. MODULE PROGRESS
+========================================================= */
+
+.module-progress {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 9px;
+}
+
+.progress-track {
+    width: 100%;
+    max-width: 260px;
+
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--border);
+}
+
+.progress-value {
+    height: 100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            #8b5cf6
+        );
+}
+
+.module-progress > span {
+    min-width: 28px;
+
+    color:
+        var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   35. MODULE BUTTON
+========================================================= */
+
+.module-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        9px 12px;
+
+    border-radius:
+        9px;
+
+    background:
+        var(--primary);
+
+    color:
+        #ffffff;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    transition:
+        var(--transition);
+
+    white-space: nowrap;
+}
+
+.module-button:hover {
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(79, 70, 229, 0.2);
+}
+
+.module-button.completed-btn {
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+}
+
+.module-button.completed-btn:hover {
+    background:
+        var(--primary);
+
+    color:
+        #ffffff;
+}
+
+.module-button.disabled {
+    background:
+        var(--border);
+
+    color:
+        var(--muted);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   36. RIGHT COLUMN
+========================================================= */
+
+.right-column {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+/* =========================================================
+   37. UPCOMING CLASSES
+========================================================= */
+
+.class-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.class-item:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.date-box {
+    min-width: 43px;
+    height: 48px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+}
+
+.date-box span {
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+.date-box strong {
+    margin-top: 1px;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+.class-item > div:nth-child(2) {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.class-item h3 {
+    color:
+        var(--text);
+
+    font-size: 10px;
+
+    margin-bottom: 4px;
+}
+
+.class-item p {
+    color:
+        var(--muted);
+
+    font-size: 8px;
+}
+
+.live {
+    align-self:
+        flex-start;
+
+    padding:
+        4px 6px;
+
+    border-radius:
+        20px;
+
+    color:
+        #dc2626;
+
+    background:
+        #fef2f2;
+
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   38. ANNOUNCEMENTS
+========================================================= */
+
+.announcement {
+    display: flex;
+
+    gap: 11px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.announcement:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.announcement-icon {
+    min-width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.announcement h3 {
+    color:
+        var(--text);
+
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+.announcement p {
+    color:
+        var(--muted);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+.announcement small {
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--light-text);
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   39. QUICK RESOURCES
+========================================================= */
+
+.resource-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+.resource {
+    min-height: 75px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        11px;
+
+    color:
+        var(--muted);
+
+    transition:
+        var(--transition);
+}
+
+.resource i {
+    color:
+        var(--primary);
+
+    font-size: 16px;
+}
+
+.resource span {
+    font-size: 8px;
+
+    font-weight: 500;
+}
+
+.resource:hover {
+    border-color:
+        rgba(79, 70, 229, 0.3);
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   40. DARK MODE PANELS
+========================================================= */
+
+body.dark-mode .card,
+body.dark-mode .panel,
+body.dark-mode .module,
+body.dark-mode .search-box,
+body.dark-mode .header-icon {
+    background:
+        rgba(13, 27, 45, 0.88);
+
+    border-color:
+        rgba(148, 163, 184, 0.13);
+}
+
+body.dark-mode .more-btn {
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .progress-dot.remaining {
+    background:
+        #334155;
+}
+
+body.dark-mode .progress-track {
+    background:
+        #1e293b;
+}
+
+body.dark-mode .resource:hover {
+    background:
+        rgba(79, 70, 229, 0.12);
+}
+
+
+/* =========================================================
+   41. SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        #cbd5e1;
+
+    border-radius:
+        20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        #94a3b8;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background:
+        #334155;
+}
+
+
+/* =========================================================
+   42. TEXT SELECTION
+========================================================= */
+
+::selection {
+    background:
+        var(--primary);
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   43. ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+.stats .card,
+.stats .stat-card,
+.analytics-grid .panel,
+.main-grid .panel {
+    animation:
+        fadeUp 0.5s ease both;
+}
+
+.stats .card:nth-child(2),
+.stats .stat-card:nth-child(2) {
+    animation-delay:
+        0.05s;
+}
+
+.stats .card:nth-child(3),
+.stats .stat-card:nth-child(3) {
+    animation-delay:
+        0.1s;
+}
+
+.stats .card:nth-child(4),
+.stats .stat-card:nth-child(4) {
+    animation-delay:
+        0.15s;
+}
+
+
+/* =========================================================
+   44. RESPONSIVE — LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    :root {
+        --sidebar-width: 225px;
+    }
+
+    .content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .analytics-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .main-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .right-column {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   45. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform:
+            translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform:
+            translateX(0);
+    }
+
+    .content {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            0
+            20px
+            40px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .topbar {
+        align-items:
+            flex-start;
+
+        padding-top:
+            18px;
+    }
+
+    .welcome {
+        flex: 1;
+    }
+
+    .header-actions {
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            flex-end;
+    }
+
+    .search-box {
+        display:
+            none;
+    }
+
+    .right-column {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   46. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .content {
+        padding:
+            0
+            14px
+            30px;
+    }
+
+    .topbar {
+        display: grid;
+
+        grid-template-columns:
+            auto
+            minmax(0, 1fr);
+
+        gap: 12px;
+
+        padding-top:
+            15px;
+    }
+
+    .mobile-menu-btn {
+        grid-column:
+            1;
+
+        grid-row:
+            1;
+    }
+
+    .welcome {
+        grid-column:
+            2;
+
+        grid-row:
+            1;
+    }
+
+    .welcome-label {
+        font-size:
+            7px;
+    }
+
+    .welcome h1 {
+        font-size:
+            20px;
+    }
+
+    .welcome p {
+        font-size:
+            9px;
+    }
+
+    .header-actions {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+
+        justify-content:
+            flex-end;
+
+        margin-top:
+            2px;
+    }
+
+    .profile {
+        margin-left:
+            auto;
+    }
+
+    .profile-info {
+        display:
+            none;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            10px;
+
+        margin-top:
+            10px;
+    }
+
+    .stat-card {
+        min-height:
+            105px;
+
+        padding:
+            14px;
+
+        gap:
+            10px;
+    }
+
+    .stat-icon {
+        min-width:
+            38px;
+
+        height:
+            38px;
+
+        border-radius:
+            10px;
+
+        font-size:
+            13px;
+    }
+
+    .stat-card span {
+        font-size:
+            8px;
+    }
+
+    .stat-card h3 {
+        font-size:
+            20px;
+    }
+
+    .stat-card small {
+        font-size:
+            7px;
+    }
+
+    .panel {
+        padding:
+            17px;
+    }
+
+    .analytics-grid {
+        gap:
+            10px;
+
+        margin-top:
+            10px;
+    }
+
+    .progress-content {
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+    }
+
+    .progress-details {
+        width:
+            100%;
+    }
+
+    .circular-progress {
+        width:
+            145px;
+
+        height:
+            145px;
+    }
+
+    .chart-container {
+        height:
+            190px;
+    }
+
+    .main-grid {
+        gap:
+            10px;
+
+        margin-top:
+            10px;
+    }
+
+    .module {
+        grid-template-columns:
+            40px
+            minmax(0, 1fr);
+
+        padding:
+            12px;
+
+        gap:
+            10px;
+    }
+
+    .module-icon {
+        width:
+            40px;
+
+        height:
+            40px;
+
+        font-size:
+            14px;
+    }
+
+    .module-button {
+        grid-column:
+            2;
+
+        justify-self:
+            start;
+
+        margin-top:
+            4px;
+    }
+
+    .module-info h3 {
+        font-size:
+            10px;
+    }
+
+    .module-info p {
+        font-size:
+            8px;
+    }
+
+    .right-column {
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+    .notification-dropdown {
+        position:
+            fixed;
+
+        top:
+            75px;
+
+        left:
+            14px;
+
+        right:
+            14px;
+
+        width:
+            auto;
+    }
+}
+
+
+/* =========================================================
+   47. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .content {
+        padding-left:
+            10px;
+
+        padding-right:
+            10px;
+    }
+
+    .topbar {
+        gap:
+            8px;
+    }
+
+    .welcome h1 {
+        font-size:
+            18px;
+    }
+
+    .welcome p {
+        font-size:
+            8px;
+    }
+
+    .profile img {
+        width:
+            36px;
+
+        height:
+            36px;
+    }
+
+    .header-icon {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+    .mobile-menu-btn {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+    .stats {
+        grid-template-columns:
+            1fr;
+    }
+
+    .stat-card {
+        min-height:
+            90px;
+    }
+
+    .resource-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .module-top {
+        flex-wrap:
+            wrap;
+    }
+
+    .notification-dropdown {
+        top:
+            70px;
+    }
+}
+
+
+/* =========================================================
+   48. ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline:
+        3px solid
+        rgba(79, 70, 229, 0.25);
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   49. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
