@@ -13,6 +13,7 @@ const studentsRoutes = require("./src/routes/students.routes");
 const applicationsRoutes = require("./src/routes/applications.routes");
 const cohortsRoutes = require("./src/routes/cohorts.routes");
 const resourcesRoutes = require("./src/routes/resources.routes");
+const resourcesPublicRoutes = require("./src/routes/resourcesPublic.routes");
 const announcementsRoutes = require("./src/routes/announcements.routes");
 const studentPortalRoutes = require("./src/routes/studentPortal.routes");
 const documentsRoutes = require("./src/routes/documents.routes");
@@ -21,7 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "15mb" }));
 app.use(morgan("dev"));
 
 /* =========================================================
@@ -55,6 +56,7 @@ app.use("/api/admin/announcements", requireAdminAuth, announcementsRoutes);
 
 app.use("/api/student", requireStudentAuth, studentPortalRoutes);
 app.use("/api/documents", requireStudentAuth, documentsRoutes);
+app.use("/api/resources", requireStudentAuth, resourcesPublicRoutes);
 
 /* =========================================================
    404 HANDLER

@@ -21,7 +21,7 @@
       "progress": 82,
       "registeredAt": "2024-01-15T09:00:00.000Z",
       "approvedAt": "2024-01-16T09:00:00.000Z",
-      "lastLogin": "2026-09-03T10:08:33.477Z"
+      "lastLogin": "2026-09-05T04:50:42.981Z"
     },
     {
       "id": "STU-002",
@@ -177,18 +177,32 @@
   ],
   "resources": [
     {
-      "id": "RES-001",
-      "title": "Intro to Consulting Frameworks.pdf",
-      "type": "pdf",
-      "cohort": "cohort-01",
-      "uploadedAt": "2024-02-01T09:00:00.000Z"
+      "id": "resource-seed-001",
+      "title": "Digital Marketing Strategy",
+      "category": "module",
+      "description": "Learning material for the Digital Marketing Strategy course.",
+      "status": "published",
+      "fileName": "digital-marketing-strategy.pdf",
+      "fileType": "application/pdf",
+      "fileSize": 0,
+      "fileData": null,
+      "downloads": 0,
+      "createdAt": "2026-09-01T09:00:00.000Z",
+      "updatedAt": "2026-09-01T09:00:00.000Z"
     },
     {
-      "id": "RES-002",
-      "title": "Case Study Toolkit.pdf",
-      "type": "pdf",
-      "cohort": "all",
-      "uploadedAt": "2024-03-10T09:00:00.000Z"
+      "id": "resource-seed-002",
+      "title": "Student Orientation Guide",
+      "category": "document",
+      "description": "Important information for students joining the Jabico learning platform.",
+      "status": "published",
+      "fileName": "student-orientation-guide.pdf",
+      "fileType": "application/pdf",
+      "fileSize": 0,
+      "fileData": null,
+      "downloads": 0,
+      "createdAt": "2026-08-30T12:00:00.000Z",
+      "updatedAt": "2026-08-30T12:00:00.000Z"
     }
   ],
   "announcements": [

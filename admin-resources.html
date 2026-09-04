@@ -2958,6 +2958,7 @@
      JAVASCRIPT
 ========================================================= -->
 
+<script src="js/api-config.js"></script>
 <script>
 
 "use strict";
@@ -2976,18 +2977,102 @@ document.addEventListener(
            AUTHENTICATION
         ====================================================== */
 
+        const ADMIN_TOKEN_KEY = "jabicoAdminToken";
+        const ADMIN_SESSION_KEY = "jabicoAdminAuthenticated";
+
         const authenticated =
-            localStorage.getItem(
-                "jabicoAdminAuthenticated"
-            );
+            sessionStorage.getItem(ADMIN_SESSION_KEY);
+
+        const adminToken =
+            sessionStorage.getItem(ADMIN_TOKEN_KEY);
 
 
-        if (authenticated !== "true") {
+        if (authenticated !== "true" || !adminToken) {
 
             window.location.href =
                 "admin-login.html";
 
             return;
+
+        }
+
+
+        /* =====================================================
+           API HELPER
+        ====================================================== */
+
+        async function api(path, options = {}) {
+
+            const token =
+                sessionStorage.getItem(ADMIN_TOKEN_KEY);
+
+            if (!token) {
+                throw new Error("Your admin session has expired. Please log in again.");
+            }
+
+            const headers = { Accept: "application/json", ...(options.headers || {}) };
+            headers.Authorization = `Bearer ${token}`;
+
+            if (options.body && !headers["Content-Type"]) {
+                headers["Content-Type"] = "application/json";
+            }
+
+            const response = await fetch(`${API_BASE_URL}${path}`, { ...options, headers });
+
+            const data = await response.json().catch(() => ({}));
+
+            if (response.status === 401) {
+                sessionStorage.removeItem(ADMIN_TOKEN_KEY);
+                sessionStorage.removeItem(ADMIN_SESSION_KEY);
+                throw new Error("Your admin session has expired. Please log in again.");
+            }
+
+            if (!response.ok || data.success === false) {
+                throw new Error(data.message || "Request failed.");
+            }
+
+            return data;
+
+        }
+
+
+        async function apiBlob(path) {
+
+            const token =
+                sessionStorage.getItem(ADMIN_TOKEN_KEY);
+
+            const response =
+                await fetch(`${API_BASE_URL}${path}`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.message || "Unable to load file.");
+            }
+
+            return response.blob();
+
+        }
+
+
+        function fileToBase64(file) {
+
+            return new Promise((resolve, reject) => {
+
+                const reader = new FileReader();
+
+                reader.onload = () => {
+                    // result looks like "data:<mime>;base64,AAAA..."
+                    const base64 = String(reader.result).split(",")[1] || "";
+                    resolve(base64);
+                };
+
+                reader.onerror = () => reject(reader.error);
+
+                reader.readAsDataURL(file);
+
+            });
 
         }
 
@@ -3130,20 +3215,6 @@ document.addEventListener(
             );
 
 
-        /* =====================================================
-           DATABASE
-        ====================================================== */
-
-        const DB_NAME =
-            "JabicoAdminResourcesDB";
-
-        const DB_VERSION = 1;
-
-        const STORE_NAME =
-            "resources";
-
-        let database = null;
-
 
         /* =====================================================
            APPLICATION STATE
@@ -3156,236 +3227,15 @@ document.addEventListener(
         let selectedFile = null;
 
 
-        /* =====================================================
-           OPEN INDEXED DB
-        ====================================================== */
-
-        function openDatabase() {
-
-            return new Promise(
-                (resolve, reject) => {
-
-                    const request =
-                        indexedDB.open(
-                            DB_NAME,
-                            DB_VERSION
-                        );
-
-
-                    request.onupgradeneeded =
-                        (event) => {
-
-                            const db =
-                                event.target.result;
-
-
-                            if (
-                                !db.objectStoreNames
-                                    .contains(STORE_NAME)
-                            ) {
-
-                                const store =
-                                    db.createObjectStore(
-                                        STORE_NAME,
-                                        {
-                                            keyPath: "id"
-                                        }
-                                    );
-
-
-                                store.createIndex(
-                                    "status",
-                                    "status",
-                                    {
-                                        unique: false
-                                    }
-                                );
-
-
-                                store.createIndex(
-                                    "category",
-                                    "category",
-                                    {
-                                        unique: false
-                                    }
-                                );
-
-                            }
-
-                        };
-
-
-                    request.onsuccess =
-                        (event) => {
-
-                            database =
-                                event.target.result;
-
-                            resolve(database);
-
-                        };
-
-
-                    request.onerror =
-                        () => {
-
-                            reject(
-                                request.error
-                            );
-
-                        };
-
-                }
-            );
-
-        }
-
-
-        /* =====================================================
-           GET ALL RESOURCES
-        ====================================================== */
-
-        function getResources() {
-
-            return new Promise(
-                (resolve, reject) => {
-
-                    const transaction =
-                        database.transaction(
-                            STORE_NAME,
-                            "readonly"
-                        );
-
-
-                    const store =
-                        transaction.objectStore(
-                            STORE_NAME
-                        );
-
-
-                    const request =
-                        store.getAll();
-
-
-                    request.onsuccess =
-                        () => {
-
-                            resolve(
-                                request.result || []
-                            );
-
-                        };
-
-
-                    request.onerror =
-                        () => {
-
-                            reject(
-                                request.error
-                            );
-
-                        };
-
-                }
-            );
-
-        }
-
-
-        /* =====================================================
-           SAVE RESOURCE
-        ====================================================== */
-
-        function saveResource(resource) {
-
-            return new Promise(
-                (resolve, reject) => {
-
-                    const transaction =
-                        database.transaction(
-                            STORE_NAME,
-                            "readwrite"
-                        );
-
-
-                    const store =
-                        transaction.objectStore(
-                            STORE_NAME
-                        );
-
-
-                    const request =
-                        store.put(resource);
-
-
-                    request.onsuccess =
-                        () => resolve();
-
-
-                    request.onerror =
-                        () =>
-                            reject(
-                                request.error
-                            );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================================
-           DELETE RESOURCE
-        ====================================================== */
-
-        function deleteResource(id) {
-
-            return new Promise(
-                (resolve, reject) => {
-
-                    const transaction =
-                        database.transaction(
-                            STORE_NAME,
-                            "readwrite"
-                        );
-
-
-                    const store =
-                        transaction.objectStore(
-                            STORE_NAME
-                        );
-
-
-                    const request =
-                        store.delete(id);
-
-
-                    request.onsuccess =
-                        () => resolve();
-
-
-                    request.onerror =
-                        () =>
-                            reject(
-                                request.error
-                            );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================================
-           LOAD RESOURCES
-        ====================================================== */
-
         async function loadResources() {
 
             try {
 
+                const data =
+                    await api("/api/admin/resources");
+
                 resources =
-                    await getResources();
+                    data.resources || [];
 
 
                 resources.sort(
@@ -3408,9 +3258,15 @@ document.addEventListener(
                 );
 
                 showToast(
-                    "Unable to load resources.",
+                    error.message === "Failed to fetch"
+                        ? "Cannot connect to the server."
+                        : "Unable to load resources.",
                     "error"
                 );
+
+                if (/session has expired|log in again/i.test(error.message)) {
+                    setTimeout(() => { window.location.href = "admin-login.html"; }, 1200);
+                }
 
             }
 
@@ -4074,54 +3930,24 @@ document.addEventListener(
 
                     if (editingId) {
 
-                        const existing =
-                            resources.find(
-                                item =>
-                                    item.id ===
-                                    editingId
-                            );
-
-
-                        if (!existing)
-                            return;
-
-
-                        existing.title =
-                            title;
-
-                        existing.category =
-                            category;
-
-                        existing.description =
-                            description;
-
-                        existing.status =
-                            status;
-
-                        existing.updatedAt =
-                            new Date().toISOString();
-
+                        const payload = {
+                            title,
+                            category,
+                            description,
+                            status
+                        };
 
                         if (selectedFile) {
-
-                            existing.file =
-                                selectedFile;
-
-                            existing.fileName =
-                                selectedFile.name;
-
-                            existing.fileType =
-                                selectedFile.type;
-
-                            existing.fileSize =
-                                selectedFile.size;
-
+                            payload.fileName = selectedFile.name;
+                            payload.fileType = selectedFile.type;
+                            payload.fileSize = selectedFile.size;
+                            payload.fileData = await fileToBase64(selectedFile);
                         }
 
-
-                        await saveResource(
-                            existing
-                        );
+                        await api(`/api/admin/resources/${editingId}`, {
+                            method: "PUT",
+                            body: JSON.stringify(payload)
+                        });
 
 
                         showToast(
@@ -4150,53 +3976,22 @@ document.addEventListener(
                         }
 
 
-                        const newResource = {
-
-                            id:
-                                crypto.randomUUID
-                                ? crypto.randomUUID()
-                                : (
-                                    Date.now() +
-                                    "-" +
-                                    Math.random()
-                                ),
-
+                        const payload = {
                             title,
-
                             category,
-
                             description,
-
                             status,
-
-                            file:
-                                selectedFile,
-
-                            fileName:
-                                selectedFile.name,
-
-                            fileType:
-                                selectedFile.type,
-
-                            fileSize:
-                                selectedFile.size,
-
-                            downloads: 0,
-
-                            createdAt:
-                                new Date()
-                                .toISOString(),
-
-                            updatedAt:
-                                new Date()
-                                .toISOString()
-
+                            fileName: selectedFile.name,
+                            fileType: selectedFile.type,
+                            fileSize: selectedFile.size,
+                            fileData: await fileToBase64(selectedFile)
                         };
 
 
-                        await saveResource(
-                            newResource
-                        );
+                        await api("/api/admin/resources", {
+                            method: "POST",
+                            body: JSON.stringify(payload)
+                        });
 
 
                         showToast(
@@ -4221,7 +4016,7 @@ document.addEventListener(
                     );
 
                     showToast(
-                        "Unable to save resource.",
+                        error.message || "Unable to save resource.",
                         "error"
                     );
 
@@ -4316,9 +4111,9 @@ document.addEventListener(
 
                     try {
 
-                        await deleteResource(
-                            id
-                        );
+                        await api(`/api/admin/resources/${id}`, {
+                            method: "DELETE"
+                        });
 
 
                         showToast(
@@ -4353,11 +4148,11 @@ document.addEventListener(
            VIEW RESOURCE
         ====================================================== */
 
-        function viewResource(
+        async function viewResource(
             resource
         ) {
 
-            if (!resource.file) {
+            if (!resource.hasFile) {
 
                 showToast(
                     "This resource has no file attached.",
@@ -4371,9 +4166,13 @@ document.addEventListener(
 
             try {
 
+                const blob =
+                    await apiBlob(`/api/admin/resources/${resource.id}/download`);
+
+
                 const url =
                     URL.createObjectURL(
-                        resource.file
+                        blob
                     );
 
 
@@ -4381,22 +4180,6 @@ document.addEventListener(
                     url,
                     "_blank",
                     "noopener,noreferrer"
-                );
-
-
-                resource.downloads =
-                    (
-                        Number(
-                            resource.downloads
-                        ) || 0
-                    ) + 1;
-
-
-                saveResource(
-                    resource
-                ).then(
-                    () =>
-                        updateStatistics()
                 );
 
 
@@ -4414,7 +4197,7 @@ document.addEventListener(
                 );
 
                 showToast(
-                    "Unable to open this file.",
+                    error.message || "Unable to open this file.",
                     "error"
                 );
 
@@ -5063,21 +4846,19 @@ document.addEventListener(
 
             try {
 
-                await openDatabase();
-
                 await loadResources();
 
             }
             catch (error) {
 
                 console.error(
-                    "Jabico Resources DB error:",
+                    "Jabico Resources error:",
                     error
                 );
 
 
                 showToast(
-                    "Resource storage could not be initialized.",
+                    "Unable to load resources.",
                     "error"
                 );
 
