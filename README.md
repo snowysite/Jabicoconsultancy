@@ -18,3 +18,4 @@ The admin login now receives a JWT from the backend. The Applications page uses 
 
 The frontend currently expects the backend at `http://localhost:4000`. This is intentional for local testing. Before production deployment, change `API_BASE_URL` to the deployed API URL.
 "# Jabicoconsultancy" 
+"# Jabicoconsultancy" 
